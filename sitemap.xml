@@ -6,17 +6,12 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ua/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://getelia.app/de/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ru/</loc>
+    <loc>https://getelia.app/es/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>1.0</priority>
   </url>
@@ -26,17 +21,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ua/apps/contractions/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://getelia.app/de/apps/contractions/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ru/apps/contractions/</loc>
+    <loc>https://getelia.app/es/apps/contractions/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.8</priority>
   </url>
@@ -46,17 +36,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ua/apps/feeding/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://getelia.app/de/apps/feeding/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ru/apps/feeding/</loc>
+    <loc>https://getelia.app/es/apps/feeding/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.8</priority>
   </url>
@@ -66,17 +51,12 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ua/apps/contractions/privacy/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://getelia.app/de/apps/contractions/privacy/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ru/apps/contractions/privacy/</loc>
+    <loc>https://getelia.app/es/apps/contractions/privacy/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.3</priority>
   </url>
@@ -86,17 +66,12 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ua/apps/contractions/support/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://getelia.app/de/apps/contractions/support/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ru/apps/contractions/support/</loc>
+    <loc>https://getelia.app/es/apps/contractions/support/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.3</priority>
   </url>
@@ -106,17 +81,12 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ua/apps/feeding/privacy/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://getelia.app/de/apps/feeding/privacy/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ru/apps/feeding/privacy/</loc>
+    <loc>https://getelia.app/es/apps/feeding/privacy/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.3</priority>
   </url>
@@ -126,17 +96,12 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ua/apps/feeding/support/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://getelia.app/de/apps/feeding/support/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://getelia.app/ru/apps/feeding/support/</loc>
+    <loc>https://getelia.app/es/apps/feeding/support/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.3</priority>
   </url>

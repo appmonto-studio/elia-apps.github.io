@@ -4,10 +4,10 @@ from html import escape
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://getelia.app"
-LANGS = ["en", "uk", "de", "ru"]
-LOCALES = {"en": "en_US", "uk": "uk_UA", "de": "de_DE", "ru": "ru_RU"}
-LANG_LABELS = {"en": "EN", "uk": "UA", "de": "DE", "ru": "RU"}
-URL_PREFIXES = {"en": "", "uk": "ua", "de": "de", "ru": "ru"}
+LANGS = ["en", "de", "es"]
+LOCALES = {"en": "en_US", "de": "de_DE", "es": "es_ES"}
+LANG_LABELS = {"en": "EN", "de": "DE", "es": "ES"}
+URL_PREFIXES = {"en": "", "de": "de", "es": "es"}
 
 
 def url(lang, route=""):
@@ -141,195 +141,534 @@ def footer(lang, links, note, route=""):
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>"""
 
 
-T = {
- "en": {
-  "lang": "Language", "note": "Not a medical device.",
-  "home": {
-   "title": "Elia — calm, private apps for your family's first days",
-   "description": "Elia is a small family of calm, private, offline-first apps for pregnancy, birth, and the early days with your baby. No account. No ads. No cloud.",
-   "nav": [("Apps", "#apps"), ("Philosophy", "#philosophy"), ("Story", "#story")],
-   "hero": ["Elia", "Calm companions for birth and beyond.", "A small family of private, offline-first apps for pregnancy, birth, and the early days with your baby. No account. No ads. No cloud.", "See the apps", "Why Elia"],
-   "apps_head": ["The apps", "Two apps for two moments.", "Each does one thing calmly, and gets out of your way."],
-   "coming": "Coming soon", "learn": "Learn more",
-   "contr_card": ["Elia Contractions", "A calm companion for birth. Time contractions clearly, stay present, and share a simple summary with your care team."],
-   "feed_card": ["Elia Feeding", "A calm, private feeding log for the first days with your baby. Tap what just happened — Elia remembers the rest."],
-   "promise": ["The promise", "The interface should reduce stress, not add to it.", "Elia is warm, quiet, and trustworthy — like a calm midwife and a supportive partner, not like hospital software. Every Elia app follows the same principles."],
-   "chips": ["No account", "No ads", "No subscriptions", "No cloud sync", "No analytics", "Offline-first", "Local-only by default", "No judgement"],
-   "story": ["Our story", "Elia was born in a delivery room.", "During labor, a partner reached for a contraction app. It lagged. The main button never made it clear whether tracking had started. Useful features were locked behind a subscription. After three contractions it said to go to the hospital — where the family already was.", "The app added stress. Elia is the answer to that moment: the companion we wished we had.", "Their baby was born that evening. Elia was born the same day — and grew into a small family of apps for the quiet, tired, important days that follow."],
-  },
- },
- "uk": {
-  "lang": "Мова", "note": "Не є медичним виробом.",
-  "home": {
-   "title": "Elia — спокійні приватні застосунки для перших сімейних днів",
-   "description": "Elia — невелика родина спокійних приватних застосунків для вагітності, пологів і перших днів з малюком. Без акаунта, реклами й хмарної синхронізації.",
-   "nav": [("Застосунки", "#apps"), ("Філософія", "#philosophy"), ("Історія", "#story")],
-   "hero": ["Elia", "Спокійні помічники для пологів і днів після них.", "Невелика родина приватних offline-first застосунків для вагітності, пологів і перших днів з малюком. Без акаунта. Без реклами. Без хмарної синхронізації.", "Переглянути застосунки", "Чому Elia"],
-   "apps_head": ["Застосунки", "Два застосунки для двох моментів.", "Кожен спокійно робить одну справу і не заважає."],
-   "coming": "Незабаром", "learn": "Докладніше",
-   "contr_card": ["Elia Contractions", "Спокійний помічник для пологів. Чітко фіксуйте перейми, залишайтеся поруч із моментом і діліться простим підсумком із командою догляду."],
-   "feed_card": ["Elia Feeding", "Спокійний приватний журнал годувань для перших днів із малюком. Натисніть те, що щойно сталося — Elia запам'ятає решту."],
-   "promise": ["Обіцянка", "Інтерфейс має зменшувати стрес, а не додавати його.", "Elia тепла, тиха й надійна — як спокійна акушерка і підтримуючий партнер, а не як лікарняна система. Усі застосунки Elia дотримуються тих самих принципів."],
-   "chips": ["Без акаунта", "Без реклами", "Без підписок", "Без хмарної синхронізації", "Без аналітики", "Offline-first", "Локально за замовчуванням", "Без осуду"],
-   "story": ["Наша історія", "Elia народилася у пологовій кімнаті.", "Під час пологів партнер відкрив застосунок для перейм. Він гальмував. Головна кнопка не давала зрозуміти, чи запис уже почався. Корисні функції були за підпискою. Після трьох перейм застосунок сказав їхати до лікарні — де сім'я вже була.", "Застосунок додав стресу. Elia — відповідь на той момент: помічник, якого нам тоді бракувало.", "Їхній малюк народився того вечора. Elia народилася того ж дня — і виросла в невелику родину застосунків для тихих, втомлених і важливих днів після."],
-  },
- },
- "de": {
-  "lang": "Sprache", "note": "Kein Medizinprodukt.",
-  "home": {
-   "title": "Elia — ruhige, private Apps für die ersten Tage als Familie",
-   "description": "Elia ist eine kleine Familie ruhiger, privater Offline-first-Apps für Schwangerschaft, Geburt und die ersten Tage mit deinem Baby. Kein Konto. Keine Werbung. Keine Cloud.",
-   "nav": [("Apps", "#apps"), ("Philosophie", "#philosophy"), ("Geschichte", "#story")],
-   "hero": ["Elia", "Ruhige Begleiter für Geburt und die Zeit danach.", "Eine kleine Familie privater Offline-first-Apps für Schwangerschaft, Geburt und die ersten Tage mit deinem Baby. Kein Konto. Keine Werbung. Keine Cloud.", "Apps ansehen", "Warum Elia"],
-   "apps_head": ["Die Apps", "Zwei Apps für zwei Momente.", "Jede tut ruhig eine Sache und tritt dann in den Hintergrund."],
-   "coming": "Demnächst", "learn": "Mehr erfahren",
-   "contr_card": ["Elia Contractions", "Ein ruhiger Begleiter für die Geburt. Wehen klar erfassen, präsent bleiben und bei Bedarf eine einfache Zusammenfassung teilen."],
-   "feed_card": ["Elia Feeding", "Ein ruhiges, privates Still- und Fütterungsprotokoll für die ersten Tage mit deinem Baby. Tippe, was gerade passiert ist — Elia merkt sich den Rest."],
-   "promise": ["Das Versprechen", "Die Oberfläche soll Stress reduzieren, nicht erhöhen.", "Elia ist warm, leise und vertrauenswürdig — eher wie eine ruhige Hebamme und ein unterstützender Partner als wie Krankenhaussoftware. Jede Elia-App folgt denselben Prinzipien."],
-   "chips": ["Kein Konto", "Keine Werbung", "Keine Abos", "Keine Cloud-Synchronisierung", "Keine Analyse", "Offline-first", "Standardmäßig lokal", "Kein Urteil"],
-   "story": ["Unsere Geschichte", "Elia entstand in einem Kreißsaal.", "Während der Geburt griff ein Partner zu einer Wehen-App. Sie reagierte träge. Der Hauptknopf machte nie klar, ob die Aufzeichnung begonnen hatte. Nützliche Funktionen lagen hinter einem Abo. Nach drei Wehen sagte sie, man solle ins Krankenhaus fahren — wo die Familie bereits war.", "Die App machte den Moment stressiger. Elia ist die Antwort darauf: der Begleiter, den wir uns gewünscht hätten.", "Das Baby wurde an diesem Abend geboren. Elia entstand am selben Tag — und wuchs zu einer kleinen App-Familie für die leisen, müden und wichtigen Tage danach."],
-  },
- },
- "ru": {
-  "lang": "Язык", "note": "Не является медицинским изделием.",
-  "home": {
-   "title": "Elia — спокойные приватные приложения для первых семейных дней",
-   "description": "Elia — небольшая семья спокойных приватных приложений для беременности, родов и первых дней с малышом. Без аккаунта, рекламы и облачной синхронизации.",
-   "nav": [("Приложения", "#apps"), ("Философия", "#philosophy"), ("История", "#story")],
-   "hero": ["Elia", "Спокойные помощники для родов и дней после.", "Небольшая семья приватных offline-first приложений для беременности, родов и первых дней с малышом. Без аккаунта. Без рекламы. Без облачной синхронизации.", "Посмотреть приложения", "Почему Elia"],
-   "apps_head": ["Приложения", "Два приложения для двух моментов.", "Каждое спокойно делает одну вещь и не мешает."],
-   "coming": "Скоро", "learn": "Подробнее",
-   "contr_card": ["Elia Contractions", "Спокойный помощник для родов. Четко фиксируйте схватки, оставайтесь в моменте и делитесь простым итогом с командой ухода."],
-   "feed_card": ["Elia Feeding", "Спокойный приватный журнал кормлений для первых дней с малышом. Нажмите то, что только что произошло — Elia запомнит остальное."],
-   "promise": ["Обещание", "Интерфейс должен снижать стресс, а не добавлять его.", "Elia теплая, тихая и надежная — как спокойная акушерка и поддерживающий партнер, а не как больничная система. Все приложения Elia следуют одним принципам."],
-   "chips": ["Без аккаунта", "Без рекламы", "Без подписок", "Без облачной синхронизации", "Без аналитики", "Offline-first", "Локально по умолчанию", "Без осуждения"],
-   "story": ["Наша история", "Elia родилась в родильной комнате.", "Во время родов партнер открыл приложение для схваток. Оно тормозило. Главная кнопка не давала понять, началась ли запись. Полезные функции были за подпиской. После трех схваток приложение сказало ехать в больницу — где семья уже была.", "Приложение добавило стресса. Elia — ответ на тот момент: помощник, которого нам тогда не хватало.", "Их малыш родился тем вечером. Elia родилась в тот же день — и выросла в небольшую семью приложений для тихих, уставших и важных дней после."],
-  },
- },
-}
+T = {'en': {'lang': 'Language',
+        'note': 'Not a medical device.',
+        'home': {'title': "Elia — calm, private apps for your family's first days",
+                 'description': 'Elia is a small family of calm, private, offline-first apps for pregnancy, birth, and '
+                                'the early days with your baby. No account. No ads. No cloud.',
+                 'nav': [('Apps', '#apps'), ('Philosophy', '#philosophy'), ('Story', '#story')],
+                 'hero': ['Elia',
+                          'Calm companions for birth and beyond.',
+                          'A small family of private, offline-first apps for pregnancy, birth, and the early days with '
+                          'your baby. No account. No ads. No cloud.',
+                          'See the apps',
+                          'Why Elia'],
+                 'apps_head': ['The apps',
+                               'Two apps for two moments.',
+                               'Each does one thing calmly, and gets out of your way.'],
+                 'coming': 'Coming soon',
+                 'learn': 'Learn more',
+                 'contr_card': ['Elia Contractions',
+                                'A calm companion for birth. Time contractions clearly, stay present, and share a '
+                                'simple summary with your care team.'],
+                 'feed_card': ['Elia Feeding',
+                               'A calm, private feeding log for the first days with your baby. Tap what just happened '
+                               '— Elia remembers the rest.'],
+                 'promise': ['The promise',
+                             'The interface should reduce stress, not add to it.',
+                             'Elia is warm, quiet, and trustworthy — like a calm midwife and a supportive partner, not '
+                             'like hospital software. Every Elia app follows the same principles.'],
+                 'chips': ['No account',
+                           'No ads',
+                           'No subscriptions',
+                           'No cloud sync',
+                           'No analytics',
+                           'Offline-first',
+                           'Local-only by default',
+                           'No judgement'],
+                 'story': ['Our story',
+                           'Elia was born in a delivery room.',
+                           'During labor, a partner reached for a contraction app. It lagged. The main button never '
+                           'made it clear whether tracking had started. Useful features were locked behind a '
+                           'subscription. After three contractions it said to go to the hospital — where the family '
+                           'already was.',
+                           'The app added stress. Elia is the answer to that moment: the companion we wished we had.',
+                           'Their baby was born that evening. Elia was born the same day — and grew into a small '
+                           'family of apps for the quiet, tired, important days that follow.']}},
+ 'de': {'lang': 'Sprache',
+        'note': 'Kein Medizinprodukt.',
+        'home': {'title': 'Elia — ruhige, private Apps für die ersten Tage als Familie',
+                 'description': 'Elia ist eine kleine Familie ruhiger, privater Offline-first-Apps für '
+                                'Schwangerschaft, Geburt und die ersten Tage mit deinem Baby. Kein Konto. Keine '
+                                'Werbung. Keine Cloud.',
+                 'nav': [('Apps', '#apps'), ('Philosophie', '#philosophy'), ('Geschichte', '#story')],
+                 'hero': ['Elia',
+                          'Ruhige Begleiter für Geburt und die Zeit danach.',
+                          'Eine kleine Familie privater Offline-first-Apps für Schwangerschaft, Geburt und die ersten '
+                          'Tage mit deinem Baby. Kein Konto. Keine Werbung. Keine Cloud.',
+                          'Apps ansehen',
+                          'Warum Elia'],
+                 'apps_head': ['Die Apps',
+                               'Zwei Apps für zwei Momente.',
+                               'Jede tut ruhig eine Sache und tritt dann in den Hintergrund.'],
+                 'coming': 'Demnächst',
+                 'learn': 'Mehr erfahren',
+                 'contr_card': ['Elia Contractions',
+                                'Ein ruhiger Begleiter für die Geburt. Wehen klar erfassen, präsent bleiben und bei '
+                                'Bedarf eine einfache Zusammenfassung teilen.'],
+                 'feed_card': ['Elia Feeding',
+                               'Ein ruhiges, privates Still- und Fütterungsprotokoll für die ersten Tage mit deinem '
+                               'Baby. Tippe, was gerade passiert ist — Elia merkt sich den Rest.'],
+                 'promise': ['Das Versprechen',
+                             'Die Oberfläche soll Stress reduzieren, nicht erhöhen.',
+                             'Elia ist warm, leise und vertrauenswürdig — eher wie eine ruhige Hebamme und ein '
+                             'unterstützender Partner als wie Krankenhaussoftware. Jede Elia-App folgt denselben '
+                             'Prinzipien.'],
+                 'chips': ['Kein Konto',
+                           'Keine Werbung',
+                           'Keine Abos',
+                           'Keine Cloud-Synchronisierung',
+                           'Keine Analyse',
+                           'Offline-first',
+                           'Standardmäßig lokal',
+                           'Kein Urteil'],
+                 'story': ['Unsere Geschichte',
+                           'Elia entstand in einem Kreißsaal.',
+                           'Während der Geburt griff ein Partner zu einer Wehen-App. Sie reagierte träge. Der '
+                           'Hauptknopf machte nie klar, ob die Aufzeichnung begonnen hatte. Nützliche Funktionen lagen '
+                           'hinter einem Abo. Nach drei Wehen sagte sie, man solle ins Krankenhaus fahren — wo die '
+                           'Familie bereits war.',
+                           'Die App machte den Moment stressiger. Elia ist die Antwort darauf: der Begleiter, den wir '
+                           'uns gewünscht hätten.',
+                           'Das Baby wurde an diesem Abend geboren. Elia entstand am selben Tag — und wuchs zu einer '
+                           'kleinen App-Familie für die leisen, müden und wichtigen Tage danach.']}},
+ 'es': {'lang': 'Idioma',
+        'note': 'No es un dispositivo médico.',
+        'home': {'title': 'Elia — apps tranquilas y privadas para los primeros días en familia',
+                 'description': 'Elia es una pequeña familia de apps tranquilas, privadas y offline-first para el '
+                                'embarazo, el parto y los primeros días con tu bebé. Sin cuenta. Sin anuncios. Sin '
+                                'sincronización en la nube.',
+                 'nav': [('Apps', '#apps'), ('Filosofía', '#philosophy'), ('Historia', '#story')],
+                 'hero': ['Elia',
+                          'Compañeras tranquilas para el parto y lo que viene después.',
+                          'Una pequeña familia de apps privadas y offline-first para el embarazo, el parto y los '
+                          'primeros días con tu bebé. Sin cuenta. Sin anuncios. Sin sincronización en la nube.',
+                          'Ver las apps',
+                          'Por qué Elia'],
+                 'apps_head': ['Las apps',
+                               'Dos apps para dos momentos.',
+                               'Cada una hace una cosa con calma y no se interpone.'],
+                 'coming': 'Próximamente',
+                 'learn': 'Más información',
+                 'contr_card': ['Elia Contractions',
+                                'Una compañera tranquila para el parto. Registra las contracciones con claridad, '
+                                'mantente presente y comparte un resumen sencillo con tu equipo de atención.'],
+                 'feed_card': ['Elia Feeding',
+                               'Un registro tranquilo y privado de alimentación para los primeros días con tu bebé. Toca lo '
+                               'que acaba de pasar; Elia recuerda el resto.'],
+                 'promise': ['La promesa',
+                             'La interfaz debería reducir el estrés, no añadirlo.',
+                             'Elia es cálida, discreta y confiable: más parecida a una presencia tranquila y una pareja '
+                             'que acompaña que a un software de hospital. Todas las apps de Elia siguen los mismos '
+                             'principios.'],
+                 'chips': ['Sin cuenta',
+                           'Sin anuncios',
+                           'Sin suscripciones',
+                           'Sin sincronización en la nube',
+                           'Sin analíticas',
+                           'Offline-first',
+                           'Local por defecto',
+                           'Sin juicio'],
+                 'story': ['Nuestra historia',
+                           'Elia nació en una sala de parto.',
+                           'Durante el parto, una pareja abrió una app de contracciones. Iba lenta. El botón principal '
+                           'nunca dejaba claro si el registro había empezado. Las funciones útiles estaban detrás de '
+                           'una suscripción. Tras tres contracciones dijo que fueran al hospital, donde la familia ya '
+                           'estaba.',
+                           'La app añadió estrés. Elia es la respuesta a ese momento: la compañera que nos habría '
+                           'gustado tener.',
+                           'Su bebé nació esa noche. Elia nació el mismo día y creció hasta convertirse en una pequeña '
+                           'familia de apps para los días tranquilos, cansados e importantes que vienen después.']}}}
 
 
-APP = {
- "en": {
-  "common": {"overview": "Overview", "support": "Support", "privacy": "Privacy", "all": "All apps", "back": "← All Elia apps", "what": "What it is", "does": "What it does", "promise": "The promise", "why": "Why it exists", "still": "Still need help?", "read": "We read every message."},
-  "contractions": {
-   "title": "Elia Contractions — a calm companion for birth", "desc": "Elia Contractions is a calm, offline-first contraction companion for families during labor. Time contractions clearly, stay present, and share a simple summary.", "tag": "A calm companion for birth.",
-   "sub": "A contraction companion for families during labor, built around one belief: during labor, the interface should reduce stress, not add to it.",
-   "head": ["What it is", "Just enough, exactly when it matters."], "left": "Elia Contractions helps you", "right": "What it is not",
-   "yes": ["Record contractions with one clear tap.", "Review timing and intervals at a glance.", "Stay focused during a contraction.", "Stay present between them.", "Keep a simple, honest history.", "Share a clear summary with your care team, if useful."],
-   "no": ["A medical device or diagnostic tool.", "A replacement for doctors or midwives.", "A pregnancy or baby tracker.", "A subscription trap.", "An advertising surface.", "Something that tells you what to do."],
-   "story": ["Why it exists", "Born from a real birth.", "It began in a hospital room, during labor. Things moved quickly, and soon the contractions left almost no pause in between.", "The partner reached for a contraction app. The one they found lagged. The main button never made it clear whether tracking had started or stopped. Useful features were locked behind a subscription. After a few contractions, it told the family to leave for the hospital — where they already were, under care.", "The app added stress. Elia is the answer to that moment.", "Their baby was born that evening. Elia was born the same day."],
-   "principles": ["Calm, private, and yours.", ["Offline-first", "Local-only", "No account", "No ads", "No subscription for core", "No analytics"], "Elia Contractions is not a medical device and does not provide medical advice or diagnosis. It never tells you when to go to the hospital. Always follow the guidance of your doctors and midwives."],
-  },
-  "feeding": {
-   "title": "Elia Feeding — a calm feeding log for the first days", "desc": "Elia Feeding is a calm, private newborn feeding and care log for the first days with your baby. No account. No cloud. No judgement.", "tag": "Remember just enough.",
-   "sub": "A calm, private feeding log for the first days with your baby. No account. No cloud. No judgement. Just the last feed, the next action, and a simple history.",
-   "pull": ["Open the app. Tap the thing that just happened. Elia remembers.", "Most baby trackers help you measure everything. Elia helps you remember just enough."],
-   "head": ["What it does", "Fast, obvious logging — one hand, low attention."], "left": "In the app", "right": "Deliberately not included",
-   "yes": ["Breastfeeding timer with Left / Right side.", "Bottle feeding log, with optional amount.", "Simple diaper log: wet, dirty, or both.", "A home screen showing the current state and last useful context.", "A quiet history you can edit or delete.", "Share or export as plain text."],
-   "no": ["Accounts, cloud, or multi-parent sync.", "Growth charts and analytics.", "Feeding targets, streaks, or warnings.", "Medical recommendations.", "Sleep, medication, or pumping inventory.", "Ads or billing."],
-   "principles": ["Calm, private, and yours.", "No goals, warnings, or pressure. Elia remembers what you log — nothing more.", ["No account", "No ads", "No subscriptions", "No backend", "No cloud sync", "No analytics", "Offline-first", "No judgement"], "Elia Feeding is a calm memory aid, not a medical tool. It does not give medical advice and does not define what is normal. For anything about your baby's health, talk to your pediatrician or midwife."],
-  },
- },
- "uk": {
-  "common": {"overview": "Огляд", "support": "Підтримка", "privacy": "Приватність", "all": "Усі застосунки", "back": "← Усі застосунки Elia", "what": "Що це", "does": "Що робить", "promise": "Обіцянка", "why": "Навіщо існує", "still": "Потрібна допомога?", "read": "Ми читаємо кожне повідомлення."},
-  "contractions": {
-   "title": "Elia Contractions — спокійний помічник для пологів", "desc": "Elia Contractions — спокійний offline-first помічник для сімей під час пологів. Чітко фіксуйте перейми, залишайтеся поруч із моментом і діліться простим підсумком.", "tag": "Спокійний помічник для пологів.",
-   "sub": "Помічник для сімей під час пологів, створений навколо однієї думки: під час пологів інтерфейс має зменшувати стрес, а не додавати його.",
-   "head": ["Що це", "Рівно стільки, скільки потрібно, саме тоді, коли важливо."], "left": "Elia Contractions допомагає", "right": "Чим це не є",
-   "yes": ["Записувати перейми одним зрозумілим натисканням.", "Бачити тривалість і інтервали з першого погляду.", "Залишатися зосередженими під час перейми.", "Бути присутніми між ними.", "Мати просту й чесну історію.", "Ділитися зрозумілим підсумком із командою догляду, якщо це корисно."],
-   "no": ["Медичний виріб або діагностичний інструмент.", "Заміна лікаря чи акушерки.", "Трекер вагітності або дитини.", "Пастка з підпискою.", "Місце для реклами.", "Щось, що каже вам, що робити."],
-   "story": ["Навіщо існує", "Народжена з реальних пологів.", "Усе почалося в лікарняній кімнаті, під час пологів. Події рухалися швидко, і невдовзі між переймами майже не залишалося пауз.", "Партнер відкрив застосунок для перейм. Він гальмував. Головна кнопка не давала зрозуміти, чи запис почався або зупинився. Корисні функції були за підпискою. Після кількох перейм застосунок сказав їхати до лікарні — де сім'я вже була під наглядом.", "Застосунок додав стресу. Elia — відповідь на той момент.", "Їхній малюк народився того вечора. Elia народилася того ж дня."],
-   "principles": ["Спокійна, приватна і ваша.", ["Offline-first", "Локально", "Без акаунта", "Без реклами", "Основне без підписки", "Без аналітики"], "Elia Contractions не є медичним виробом і не надає медичних порад чи діагнозів. Вона ніколи не каже, коли їхати до лікарні. Завжди дотримуйтеся рекомендацій лікарів і акушерок."],
-  },
-  "feeding": {
-   "title": "Elia Feeding — спокійний журнал годувань для перших днів", "desc": "Elia Feeding — спокійний приватний журнал годувань і догляду за новонародженим у перші дні. Без акаунта, хмарної синхронізації й осуду.", "tag": "Пам'ятати рівно стільки, скільки потрібно.",
-   "sub": "Спокійний приватний журнал годувань для перших днів із малюком. Без акаунта. Без хмарної синхронізації. Без осуду. Тільки останнє годування, наступна дія і проста історія.",
-   "pull": ["Відкрийте застосунок. Натисніть те, що щойно сталося. Elia запам'ятає.", "Більшість дитячих трекерів допомагають вимірювати все. Elia допомагає пам'ятати рівно стільки, скільки потрібно."],
-   "head": ["Що робить", "Швидке й очевидне логування — однією рукою, з мінімумом уваги."], "left": "У застосунку", "right": "Навмисно не включено",
-   "yes": ["Таймер грудного годування з лівим / правим боком.", "Журнал годування з пляшечки, з необов'язковою кількістю.", "Простий журнал підгузків: мокрий, брудний або обидва.", "Головний екран із поточним станом і останнім корисним контекстом.", "Тиха історія, яку можна редагувати або видаляти.", "Поділитися або експортувати як звичайний текст."],
-   "no": ["Акаунти, хмара або синхронізація між батьками.", "Графіки росту й аналітика.", "Цілі годування, серії або попередження.", "Медичні рекомендації.", "Сон, ліки або облік зціджування.", "Реклама або оплата."],
-   "principles": ["Спокійна, приватна і ваша.", "Без цілей, попереджень і тиску. Elia пам'ятає те, що ви записали — і нічого більше.", ["Без акаунта", "Без реклами", "Без підписок", "Без бекенду", "Без хмарної синхронізації", "Без аналітики", "Offline-first", "Без осуду"], "Elia Feeding — спокійна пам'ятка, а не медичний інструмент. Вона не дає медичних порад і не визначає, що є нормою. Щодо здоров'я малюка звертайтеся до педіатра або акушерки."],
-  },
- },
- "de": {
-  "common": {"overview": "Überblick", "support": "Support", "privacy": "Datenschutz", "all": "Alle Apps", "back": "← Alle Elia-Apps", "what": "Was es ist", "does": "Was es tut", "promise": "Versprechen", "why": "Warum es existiert", "still": "Brauchst du Hilfe?", "read": "Wir lesen jede Nachricht."},
-  "contractions": {
-   "title": "Elia Contractions — ein ruhiger Begleiter für die Geburt", "desc": "Elia Contractions ist ein ruhiger Offline-first-Begleiter für Familien während der Geburt. Wehen klar erfassen, präsent bleiben und eine einfache Zusammenfassung teilen.", "tag": "Ein ruhiger Begleiter für die Geburt.",
-   "sub": "Ein Wehenbegleiter für Familien während der Geburt, gebaut um eine Überzeugung: Während der Geburt soll die Oberfläche Stress reduzieren, nicht erhöhen.",
-   "head": ["Was es ist", "Gerade genug, genau dann, wenn es zählt."], "left": "Elia Contractions hilft dir", "right": "Was es nicht ist",
-   "yes": ["Wehen mit einem klaren Tippen erfassen.", "Dauer und Abstände auf einen Blick prüfen.", "Während einer Wehe fokussiert bleiben.", "Zwischen den Wehen präsent bleiben.", "Eine einfache, ehrliche Historie behalten.", "Bei Bedarf eine klare Zusammenfassung mit dem Betreuungsteam teilen."],
-   "no": ["Ein Medizinprodukt oder Diagnosewerkzeug.", "Ein Ersatz für Ärztinnen, Ärzte oder Hebammen.", "Ein Schwangerschafts- oder Babytracker.", "Eine Abo-Falle.", "Eine Werbefläche.", "Etwas, das dir sagt, was du tun sollst."],
-   "story": ["Warum es existiert", "Aus einer echten Geburt entstanden.", "Es begann in einem Krankenhauszimmer während der Geburt. Alles ging schnell, und bald blieb zwischen den Wehen kaum noch Pause.", "Der Partner öffnete eine Wehen-App. Sie reagierte träge. Der Hauptknopf machte nicht klar, ob die Aufzeichnung gestartet oder gestoppt war. Nützliche Funktionen lagen hinter einem Abo. Nach ein paar Wehen sagte die App, man solle ins Krankenhaus fahren — wo die Familie bereits betreut wurde.", "Die App machte den Moment stressiger. Elia ist die Antwort darauf.", "Das Baby wurde an diesem Abend geboren. Elia entstand am selben Tag."],
-   "principles": ["Ruhig, privat und dein.", ["Offline-first", "Nur lokal", "Kein Konto", "Keine Werbung", "Kernfunktionen ohne Abo", "Keine Analyse"], "Elia Contractions ist kein Medizinprodukt und gibt keine medizinische Beratung oder Diagnose. Sie sagt dir nie, wann du ins Krankenhaus fahren sollst. Folge immer den Empfehlungen deiner Ärztinnen, Ärzte und Hebammen."],
-  },
-  "feeding": {
-   "title": "Elia Feeding — ein ruhiges Fütterungsprotokoll für die ersten Tage", "desc": "Elia Feeding ist ein ruhiges, privates Protokoll für Füttern und Pflege in den ersten Tagen mit deinem Baby. Kein Konto. Keine Cloud. Kein Urteil.", "tag": "Gerade genug merken.",
-   "sub": "Ein ruhiges, privates Fütterungsprotokoll für die ersten Tage mit deinem Baby. Kein Konto. Keine Cloud. Kein Urteil. Nur die letzte Mahlzeit, die nächste Aktion und eine einfache Historie.",
-   "pull": ["App öffnen. Antippen, was gerade passiert ist. Elia merkt es sich.", "Die meisten Babytracker helfen, alles zu messen. Elia hilft, gerade genug im Kopf zu behalten."],
-   "head": ["Was es tut", "Schnelles, klares Protokollieren — mit einer Hand, wenig Aufmerksamkeit."], "left": "In der App", "right": "Bewusst nicht enthalten",
-   "yes": ["Still-Timer mit linker / rechter Seite.", "Fläschchen-Protokoll mit optionaler Menge.", "Einfaches Windelprotokoll: nass, schmutzig oder beides.", "Startseite mit aktuellem Zustand und dem letzten nützlichen Kontext.", "Eine ruhige Historie, die du bearbeiten oder löschen kannst.", "Teilen oder Export als Klartext."],
-   "no": ["Konten, Cloud oder Synchronisierung zwischen Eltern.", "Wachstumskurven und Analysen.", "Fütterungsziele, Serien oder Warnungen.", "Medizinische Empfehlungen.", "Schlaf, Medikamente oder Pumpvorräte.", "Werbung oder Bezahlung."],
-   "principles": ["Ruhig, privat und dein.", "Keine Ziele, Warnungen oder Druck. Elia merkt sich, was du einträgst — mehr nicht.", ["Kein Konto", "Keine Werbung", "Keine Abos", "Kein Backend", "Keine Cloud-Synchronisierung", "Keine Analyse", "Offline-first", "Kein Urteil"], "Elia Feeding ist eine ruhige Gedächtnisstütze, kein medizinisches Werkzeug. Sie gibt keine medizinischen Ratschläge und definiert nicht, was normal ist. Wenn es um die Gesundheit deines Babys geht, sprich mit Kinderarzt, Kinderärztin oder Hebamme."],
-  },
- },
- "ru": {
-  "common": {"overview": "Обзор", "support": "Поддержка", "privacy": "Приватность", "all": "Все приложения", "back": "← Все приложения Elia", "what": "Что это", "does": "Что делает", "promise": "Обещание", "why": "Зачем существует", "still": "Нужна помощь?", "read": "Мы читаем каждое сообщение."},
-  "contractions": {
-   "title": "Elia Contractions — спокойный помощник для родов", "desc": "Elia Contractions — спокойный offline-first помощник для семей во время родов. Четко фиксируйте схватки, оставайтесь в моменте и делитесь простым итогом.", "tag": "Спокойный помощник для родов.",
-   "sub": "Помощник для семей во время родов, построенный вокруг одной мысли: во время родов интерфейс должен снижать стресс, а не добавлять его.",
-   "head": ["Что это", "Ровно столько, сколько нужно, именно когда важно."], "left": "Elia Contractions помогает", "right": "Чем это не является",
-   "yes": ["Записывать схватки одним понятным нажатием.", "Быстро видеть длительность и интервалы.", "Сохранять фокус во время схватки.", "Оставаться в моменте между ними.", "Вести простую и честную историю.", "Делиться понятным итогом с командой ухода, если это полезно."],
-   "no": ["Медицинское изделие или диагностический инструмент.", "Замена врачу или акушерке.", "Трекер беременности или ребенка.", "Ловушка с подпиской.", "Рекламная площадка.", "Что-то, что говорит вам, что делать."],
-   "story": ["Зачем существует", "Родилось из настоящих родов.", "Все началось в больничной палате, во время родов. События шли быстро, и вскоре между схватками почти не оставалось пауз.", "Партнер открыл приложение для схваток. Оно тормозило. Главная кнопка не давала понять, началась запись или остановилась. Полезные функции были за подпиской. После нескольких схваток приложение сказало ехать в больницу — где семья уже была под присмотром.", "Приложение добавило стресса. Elia — ответ на тот момент.", "Их малыш родился тем вечером. Elia родилась в тот же день."],
-   "principles": ["Спокойная, приватная и ваша.", ["Offline-first", "Локально", "Без аккаунта", "Без рекламы", "Основное без подписки", "Без аналитики"], "Elia Contractions не является медицинским изделием и не дает медицинских советов или диагнозов. Она никогда не говорит, когда ехать в больницу. Всегда следуйте рекомендациям врачей и акушерок."],
-  },
-  "feeding": {
-   "title": "Elia Feeding — спокойный журнал кормлений для первых дней", "desc": "Elia Feeding — спокойный приватный журнал кормлений и ухода за новорожденным в первые дни. Без аккаунта, облачной синхронизации и осуждения.", "tag": "Помнить ровно столько, сколько нужно.",
-   "sub": "Спокойный приватный журнал кормлений для первых дней с малышом. Без аккаунта. Без облачной синхронизации. Без осуждения. Только последнее кормление, следующее действие и простая история.",
-   "pull": ["Откройте приложение. Нажмите то, что только что произошло. Elia запомнит.", "Большинство детских трекеров помогают измерять все. Elia помогает помнить ровно столько, сколько нужно."],
-   "head": ["Что делает", "Быстрая и очевидная запись — одной рукой, с минимумом внимания."], "left": "В приложении", "right": "Намеренно не включено",
-   "yes": ["Таймер грудного кормления с левой / правой стороной.", "Журнал кормления из бутылочки, с необязательным количеством.", "Простой журнал подгузников: мокрый, грязный или оба.", "Главный экран с текущим состоянием и последним полезным контекстом.", "Тихая история, которую можно редактировать или удалять.", "Поделиться или экспортировать обычным текстом."],
-   "no": ["Аккаунты, облако или синхронизация между родителями.", "Графики роста и аналитика.", "Цели кормления, серии или предупреждения.", "Медицинские рекомендации.", "Сон, лекарства или учет сцеживания.", "Реклама или оплата."],
-   "principles": ["Спокойная, приватная и ваша.", "Без целей, предупреждений и давления. Elia помнит то, что вы записали — и ничего больше.", ["Без аккаунта", "Без рекламы", "Без подписок", "Без бэкенда", "Без облачной синхронизации", "Без аналитики", "Offline-first", "Без осуждения"], "Elia Feeding — спокойная памятка, а не медицинский инструмент. Она не дает медицинских советов и не определяет, что нормально. По вопросам здоровья малыша обращайтесь к педиатру или акушерке."],
-  },
- },
-}
+APP = {'en': {'common': {'overview': 'Overview',
+                   'support': 'Support',
+                   'privacy': 'Privacy',
+                   'all': 'All apps',
+                   'back': '← All Elia apps',
+                   'what': 'What it is',
+                   'does': 'What it does',
+                   'promise': 'The promise',
+                   'why': 'Why it exists',
+                   'still': 'Still need help?',
+                   'read': 'We read every message.'},
+        'contractions': {'title': 'Elia Contractions — a calm companion for birth',
+                         'desc': 'Elia Contractions is a calm, offline-first contraction companion for families during '
+                                 'labor. Time contractions clearly, stay present, and share a simple summary.',
+                         'tag': 'A calm companion for birth.',
+                         'sub': 'A contraction companion for families during labor, built around one belief: during '
+                                'labor, the interface should reduce stress, not add to it.',
+                         'head': ['What it is', 'Just enough, exactly when it matters.'],
+                         'left': 'Elia Contractions helps you',
+                         'right': 'What it is not',
+                         'yes': ['Record contractions with one clear tap.',
+                                 'Review timing and intervals at a glance.',
+                                 'Stay focused during a contraction.',
+                                 'Stay present between them.',
+                                 'Keep a simple, honest history.',
+                                 'Share a clear summary with your care team, if useful.'],
+                         'no': ['A medical device or diagnostic tool.',
+                                'A replacement for doctors or midwives.',
+                                'A pregnancy or baby tracker.',
+                                'A subscription trap.',
+                                'An advertising surface.',
+                                'Something that tells you what to do.'],
+                         'story': ['Why it exists',
+                                   'Born from a real birth.',
+                                   'It began in a hospital room, during labor. Things moved quickly, and soon the '
+                                   'contractions left almost no pause in between.',
+                                   'The partner reached for a contraction app. The one they found lagged. The main '
+                                   'button never made it clear whether tracking had started or stopped. Useful '
+                                   'features were locked behind a subscription. After a few contractions, it told the '
+                                   'family to leave for the hospital — where they already were, under care.',
+                                   'The app added stress. Elia is the answer to that moment.',
+                                   'Their baby was born that evening. Elia was born the same day.'],
+                         'principles': ['Calm, private, and yours.',
+                                        ['Offline-first',
+                                         'Local-only',
+                                         'No account',
+                                         'No ads',
+                                         'No subscription for core',
+                                         'No analytics'],
+                                        'Elia Contractions is not a medical device and does not provide medical advice '
+                                        'or diagnosis. It never tells you when to go to the hospital. Always follow '
+                                        'the guidance of your doctors and midwives.']},
+        'feeding': {'title': 'Elia Feeding — a calm feeding log for the first days',
+                    'desc': 'Elia Feeding is a calm, private newborn feeding and care log for the first days with your '
+                            'baby. No account. No cloud. No judgement.',
+                    'tag': 'Remember just enough.',
+                    'sub': 'A calm, private feeding log for the first days with your baby. No account. No cloud. No '
+                           'judgement. Just the last feed, the next action, and a simple history.',
+                    'pull': ['Open the app. Tap the thing that just happened. Elia remembers.',
+                             'Most baby trackers help you measure everything. Elia helps you remember just enough.'],
+                    'head': ['What it does', 'Fast, obvious logging — one hand, low attention.'],
+                    'left': 'In the app',
+                    'right': 'Deliberately not included',
+                    'yes': ['Breastfeeding timer with Left / Right side.',
+                            'Bottle feeding log, with optional amount.',
+                            'Simple diaper log: wet, dirty, or both.',
+                            'A home screen showing the current state and last useful context.',
+                            'A quiet history you can edit or delete.',
+                            'Share or export as plain text.'],
+                    'no': ['Accounts, cloud, or multi-parent sync.',
+                           'Growth charts and analytics.',
+                           'Feeding targets, streaks, or warnings.',
+                           'Medical recommendations.',
+                           'Sleep, medication, or pumping inventory.',
+                           'Ads or billing.'],
+                    'principles': ['Calm, private, and yours.',
+                                   'No goals, warnings, or pressure. Elia remembers what you log — nothing more.',
+                                   ['No account',
+                                    'No ads',
+                                    'No subscriptions',
+                                    'No backend',
+                                    'No cloud sync',
+                                    'No analytics',
+                                    'Offline-first',
+                                    'No judgement'],
+                                   'Elia Feeding is a calm memory aid, not a medical tool. It does not give medical '
+                                   "advice and does not define what is normal. For anything about your baby's health, "
+                                   'talk to your pediatrician or midwife.']}},
+ 'de': {'common': {'overview': 'Überblick',
+                   'support': 'Support',
+                   'privacy': 'Datenschutz',
+                   'all': 'Alle Apps',
+                   'back': '← Alle Elia-Apps',
+                   'what': 'Was es ist',
+                   'does': 'Was es tut',
+                   'promise': 'Versprechen',
+                   'why': 'Warum es existiert',
+                   'still': 'Brauchst du Hilfe?',
+                   'read': 'Wir lesen jede Nachricht.'},
+        'contractions': {'title': 'Elia Contractions — ein ruhiger Begleiter für die Geburt',
+                         'desc': 'Elia Contractions ist ein ruhiger Offline-first-Begleiter für Familien während der '
+                                 'Geburt. Wehen klar erfassen, präsent bleiben und eine einfache Zusammenfassung '
+                                 'teilen.',
+                         'tag': 'Ein ruhiger Begleiter für die Geburt.',
+                         'sub': 'Ein Wehenbegleiter für Familien während der Geburt, gebaut um eine Überzeugung: '
+                                'Während der Geburt soll die Oberfläche Stress reduzieren, nicht erhöhen.',
+                         'head': ['Was es ist', 'Gerade genug, genau dann, wenn es zählt.'],
+                         'left': 'Elia Contractions hilft dir',
+                         'right': 'Was es nicht ist',
+                         'yes': ['Wehen mit einem klaren Tippen erfassen.',
+                                 'Dauer und Abstände auf einen Blick prüfen.',
+                                 'Während einer Wehe fokussiert bleiben.',
+                                 'Zwischen den Wehen präsent bleiben.',
+                                 'Eine einfache, ehrliche Historie behalten.',
+                                 'Bei Bedarf eine klare Zusammenfassung mit dem Betreuungsteam teilen.'],
+                         'no': ['Ein Medizinprodukt oder Diagnosewerkzeug.',
+                                'Ein Ersatz für Ärztinnen, Ärzte oder Hebammen.',
+                                'Ein Schwangerschafts- oder Babytracker.',
+                                'Eine Abo-Falle.',
+                                'Eine Werbefläche.',
+                                'Etwas, das dir sagt, was du tun sollst.'],
+                         'story': ['Warum es existiert',
+                                   'Aus einer echten Geburt entstanden.',
+                                   'Es begann in einem Krankenhauszimmer während der Geburt. Alles ging schnell, und '
+                                   'bald blieb zwischen den Wehen kaum noch Pause.',
+                                   'Der Partner öffnete eine Wehen-App. Sie reagierte träge. Der Hauptknopf machte '
+                                   'nicht klar, ob die Aufzeichnung gestartet oder gestoppt war. Nützliche Funktionen '
+                                   'lagen hinter einem Abo. Nach ein paar Wehen sagte die App, man solle ins '
+                                   'Krankenhaus fahren — wo die Familie bereits betreut wurde.',
+                                   'Die App machte den Moment stressiger. Elia ist die Antwort darauf.',
+                                   'Das Baby wurde an diesem Abend geboren. Elia entstand am selben Tag.'],
+                         'principles': ['Ruhig, privat und dein.',
+                                        ['Offline-first',
+                                         'Nur lokal',
+                                         'Kein Konto',
+                                         'Keine Werbung',
+                                         'Kernfunktionen ohne Abo',
+                                         'Keine Analyse'],
+                                        'Elia Contractions ist kein Medizinprodukt und gibt keine medizinische '
+                                        'Beratung oder Diagnose. Sie sagt dir nie, wann du ins Krankenhaus fahren '
+                                        'sollst. Folge immer den Empfehlungen deiner Ärztinnen, Ärzte und Hebammen.']},
+        'feeding': {'title': 'Elia Feeding — ein ruhiges Fütterungsprotokoll für die ersten Tage',
+                    'desc': 'Elia Feeding ist ein ruhiges, privates Protokoll für Füttern und Pflege in den ersten '
+                            'Tagen mit deinem Baby. Kein Konto. Keine Cloud. Kein Urteil.',
+                    'tag': 'Gerade genug merken.',
+                    'sub': 'Ein ruhiges, privates Fütterungsprotokoll für die ersten Tage mit deinem Baby. Kein Konto. '
+                           'Keine Cloud. Kein Urteil. Nur die letzte Mahlzeit, die nächste Aktion und eine einfache '
+                           'Historie.',
+                    'pull': ['App öffnen. Antippen, was gerade passiert ist. Elia merkt es sich.',
+                             'Die meisten Babytracker helfen, alles zu messen. Elia hilft, gerade genug im Kopf zu '
+                             'behalten.'],
+                    'head': ['Was es tut', 'Schnelles, klares Protokollieren — mit einer Hand, wenig Aufmerksamkeit.'],
+                    'left': 'In der App',
+                    'right': 'Bewusst nicht enthalten',
+                    'yes': ['Still-Timer mit linker / rechter Seite.',
+                            'Fläschchen-Protokoll mit optionaler Menge.',
+                            'Einfaches Windelprotokoll: nass, schmutzig oder beides.',
+                            'Startseite mit aktuellem Zustand und dem letzten nützlichen Kontext.',
+                            'Eine ruhige Historie, die du bearbeiten oder löschen kannst.',
+                            'Teilen oder Export als Klartext.'],
+                    'no': ['Konten, Cloud oder Synchronisierung zwischen Eltern.',
+                           'Wachstumskurven und Analysen.',
+                           'Fütterungsziele, Serien oder Warnungen.',
+                           'Medizinische Empfehlungen.',
+                           'Schlaf, Medikamente oder Pumpvorräte.',
+                           'Werbung oder Bezahlung.'],
+                    'principles': ['Ruhig, privat und dein.',
+                                   'Keine Ziele, Warnungen oder Druck. Elia merkt sich, was du einträgst — mehr nicht.',
+                                   ['Kein Konto',
+                                    'Keine Werbung',
+                                    'Keine Abos',
+                                    'Kein Backend',
+                                    'Keine Cloud-Synchronisierung',
+                                    'Keine Analyse',
+                                    'Offline-first',
+                                    'Kein Urteil'],
+                                   'Elia Feeding ist eine ruhige Gedächtnisstütze, kein medizinisches Werkzeug. Sie '
+                                   'gibt keine medizinischen Ratschläge und definiert nicht, was normal ist. Wenn es '
+                                   'um die Gesundheit deines Babys geht, sprich mit Kinderarzt, Kinderärztin oder '
+                                   'Hebamme.']}},
+ 'es': {'common': {'overview': 'Vista general',
+                   'support': 'Soporte',
+                   'privacy': 'Privacidad',
+                   'all': 'Todas las apps',
+                   'back': '← Todas las apps de Elia',
+                   'what': 'Qué es',
+                   'does': 'Qué hace',
+                   'promise': 'La promesa',
+                   'why': 'Por qué existe',
+                   'still': '¿Necesitas ayuda?',
+                   'read': 'Leemos todos los mensajes.'},
+        'contractions': {'title': 'Elia Contractions — una compañera tranquila para el parto',
+                         'desc': 'Elia Contractions es una compañera tranquila y offline-first para familias durante '
+                                 'el parto. Registra contracciones con claridad, mantente presente y comparte un '
+                                 'resumen sencillo.',
+                         'tag': 'Una compañera tranquila para el parto.',
+                         'sub': 'Una compañera de contracciones para familias durante el parto, creada alrededor de '
+                                'una idea: durante el parto, la interfaz debería reducir el estrés, no añadirlo.',
+                         'head': ['Qué es', 'Lo justo, justo cuando importa.'],
+                         'left': 'Elia Contractions te ayuda a',
+                         'right': 'Qué no es',
+                         'yes': ['Registrar contracciones con un toque claro.',
+                                 'Ver duración e intervalos de un vistazo.',
+                                 'Mantener el foco durante una contracción.',
+                                 'Estar presente entre una y otra.',
+                                 'Conservar un historial simple y honesto.',
+                                 'Compartir un resumen claro con tu equipo de atención, si resulta útil.'],
+                         'no': ['Un dispositivo médico o herramienta de diagnóstico.',
+                                'Un reemplazo de profesionales de salud.',
+                                'Un tracker de embarazo o bebé.',
+                                'Una trampa de suscripción.',
+                                'Un espacio para anuncios.',
+                                'Algo que te diga qué hacer.'],
+                         'story': ['Por qué existe',
+                                   'Nacida de un parto real.',
+                                   'Todo empezó en una habitación de hospital, durante el parto. Las cosas avanzaron '
+                                   'rápido y pronto casi no quedaba pausa entre contracciones.',
+                                   'La pareja abrió una app de contracciones. La app iba lenta. El botón principal no '
+                                   'dejaba claro si el registro había empezado o se había detenido. Las funciones '
+                                   'útiles estaban detrás de una suscripción. Tras unas pocas contracciones, dijo a la '
+                                   'familia que saliera hacia el hospital, donde ya estaban bajo cuidado.',
+                                   'La app añadió estrés. Elia es la respuesta a ese momento.',
+                                   'Su bebé nació esa noche. Elia nació el mismo día.'],
+                         'principles': ['Tranquila, privada y tuya.',
+                                        ['Offline-first',
+                                         'Solo local',
+                                         'Sin cuenta',
+                                         'Sin anuncios',
+                                         'Funciones esenciales sin suscripción',
+                                         'Sin analíticas'],
+                                        'Elia Contractions no es un dispositivo médico y no ofrece consejo médico ni '
+                                        'diagnóstico. Nunca te dice cuándo ir al hospital. Sigue siempre las '
+                                        'indicaciones de tus profesionales de salud.']},
+        'feeding': {'title': 'Elia Feeding — un registro tranquilo de alimentación para los primeros días',
+                    'desc': 'Elia Feeding es un registro tranquilo y privado de alimentación y cuidados del recién nacido '
+                            'para los primeros días con tu bebé. Sin cuenta. Sin sincronización en la nube. Sin juicio.',
+                    'tag': 'Recordar justo lo necesario.',
+                    'sub': 'Un registro tranquilo y privado de alimentación para los primeros días con tu bebé. Sin cuenta. '
+                           'Sin sincronización en la nube. Sin juicio. Solo la última alimentación, la siguiente acción y un historial sencillo.',
+                    'pull': ['Abre la app. Toca lo que acaba de pasar. Elia lo recuerda.',
+                             'La mayoría de apps para bebés ayudan a medirlo todo. Elia te ayuda a recordar justo lo '
+                             'necesario.'],
+                    'head': ['Qué hace', 'Registro rápido y obvio: una mano, poca atención.'],
+                    'left': 'En la app',
+                    'right': 'Deliberadamente no incluido',
+                    'yes': ['Temporizador de lactancia con lado izquierdo / derecho.',
+                            'Registro de biberón, con cantidad opcional.',
+                            'Registro simple de pañales: pis, caca o ambos.',
+                            'Pantalla principal con el estado actual y el último contexto útil.',
+                            'Un historial tranquilo que puedes editar o borrar.',
+                            'Compartir o exportar como texto plano.'],
+                    'no': ['Cuentas o sincronización en la nube entre cuidadores.',
+                           'Gráficas de crecimiento y analíticas.',
+                           'Objetivos de alimentación, rachas o alertas.',
+                           'Recomendaciones médicas.',
+                           'Sueño, medicación o inventario de extracción.',
+                           'Anuncios o pagos.'],
+                    'principles': ['Tranquila, privada y tuya.',
+                                   'Sin objetivos, alertas ni presión. Elia recuerda lo que registras, nada más.',
+                                   ['Sin cuenta',
+                                    'Sin anuncios',
+                                    'Sin suscripciones',
+                                    'Sin backend',
+                                    'Sin sincronización en la nube',
+                                    'Sin analíticas',
+                                    'Offline-first',
+                                    'Sin juicio'],
+                                   'Elia Feeding es una ayuda tranquila para la memoria, no una herramienta médica. No '
+                                   'da consejos médicos ni define qué es normal. Para cualquier duda sobre la salud de '
+                                   'tu bebé, habla con tu pediatra o profesional de salud.']}}}
 
 
-SUPPORT = {
- "en": {
-  "contractions": [
-   ("Is my data private?", "Yes. Elia Contractions has no account and no backend. Your contraction times, history, and settings stay on your device. See the privacy policy for details."),
-   ("Does it work offline?", "Yes. Recording contractions never needs an internet connection. The app is built to be reliable in a delivery room, not dependent on a signal."),
-   ("Does it tell me when to go to the hospital?", "No. Elia does not diagnose or give medical directives. It shows your contractions clearly so you can share them with your care team. Always follow the guidance of your doctors and midwives."),
-   ("Can I correct a mistake?", "Yes. You can edit or delete entries calmly. Nothing is permanent by accident."),
-   ("How do I share a summary with my midwife or doctor?", "You can export or share your session as plain text using your device's share options. You choose where it goes; Elia never sends it anywhere on its own."),
-   ("Is there a subscription?", "The core experience is not a subscription trap. Elia will never lock essential labor features behind a paywall or show ads."),
-  ],
-  "feeding": [
-   ("Is my data private?", "Yes. Elia Feeding has no account, no backend, and no cloud. Your entries and settings stay on your device. See the privacy policy for details."),
-   ("Does it work offline?", "Yes. Logging a feed, bottle, or diaper never needs an internet connection."),
-   ("Does it tell me if my baby is feeding enough?", "No. Elia does not set targets, warnings, or judgements, and does not define what is normal. It simply remembers what you log. For anything about your baby's health, talk to your pediatrician or midwife."),
-   ("Can I edit or delete an entry?", "Yes. You can edit or delete any entry. Nothing is permanent by accident."),
-   ("Can two parents share the same log?", "Not in the current version. Elia Feeding is local-only by design, so there is no cloud sync between devices. Everything lives on the one device you log on."),
-   ("How do I move my log somewhere else?", "You can export or share it as plain text using your device's share options. You choose the destination; Elia never sends it anywhere on its own."),
-   ("Are there ads or subscriptions?", "No ads, no subscriptions, no billing. Elia Feeding is a calm memory aid, not a monetization funnel."),
-  ],
- },
- "uk": {
-  "contractions": [("Чи мої дані приватні?", "Так. В Elia Contractions немає акаунта й бекенду. Часи перейм, історія та налаштування залишаються на вашому пристрої. Докладніше — у політиці приватності."), ("Чи працює без інтернету?", "Так. Запис перейм ніколи не потребує інтернету. Застосунок створений, щоб бути надійним у пологовій кімнаті, а не залежати від сигналу."), ("Чи каже застосунок, коли їхати до лікарні?", "Ні. Elia не діагностує і не дає медичних вказівок. Вона чітко показує ваші перейми, щоб ви могли поділитися ними з командою догляду. Завжди дотримуйтеся рекомендацій лікарів і акушерок."), ("Чи можна виправити помилку?", "Так. Ви можете спокійно редагувати або видаляти записи. Нічого не стає постійним випадково."), ("Як поділитися підсумком з акушеркою або лікарем?", "Ви можете експортувати або поділитися сесією як звичайним текстом через системні опції пристрою. Ви самі обираєте місце призначення; Elia нічого не надсилає самостійно."), ("Чи є підписка?", "Основний досвід не є пасткою з підпискою. Elia ніколи не закриє важливі для пологів функції за paywall і не показуватиме рекламу.")],
-  "feeding": [("Чи мої дані приватні?", "Так. В Elia Feeding немає акаунта, бекенду й хмарної синхронізації. Ваші записи та налаштування залишаються на пристрої. Докладніше — у політиці приватності."), ("Чи працює без інтернету?", "Так. Запис годування, пляшечки або підгузка ніколи не потребує інтернету."), ("Чи каже застосунок, чи достатньо їсть мій малюк?", "Ні. Elia не ставить цілей, попереджень або оцінок і не визначає, що є нормою. Вона просто пам'ятає те, що ви записали. Щодо здоров'я малюка звертайтеся до педіатра або акушерки."), ("Чи можна редагувати або видалити запис?", "Так. Ви можете редагувати або видаляти будь-який запис. Нічого не стає постійним випадково."), ("Чи можуть двоє батьків вести один журнал?", "Не в поточній версії. Elia Feeding за задумом локальна, тому хмарної синхронізації між пристроями немає. Усе живе на одному пристрої."), ("Як перенести журнал кудись іще?", "Ви можете експортувати або поділитися ним як звичайним текстом через системні опції пристрою. Ви самі обираєте місце призначення; Elia нічого не надсилає самостійно."), ("Чи є реклама або підписки?", "Ні реклами, ні підписок, ні оплати. Elia Feeding — спокійна пам'ятка, а не воронка монетизації.")],
- },
- "de": {
-  "contractions": [("Sind meine Daten privat?", "Ja. Elia Contractions hat kein Konto und kein Backend. Wehenzeiten, Historie und Einstellungen bleiben auf deinem Gerät. Details stehen in der Datenschutzerklärung."), ("Funktioniert es offline?", "Ja. Wehen zu erfassen braucht nie eine Internetverbindung. Die App soll im Kreißsaal verlässlich sein, nicht vom Empfang abhängen."), ("Sagt die App mir, wann ich ins Krankenhaus fahren soll?", "Nein. Elia diagnostiziert nicht und gibt keine medizinischen Anweisungen. Sie zeigt deine Wehen klar, damit du sie mit deinem Betreuungsteam teilen kannst. Folge immer den Empfehlungen deiner Ärztinnen, Ärzte und Hebammen."), ("Kann ich einen Fehler korrigieren?", "Ja. Du kannst Einträge ruhig bearbeiten oder löschen. Nichts ist aus Versehen endgültig."), ("Wie teile ich eine Zusammenfassung mit Hebamme oder Arzt?", "Du kannst deine Sitzung als Klartext über die Teilen-Funktionen deines Geräts exportieren. Du wählst das Ziel; Elia sendet nie von selbst etwas."), ("Gibt es ein Abo?", "Die Kernfunktionen sind keine Abo-Falle. Elia wird wichtige Geburtsfunktionen nie hinter einer Paywall verstecken oder Werbung zeigen.")],
-  "feeding": [("Sind meine Daten privat?", "Ja. Elia Feeding hat kein Konto, kein Backend und keine Cloud. Deine Einträge und Einstellungen bleiben auf deinem Gerät. Details stehen in der Datenschutzerklärung."), ("Funktioniert es offline?", "Ja. Füttern, Fläschchen oder Windeln zu protokollieren braucht nie Internet."), ("Sagt die App, ob mein Baby genug trinkt?", "Nein. Elia setzt keine Ziele, Warnungen oder Urteile und definiert nicht, was normal ist. Sie merkt sich nur, was du einträgst. Wenn es um die Gesundheit deines Babys geht, sprich mit Kinderarzt, Kinderärztin oder Hebamme."), ("Kann ich einen Eintrag bearbeiten oder löschen?", "Ja. Du kannst jeden Eintrag bearbeiten oder löschen. Nichts ist aus Versehen endgültig."), ("Können zwei Eltern dasselbe Protokoll teilen?", "In der aktuellen Version nicht. Elia Feeding ist bewusst lokal, daher gibt es keine Cloud-Synchronisierung zwischen Geräten. Alles bleibt auf dem Gerät, auf dem du protokollierst."), ("Wie verschiebe ich mein Protokoll woandershin?", "Du kannst es als Klartext über die Teilen-Funktionen deines Geräts exportieren. Du wählst das Ziel; Elia sendet nie von selbst etwas."), ("Gibt es Werbung oder Abos?", "Keine Werbung, keine Abos, keine Bezahlung. Elia Feeding ist eine ruhige Gedächtnisstütze, kein Monetarisierungstrichter.")],
- },
- "ru": {
-  "contractions": [("Мои данные приватны?", "Да. В Elia Contractions нет аккаунта и бэкенда. Время схваток, история и настройки остаются на вашем устройстве. Подробности — в политике приватности."), ("Работает ли без интернета?", "Да. Для записи схваток интернет не нужен. Приложение сделано так, чтобы быть надежным в родильной комнате, а не зависеть от сигнала."), ("Говорит ли приложение, когда ехать в больницу?", "Нет. Elia не ставит диагнозы и не дает медицинских указаний. Она ясно показывает схватки, чтобы вы могли поделиться ими с командой ухода. Всегда следуйте рекомендациям врачей и акушерок."), ("Можно исправить ошибку?", "Да. Вы можете спокойно редактировать или удалять записи. Ничто не становится постоянным случайно."), ("Как поделиться итогом с акушеркой или врачом?", "Вы можете экспортировать или отправить сессию обычным текстом через системные функции устройства. Вы сами выбираете адресата; Elia ничего не отправляет сама."), ("Есть ли подписка?", "Основной опыт не является ловушкой с подпиской. Elia никогда не закроет важные для родов функции за paywall и не будет показывать рекламу.")],
-  "feeding": [("Мои данные приватны?", "Да. В Elia Feeding нет аккаунта, бэкенда и облачной синхронизации. Ваши записи и настройки остаются на устройстве. Подробности — в политике приватности."), ("Работает ли без интернета?", "Да. Для записи кормления, бутылочки или подгузника интернет не нужен."), ("Говорит ли приложение, достаточно ли ест мой малыш?", "Нет. Elia не ставит целей, предупреждений или оценок и не определяет, что нормально. Она просто помнит то, что вы записали. По вопросам здоровья малыша обращайтесь к педиатру или акушерке."), ("Можно редактировать или удалить запись?", "Да. Вы можете редактировать или удалить любую запись. Ничто не становится постоянным случайно."), ("Могут ли двое родителей вести один журнал?", "Не в текущей версии. Elia Feeding по задумке локальная, поэтому облачной синхронизации между устройствами нет. Все хранится на одном устройстве."), ("Как перенести журнал куда-то еще?", "Вы можете экспортировать или отправить его обычным текстом через системные функции устройства. Вы сами выбираете адресата; Elia ничего не отправляет сама."), ("Есть ли реклама или подписки?", "Нет рекламы, подписок и оплаты. Elia Feeding — спокойная памятка, а не воронка монетизации.")],
- },
-}
+SUPPORT = {'en': {'contractions': [('Is my data private?',
+                          'Yes. Elia Contractions has no account and no backend. Your contraction times, history, and '
+                          'settings stay on your device. See the privacy policy for details.'),
+                         ('Does it work offline?',
+                          'Yes. Recording contractions never needs an internet connection. The app is built to be '
+                          'reliable in a delivery room, not dependent on a signal.'),
+                         ('Does it tell me when to go to the hospital?',
+                          'No. Elia does not diagnose or give medical directives. It shows your contractions clearly '
+                          'so you can share them with your care team. Always follow the guidance of your doctors and '
+                          'midwives.'),
+                         ('Can I correct a mistake?',
+                          'Yes. You can edit or delete entries calmly. Nothing is permanent by accident.'),
+                         ('How do I share a summary with my midwife or doctor?',
+                          "You can export or share your session as plain text using your device's share options. You "
+                          'choose where it goes; Elia never sends it anywhere on its own.'),
+                         ('Is there a subscription?',
+                          'The core experience is not a subscription trap. Elia will never lock essential labor '
+                          'features behind a paywall or show ads.')],
+        'feeding': [('Is my data private?',
+                     'Yes. Elia Feeding has no account, no backend, and no cloud. Your entries and settings stay on '
+                     'your device. See the privacy policy for details.'),
+                    ('Does it work offline?',
+                     'Yes. Logging a feed, bottle, or diaper never needs an internet connection.'),
+                    ('Does it tell me if my baby is feeding enough?',
+                     'No. Elia does not set targets, warnings, or judgements, and does not define what is normal. It '
+                     "simply remembers what you log. For anything about your baby's health, talk to your pediatrician "
+                     'or midwife.'),
+                    ('Can I edit or delete an entry?',
+                     'Yes. You can edit or delete any entry. Nothing is permanent by accident.'),
+                    ('Can two parents share the same log?',
+                     'Not in the current version. Elia Feeding is local-only by design, so there is no cloud sync '
+                     'between devices. Everything lives on the one device you log on.'),
+                    ('How do I move my log somewhere else?',
+                     "You can export or share it as plain text using your device's share options. You choose the "
+                     'destination; Elia never sends it anywhere on its own.'),
+                    ('Are there ads or subscriptions?',
+                     'No ads, no subscriptions, no billing. Elia Feeding is a calm memory aid, not a monetization '
+                     'funnel.')]},
+ 'de': {'contractions': [('Sind meine Daten privat?',
+                          'Ja. Elia Contractions hat kein Konto und kein Backend. Wehenzeiten, Historie und '
+                          'Einstellungen bleiben auf deinem Gerät. Details stehen in der Datenschutzerklärung.'),
+                         ('Funktioniert es offline?',
+                          'Ja. Wehen zu erfassen braucht nie eine Internetverbindung. Die App soll im Kreißsaal '
+                          'verlässlich sein, nicht vom Empfang abhängen.'),
+                         ('Sagt die App mir, wann ich ins Krankenhaus fahren soll?',
+                          'Nein. Elia diagnostiziert nicht und gibt keine medizinischen Anweisungen. Sie zeigt deine '
+                          'Wehen klar, damit du sie mit deinem Betreuungsteam teilen kannst. Folge immer den '
+                          'Empfehlungen deiner Ärztinnen, Ärzte und Hebammen.'),
+                         ('Kann ich einen Fehler korrigieren?',
+                          'Ja. Du kannst Einträge ruhig bearbeiten oder löschen. Nichts ist aus Versehen endgültig.'),
+                         ('Wie teile ich eine Zusammenfassung mit Hebamme oder Arzt?',
+                          'Du kannst deine Sitzung als Klartext über die Teilen-Funktionen deines Geräts exportieren. '
+                          'Du wählst das Ziel; Elia sendet nie von selbst etwas.'),
+                         ('Gibt es ein Abo?',
+                          'Die Kernfunktionen sind keine Abo-Falle. Elia wird wichtige Geburtsfunktionen nie hinter '
+                          'einer Paywall verstecken oder Werbung zeigen.')],
+        'feeding': [('Sind meine Daten privat?',
+                     'Ja. Elia Feeding hat kein Konto, kein Backend und keine Cloud. Deine Einträge und Einstellungen '
+                     'bleiben auf deinem Gerät. Details stehen in der Datenschutzerklärung.'),
+                    ('Funktioniert es offline?',
+                     'Ja. Füttern, Fläschchen oder Windeln zu protokollieren braucht nie Internet.'),
+                    ('Sagt die App, ob mein Baby genug trinkt?',
+                     'Nein. Elia setzt keine Ziele, Warnungen oder Urteile und definiert nicht, was normal ist. Sie '
+                     'merkt sich nur, was du einträgst. Wenn es um die Gesundheit deines Babys geht, sprich mit '
+                     'Kinderarzt, Kinderärztin oder Hebamme.'),
+                    ('Kann ich einen Eintrag bearbeiten oder löschen?',
+                     'Ja. Du kannst jeden Eintrag bearbeiten oder löschen. Nichts ist aus Versehen endgültig.'),
+                    ('Können zwei Eltern dasselbe Protokoll teilen?',
+                     'In der aktuellen Version nicht. Elia Feeding ist bewusst lokal, daher gibt es keine '
+                     'Cloud-Synchronisierung zwischen Geräten. Alles bleibt auf dem Gerät, auf dem du protokollierst.'),
+                    ('Wie verschiebe ich mein Protokoll woandershin?',
+                     'Du kannst es als Klartext über die Teilen-Funktionen deines Geräts exportieren. Du wählst das '
+                     'Ziel; Elia sendet nie von selbst etwas.'),
+                    ('Gibt es Werbung oder Abos?',
+                     'Keine Werbung, keine Abos, keine Bezahlung. Elia Feeding ist eine ruhige Gedächtnisstütze, kein '
+                     'Monetarisierungstrichter.')]},
+ 'es': {'contractions': [('¿Mis datos son privados?',
+                          'Sí. Elia Contractions no tiene cuenta ni backend. Tus tiempos de contracciones, historial y '
+                          'ajustes se quedan en tu dispositivo. Consulta la política de privacidad para más detalles.'),
+                         ('¿Funciona sin conexión?',
+                          'Sí. Registrar contracciones nunca necesita conexión a internet. La app está pensada para '
+                          'ser fiable en una sala de parto, no para depender de la señal.'),
+                         ('¿Me dice cuándo ir al hospital?',
+                          'No. Elia no diagnostica ni da instrucciones médicas. Muestra tus contracciones con claridad '
+                          'para que puedas compartirlas con tu equipo de atención. Sigue siempre las indicaciones de '
+                          'tus profesionales de salud.'),
+                         ('¿Puedo corregir un error?',
+                          'Sí. Puedes editar o borrar entradas con calma. Nada queda permanente por accidente.'),
+                         ('¿Cómo comparto un resumen con mi equipo de salud?',
+                          'Puedes exportar o compartir tu sesión como texto plano usando las opciones de compartir de '
+                          'tu dispositivo. Tú eliges el destino; Elia nunca envía nada por su cuenta.'),
+                         ('¿Hay suscripción?',
+                          'La experiencia principal no es una trampa de suscripción. Elia nunca bloqueará funciones '
+                          'esenciales del parto detrás de un pago ni mostrará anuncios.')],
+        'feeding': [('¿Mis datos son privados?',
+                     'Sí. Elia Feeding no tiene cuenta, backend ni sincronización en la nube. Tus entradas y ajustes se quedan en tu '
+                     'dispositivo. Consulta la política de privacidad para más detalles.'),
+                    ('¿Funciona sin conexión?',
+                     'Sí. Registrar una alimentación, un biberón o un pañal nunca necesita conexión a internet.'),
+                    ('¿Me dice si mi bebé está comiendo suficiente?',
+                     'No. Elia no establece objetivos, alertas ni juicios, y no define qué es normal. Simplemente '
+                     'recuerda lo que registras. Para cualquier duda sobre la salud de tu bebé, habla con tu pediatra '
+                     'o profesional de salud.'),
+                    ('¿Puedo editar o borrar una entrada?',
+                     'Sí. Puedes editar o borrar cualquier entrada. Nada queda permanente por accidente.'),
+                    ('¿Pueden dos cuidadores compartir el mismo registro?',
+                     'No en la versión actual. Elia Feeding es local por diseño, así que no hay sincronización en la '
+                     'nube entre dispositivos. Todo vive en el dispositivo en el que registras.'),
+                    ('¿Cómo llevo mi registro a otro lugar?',
+                     'Puedes exportarlo o compartirlo como texto plano usando las opciones de compartir de tu '
+                     'dispositivo. Tú eliges el destino; Elia nunca envía nada por su cuenta.'),
+                    ('¿Hay anuncios o suscripciones?',
+                     'No hay anuncios, suscripciones ni pagos. Elia Feeding es una ayuda tranquila para la memoria, no '
+                     'un embudo de monetización.')]}}
+
+
 
 
 def ul(items, cls):
@@ -386,7 +725,7 @@ def home(lang):
     </section>
   </main>
 
-  {footer(lang, [("Contractions", "apps/contractions"), ("Feeding", "apps/feeding"), (t["nav"][1][0], "#philosophy"), ("Contact", "mailto:hello@getelia.app")], T[lang]["note"], "")}
+  {footer(lang, [("Contractions", "apps/contractions"), ("Feeding", "apps/feeding"), (t["nav"][1][0], "#philosophy"), ({"en": "Contact", "de": "Kontakt", "es": "Contacto"}[lang], "mailto:hello@getelia.app")], T[lang]["note"], "")}
 </body>
 </html>
 """
@@ -451,13 +790,13 @@ def support_page(lang, app):
     title = f"{c['support']} — {app_name}"
     desc = f"{c['support']} — {app_name}"
     extra = feeding_style() if app == "feeding" else ""
-    faq = "".join(f'<details{" open" if i == 0 else ""}><summary>{escape(q)}</summary><p>{escape(a).replace("privacy policy", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">privacy policy</a>").replace("політиці приватності", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">політиці приватності</a>").replace("Datenschutzerklärung", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">Datenschutzerklärung</a>").replace("политике приватности", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">политике приватности</a>")}</p></details>' for i, (q, a) in enumerate(SUPPORT[lang][app]))
+    faq = "".join(f'<details{" open" if i == 0 else ""}><summary>{escape(q)}</summary><p>{escape(a).replace("privacy policy", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">privacy policy</a>").replace("Datenschutzerklärung", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">Datenschutzerklärung</a>").replace("política de privacidad", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">política de privacidad</a>")}</p></details>' for i, (q, a) in enumerate(SUPPORT[lang][app]))
     body = f"""<!DOCTYPE html>
 <html lang="{lang}">
 {head(lang, route, title, desc, "svg", None, extra)}
 <body>
   {header(lang, route, [(app.capitalize(), f"apps/{app}"), (c["privacy"], f"apps/{app}/privacy"), (c["promise"], "home#philosophy")], T[lang]["lang"])}
-  <main><section class="hero doc-hero"><div class="container"><a class="backlink" href="{href(lang, f"apps/{app}", lang, route)}">← {app_name}</a><h1>{escape(c["support"])}</h1><p class="updated">{escape("We keep things simple. Here are the common questions." if lang == "en" else "Ми тримаємо все простим. Ось найчастіші запитання." if lang == "uk" else "Wir halten es einfach. Hier sind die häufigsten Fragen." if lang == "de" else "Мы держим все простым. Вот частые вопросы.")}</p></div></section><section><div class="container"><div class="faq">{faq}</div><div class="prose" style="margin-top:40px;"><h2>{escape(c["still"])}</h2><p>{escape("Write to us at" if lang == "en" else "Напишіть нам на" if lang == "uk" else "Schreib uns an" if lang == "de" else "Напишите нам на")} <a href="mailto:{app}@getelia.app?subject=Elia%20{app.capitalize()}%20support">{app}@getelia.app</a>. {escape(c["read"])}</p></div></div></section></main>
+  <main><section class="hero doc-hero"><div class="container"><a class="backlink" href="{href(lang, f"apps/{app}", lang, route)}">← {app_name}</a><h1>{escape(c["support"])}</h1><p class="updated">{escape({"en": "We keep things simple. Here are the common questions.", "de": "Wir halten es einfach. Hier sind die häufigsten Fragen.", "es": "Lo mantenemos simple. Estas son las preguntas más frecuentes."}[lang])}</p></div></section><section><div class="container"><div class="faq">{faq}</div><div class="prose" style="margin-top:40px;"><h2>{escape(c["still"])}</h2><p>{escape({"en": "Write to us at", "de": "Schreib uns an", "es": "Escríbenos a"}[lang])} <a href="mailto:{app}@getelia.app?subject=Elia%20{app.capitalize()}%20support">{app}@getelia.app</a>. {escape(c["read"])}</p></div></div></section></main>
   {footer(lang, [(c["overview"], f"apps/{app}"), (c["privacy"], f"apps/{app}/privacy"), (c["all"], "")], T[lang]["note"], route)}
 </body>
 </html>
@@ -508,15 +847,6 @@ def privacy_text(lang, app):
             ("Children", "Elia is intended as a tool for adults and caregivers. It does not knowingly collect data from anyone."),
         ]}
     data = {
-      "uk": ("Оновлено 13 липня 2026", "Elia від початку створена приватною. У застосунку немає акаунта, бекенду й трекінгу. Ця політика простою мовою пояснює, що це означає.", "Контакт", "Питання щодо приватності? Напишіть нам на", [
-        ("Коротко", ["Без акаунта і входу.", "Elia не збирає дані.", "Ваші дані ніколи не продаються і не передаються.", "Усе зберігається локально на вашому пристрої.", "Нічого не завантажується на сервери Elia."]),
-        ("Що зберігає застосунок", "Лише локально на вашому пристрої: ваші записи, похідна від них історія та налаштування."),
-        ("Коли дані залишають пристрій", "Дані залишають пристрій лише тоді, коли ви самі експортуєте або ділитеся ними через системні опції пристрою. Ви самі обираєте місце призначення."),
-        ("Резервні копії", "Автоматичне хмарне резервне копіювання і перенесення даних між пристроями вимкнені. Журнал рухається лише через експорт, який ви запускаєте самі."),
-        ("Мережа і дозволи", "Основне використання не потребує реєстрації або з'єднання. Застосунок уникає зайвих дозволів і не містить реклами, аналітики або стороннього трекінгу."),
-        ("Видалення даних", "Видалення даних застосунку або деінсталяція прибирає локальні дані з пристрою. Оскільки нічого не зберігається деінде, цього достатньо."),
-        ("Діти", "Elia призначена для дорослих і доглядальників. Вона свідомо не збирає дані ні про кого."),
-      ]),
       "de": ("Zuletzt aktualisiert am 13. Juli 2026", "Elia ist von Anfang an privat gedacht. Es gibt kein Konto, kein Backend und kein Tracking. Diese Richtlinie erklärt in einfacher Sprache, was das bedeutet.", "Kontakt", "Fragen zum Datenschutz? Schreib uns an", [
         ("Kurzfassung", ["Kein Konto und keine Anmeldung.", "Elia sammelt keine Daten.", "Deine Daten werden nie verkauft oder geteilt.", "Alles wird lokal auf deinem Gerät gespeichert.", "Nichts wird auf Elia-Server hochgeladen."]),
         ("Was die App speichert", "Nur lokal auf deinem Gerät: deine Einträge, daraus abgeleitete Historie und Einstellungen."),
@@ -526,32 +856,30 @@ def privacy_text(lang, app):
         ("Daten löschen", "Wenn du App-Daten löschst oder die App deinstallierst, werden die lokalen Daten vom Gerät entfernt. Da nichts anderswo gespeichert wird, reicht das aus."),
         ("Kinder", "Elia ist als Werkzeug für Erwachsene und Betreuungspersonen gedacht. Sie sammelt wissentlich keine Daten von irgendwem."),
       ]),
-      "ru": ("Обновлено 13 июля 2026", "Elia изначально сделана приватной. В приложении нет аккаунта, бэкенда и трекинга. Эта политика простым языком объясняет, что это значит.", "Контакт", "Вопросы о приватности? Напишите нам на", [
-        ("Коротко", ["Без аккаунта и входа.", "Elia не собирает данные.", "Ваши данные никогда не продаются и не передаются.", "Все хранится локально на вашем устройстве.", "Ничего не загружается на серверы Elia."]),
-        ("Что хранит приложение", "Только локально на вашем устройстве: ваши записи, история на их основе и настройки."),
-        ("Когда данные покидают устройство", "Данные покидают устройство только когда вы сами экспортируете или отправляете их через системные функции устройства. Вы сами выбираете адресата."),
-        ("Резервные копии", "Автоматическое облачное резервное копирование и перенос данных между устройствами отключены. Журнал перемещается только через экспорт, который запускаете вы."),
-        ("Сеть и разрешения", "Основное использование не требует регистрации или соединения. Приложение избегает лишних разрешений и не содержит рекламы, аналитики или стороннего трекинга."),
-        ("Удаление данных", "Удаление данных приложения или деинсталляция убирает локальные данные с устройства. Поскольку ничего не хранится где-то еще, этого достаточно."),
-        ("Дети", "Elia предназначена как инструмент для взрослых и людей, которые ухаживают за ребенком. Она сознательно не собирает данные ни о ком."),
+      "es": ("Última actualización: 13 de julio de 2026", "Elia está diseñada para ser privada desde el principio. No tiene cuenta, backend ni seguimiento. Esta política explica en lenguaje sencillo qué significa eso.", "Contacto", "¿Preguntas sobre privacidad? Escríbenos a", [
+        ("La versión corta", ["Sin cuenta ni inicio de sesión.", "Elia no recoge datos.", "Tus datos nunca se venden ni se comparten.", "Todo se guarda localmente en tu dispositivo.", "Nada se sube a servidores de Elia."]),
+        ("Qué guarda la app", "Solo localmente en tu dispositivo: tus entradas, el historial derivado de ellas y tus ajustes."),
+        ("Cuando los datos salen de tu dispositivo", "Los datos salen de tu dispositivo solo cuando decides exportarlos o compartirlos usando las opciones de compartir del propio dispositivo. Tú eliges el destino."),
+        ("Copias de seguridad", "Las copias de seguridad automáticas en la nube y la transferencia de datos entre dispositivos están desactivadas. Tu registro se mueve solo mediante una exportación que tú inicias."),
+        ("Red y permisos", "El uso principal no requiere registro ni conexión. La app evita permisos innecesarios y no contiene publicidad, analíticas ni SDKs de seguimiento de terceros."),
+        ("Borrar tus datos", "Borrar los datos de la app o desinstalarla elimina los datos locales del dispositivo. Como no se guardan en ningún otro lugar, eso es suficiente."),
+        ("Menores", "Elia está pensada como herramienta para adultos y cuidadores. No recoge datos de nadie de forma consciente."),
       ]),
     }
     updated, intro, contact, question, sections = data[lang]
     return {"updated": updated, "intro": intro, "contact": contact, "question": question, "sections": sections, "callout": APP[lang][app]["principles"][3 if app == "feeding" else 2]}
 
-
 def not_found(lang):
     route = ""
-    title = {"en": "Page not found — Elia", "uk": "Сторінку не знайдено — Elia", "de": "Seite nicht gefunden — Elia", "ru": "Страница не найдена — Elia"}[lang]
-    text = {"en": "Take a breath. This page doesn't exist — but the rest of Elia does.", "uk": "Зробіть вдих. Цієї сторінки немає — але решта Elia на місці.", "de": "Atme kurz durch. Diese Seite gibt es nicht — der Rest von Elia schon.", "ru": "Сделайте вдох. Этой страницы нет — но остальная Elia на месте."}[lang]
-    btn = {"en": "Back to Elia", "uk": "Назад до Elia", "de": "Zurück zu Elia", "ru": "Назад к Elia"}[lang]
+    title = {"en": "Page not found — Elia", "de": "Seite nicht gefunden — Elia", "es": "Página no encontrada — Elia"}[lang]
+    text = {"en": "Take a breath. This page doesn't exist — but the rest of Elia does.", "de": "Atme kurz durch. Diese Seite gibt es nicht — der Rest von Elia schon.", "es": "Respira. Esta página no existe, pero el resto de Elia sí."}[lang]
+    btn = {"en": "Back to Elia", "de": "Zurück zu Elia", "es": "Volver a Elia"}[lang]
     body = f"""<!DOCTYPE html>
 <html lang="{lang}">
 {head(lang, "", title, text)}
 <body><main><section class="hero"><div class="container"><img class="brand__mark" src="{asset("assets/img/favicon.svg", lang, route)}" alt="" style="width:40px;height:40px;border-radius:12px;margin:0 auto 24px;" /><h1 class="hero__wordmark" style="font-size:clamp(40px,9vw,72px);">{escape(title.split(" — ")[0])}</h1><p class="hero__sub lead">{escape(text)}</p><div class="btn-row"><a class="btn btn--primary" href="{href(lang, "", lang, route)}">{escape(btn)}</a></div></div></section></main></body></html>"""
     if lang == "en":
         (ROOT / "404.html").write_text(body, encoding="utf-8")
-
 
 def sitemap():
     routes = ["", "apps/contractions", "apps/feeding", "apps/contractions/privacy", "apps/contractions/support", "apps/feeding/privacy", "apps/feeding/support"]
