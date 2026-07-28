@@ -1,5 +1,6 @@
 from pathlib import Path
 from html import escape
+from urllib.parse import urlparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,14 +20,10 @@ def url(lang, route=""):
 
 
 def href(lang, route="", current_lang=None, current_route=""):
-    route = route.strip("/")
-    if current_lang is None:
-        prefix = URL_PREFIXES[lang]
-        prefix = f"{prefix}/" if prefix else ""
-        return f"{prefix}{route}/index.html" if route else f"{prefix}index.html"
-    target = out_path(lang, route)
-    source_dir = out_path(current_lang, current_route).parent
-    return Path.relative_to if False else relpath(target, source_dir)
+    # Clean, canonical root-relative path (trailing slash, no index.html),
+    # matching canonical/hreflang/sitemap exactly. current_* kept for signature
+    # compatibility; a root-relative path needs no source context.
+    return urlparse(url(lang, route)).path
 
 
 def relpath(target, source_dir):
@@ -77,6 +74,7 @@ def head(lang, route, title, description, icon="svg", image=None, extra=""):
     if image:
         image_tags = f"""
   <meta property="og:image" content="{image}" />
+  <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1024" />
   <meta property="og:image:height" content="500" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -86,8 +84,8 @@ def head(lang, route, title, description, icon="svg", image=None, extra=""):
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{escape(title)}</title>
   <meta name="description" content="{escape(description)}" />
-  <meta name="theme-color" content="#FFF8F5" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#171316" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#FBF9F8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#271F25" media="(prefers-color-scheme: dark)" />
 {icon_link}
   <link rel="stylesheet" href="{asset('assets/css/styles.css', lang, route)}" />
   <link rel="canonical" href="{url(lang, route)}" />
@@ -744,7 +742,7 @@ def app_page(lang, app):
     a = APP[lang][app]
     route = f"apps/{app}"
     icon = "contractions" if app == "contractions" else "svg"
-    image = f"{BASE}/assets/img/cover-contractions.png" if app == "contractions" else None
+    image = f"{BASE}/assets/img/cover-contractions.jpg" if app == "contractions" else None
     extra = ""
     if app == "feeding":
         extra = """  <style>
@@ -788,7 +786,11 @@ def support_page(lang, app):
     route = f"apps/{app}/support"
     app_name = f"Elia {app.capitalize()}"
     title = f"{c['support']} — {app_name}"
-    desc = f"{c['support']} — {app_name}"
+    desc = {
+        "en": f"Help and answers for {app_name} — a calm, private app. Common questions and how to reach us.",
+        "de": f"Hilfe und Antworten für {app_name} — eine ruhige, private App. Häufige Fragen und Kontakt.",
+        "es": f"Ayuda y respuestas para {app_name}, una app tranquila y privada. Preguntas frecuentes y contacto.",
+    }[lang]
     extra = feeding_style() if app == "feeding" else ""
     faq = "".join(f'<details{" open" if i == 0 else ""}><summary>{escape(q)}</summary><p>{escape(a).replace("privacy policy", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">privacy policy</a>").replace("Datenschutzerklärung", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">Datenschutzerklärung</a>").replace("política de privacidad", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">política de privacidad</a>")}</p></details>' for i, (q, a) in enumerate(SUPPORT[lang][app]))
     body = f"""<!DOCTYPE html>
@@ -809,7 +811,11 @@ def privacy_page(lang, app):
     route = f"apps/{app}/privacy"
     app_name = f"Elia {app.capitalize()}"
     title = f"{c['privacy']} — {app_name}"
-    desc = f"{c['privacy']} — {app_name}"
+    desc = {
+        "en": f"Privacy policy for {app_name}. No account, no backend, no tracking — your data stays on your device.",
+        "de": f"Datenschutzerklärung für {app_name}. Kein Konto, kein Backend, kein Tracking — deine Daten bleiben auf deinem Gerät.",
+        "es": f"Política de privacidad de {app_name}. Sin cuenta, sin backend, sin seguimiento: tus datos se quedan en tu dispositivo.",
+    }[lang]
     extra = feeding_style() if app == "feeding" else ""
     text = privacy_text(lang, app)
     sections = "".join(f"<h2>{escape(h)}</h2><p>{escape(p)}</p>" if isinstance(p, str) else f"<h2>{escape(h)}</h2>{ul(p, '')}" for h, p in text["sections"])
@@ -876,7 +882,7 @@ def not_found(lang):
     btn = {"en": "Back to Elia", "de": "Zurück zu Elia", "es": "Volver a Elia"}[lang]
     body = f"""<!DOCTYPE html>
 <html lang="{lang}">
-{head(lang, "", title, text)}
+{head(lang, "", title, text, extra='  <meta name="robots" content="noindex" />\n')}
 <body><main><section class="hero"><div class="container"><img class="brand__mark" src="{asset("assets/img/favicon.svg", lang, route)}" alt="" style="width:40px;height:40px;border-radius:12px;margin:0 auto 24px;" /><h1 class="hero__wordmark" style="font-size:clamp(40px,9vw,72px);">{escape(title.split(" — ")[0])}</h1><p class="hero__sub lead">{escape(text)}</p><div class="btn-row"><a class="btn btn--primary" href="{href(lang, "", lang, route)}">{escape(btn)}</a></div></div></section></main></body></html>"""
     if lang == "en":
         (ROOT / "404.html").write_text(body, encoding="utf-8")
