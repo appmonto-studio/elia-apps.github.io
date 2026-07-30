@@ -9,6 +9,7 @@ LANGS = ["en", "de", "es"]
 LOCALES = {"en": "en_US", "de": "de_DE", "es": "es_ES"}
 LANG_LABELS = {"en": "EN", "de": "DE", "es": "ES"}
 URL_PREFIXES = {"en": "", "de": "de", "es": "es"}
+APP_ICONS = ["contractions", "feeding"]
 
 
 def url(lang, route=""):
@@ -65,10 +66,10 @@ def lang_switch(lang, route, label):
 
 def head(lang, route, title, description, icon="svg", image=None, extra=""):
     icon_link = f'  <link rel="icon" href="{asset("assets/img/favicon.svg", lang, route)}" type="image/svg+xml" />'
-    if icon == "contractions":
+    if icon in APP_ICONS:
         icon_link = '\n'.join([
-            f'  <link rel="icon" type="image/png" href="{asset("assets/img/favicon-contractions.png", lang, route)}" />',
-            f'  <link rel="apple-touch-icon" href="{asset("assets/img/apple-touch-icon-contractions.png", lang, route)}" />',
+            f'  <link rel="icon" type="image/png" href="{asset(f"assets/img/favicon-{icon}.png", lang, route)}" />',
+            f'  <link rel="apple-touch-icon" href="{asset(f"assets/img/apple-touch-icon-{icon}.png", lang, route)}" />',
         ])
     image_tags = ""
     if image:
@@ -707,7 +708,7 @@ def home(lang):
             <p class="app-card__one">{escape(t["contr_card"][1])}</p><div class="app-card__foot"><span class="app-card__cta">{escape(t["learn"])} <span class="arrow">→</span></span></div>
           </a>
           <a class="app-card" href="{href(lang, "apps/feeding", lang, "")}" data-accent="honey">
-            <div class="app-card__top"><span class="app-icon" aria-hidden="true">{bottle_svg()}</span><div><div class="app-card__title">{escape(t["feed_card"][0])}</div><span class="tag"><span class="tag__dot"></span>{escape(t["coming"])}</span></div></div>
+            <div class="app-card__top"><span class="app-icon is-image" aria-hidden="true"><img src="{asset("assets/img/icon-feeding.png", lang, "")}" alt="" width="256" height="256" /></span><div><div class="app-card__title">{escape(t["feed_card"][0])}</div><span class="tag"><span class="tag__dot"></span>{escape(t["coming"])}</span></div></div>
             <p class="app-card__one">{escape(t["feed_card"][1])}</p><div class="app-card__foot"><span class="app-card__cta">{escape(t["learn"])} <span class="arrow">→</span></span></div>
           </a>
         </div>
@@ -741,7 +742,7 @@ def app_page(lang, app):
     c = APP[lang]["common"]
     a = APP[lang][app]
     route = f"apps/{app}"
-    icon = "contractions" if app == "contractions" else "svg"
+    icon = app if app in APP_ICONS else "svg"
     image = f"{BASE}/assets/img/cover-contractions.jpg" if app == "contractions" else None
     extra = ""
     if app == "feeding":
@@ -750,7 +751,7 @@ def app_page(lang, app):
     @media (prefers-color-scheme: dark) { body { --accent-light: #352A20; } }
   </style>
 """
-    icon_html = f'<span class="app-icon is-image" aria-hidden="true" style="margin-top:24px;"><img src="{asset("assets/img/icon-contractions.png", lang, route)}" alt="" width="256" height="256" /></span>' if app == "contractions" else f'<span class="app-icon" aria-hidden="true" style="margin-top:24px;">{bottle_svg()}</span>'
+    icon_html = f'<span class="app-icon is-image" aria-hidden="true" style="margin-top:24px;"><img src="{asset(f"assets/img/icon-{app}.png", lang, route)}" alt="" width="256" height="256" /></span>' if app in APP_ICONS else f'<span class="app-icon" aria-hidden="true" style="margin-top:24px;">{bottle_svg()}</span>'
     pre = ""
     if app == "feeding":
         pre = f"""<section id="promise" class="tint"><div class="container"><div class="story" style="margin-inline:auto; text-align:center;"><p class="pull">{escape(a["pull"][0])}</p><p class="lead">{escape(a["pull"][1])}</p></div></div></section>"""
