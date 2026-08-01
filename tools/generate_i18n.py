@@ -9,7 +9,15 @@ LANGS = ["en", "de", "es"]
 LOCALES = {"en": "en_US", "de": "de_DE", "es": "es_ES"}
 LANG_LABELS = {"en": "EN", "de": "DE", "es": "ES"}
 URL_PREFIXES = {"en": "", "de": "de", "es": "es"}
-APP_ICONS = ["contractions", "feeding"]
+APPS = ["contractions", "feeding", "moments"]
+APP_ICONS = ["contractions", "feeding", "moments"]
+APP_NAMES = {"contractions": "Contractions", "feeding": "Feeding", "moments": "Moments"}
+CARD_ACCENTS = {"contractions": "rose", "feeding": "honey", "moments": "sage"}
+CARD_KEYS = {"contractions": "contr_card", "feeding": "feed_card", "moments": "moments_card"}
+ACCENTS = {
+    "feeding": ("#C9976A", "#A9784C", "#F3E3D1", "#352A20"),
+    "moments": ("#687F59", "#53663F", "#DCE5D5", "#2B3526"),
+}
 
 
 def url(lang, route=""):
@@ -143,17 +151,17 @@ def footer(lang, links, note, route=""):
 T = {'en': {'lang': 'Language',
         'note': 'Not a medical device.',
         'home': {'title': "Elia — calm, private apps for your family's first days",
-                 'description': 'Elia is a small family of calm, private, offline-first apps for pregnancy, birth, and '
-                                'the early days with your baby. No account. No ads. No cloud.',
+                 'description': 'Elia is a small family of calm, private, offline-first apps for birth, the early days '
+                                'with your baby, and the childhood years that follow. No account. No ads. No cloud.',
                  'nav': [('Apps', '#apps'), ('Philosophy', '#philosophy'), ('Story', '#story')],
                  'hero': ['Elia',
                           'Calm companions for birth and beyond.',
-                          'A small family of private, offline-first apps for pregnancy, birth, and the early days with '
-                          'your baby. No account. No ads. No cloud.',
+                          'A small family of private, offline-first apps for birth, the early days with your baby, and '
+                          'the childhood years that follow. No account. No ads. No cloud.',
                           'See the apps',
                           'Why Elia'],
                  'apps_head': ['The apps',
-                               'Two apps for two moments.',
+                               'Three apps for three chapters.',
                                'Each does one thing calmly, and gets out of your way.'],
                  'coming': 'Coming soon',
                  'learn': 'Learn more',
@@ -187,18 +195,18 @@ T = {'en': {'lang': 'Language',
  'de': {'lang': 'Sprache',
         'note': 'Kein Medizinprodukt.',
         'home': {'title': 'Elia — ruhige, private Apps für die ersten Tage als Familie',
-                 'description': 'Elia ist eine kleine Familie ruhiger, privater Offline-first-Apps für '
-                                'Schwangerschaft, Geburt und die ersten Tage mit deinem Baby. Kein Konto. Keine '
-                                'Werbung. Keine Cloud.',
+                 'description': 'Elia ist eine kleine Familie ruhiger, privater Offline-first-Apps für die '
+                                'Geburt, die ersten Tage mit deinem Baby und die Kindheitsjahre danach. Kein Konto. '
+                                'Keine Werbung. Keine Cloud.',
                  'nav': [('Apps', '#apps'), ('Philosophie', '#philosophy'), ('Geschichte', '#story')],
                  'hero': ['Elia',
                           'Ruhige Begleiter für Geburt und die Zeit danach.',
-                          'Eine kleine Familie privater Offline-first-Apps für Schwangerschaft, Geburt und die ersten '
-                          'Tage mit deinem Baby. Kein Konto. Keine Werbung. Keine Cloud.',
+                          'Eine kleine Familie privater Offline-first-Apps für die Geburt, die ersten Tage mit deinem '
+                          'Baby und die Kindheitsjahre danach. Kein Konto. Keine Werbung. Keine Cloud.',
                           'Apps ansehen',
                           'Warum Elia'],
                  'apps_head': ['Die Apps',
-                               'Zwei Apps für zwei Momente.',
+                               'Drei Apps für drei Kapitel.',
                                'Jede tut ruhig eine Sache und tritt dann in den Hintergrund.'],
                  'coming': 'Demnächst',
                  'learn': 'Mehr erfahren',
@@ -235,17 +243,18 @@ T = {'en': {'lang': 'Language',
         'note': 'No es un dispositivo médico.',
         'home': {'title': 'Elia — apps tranquilas y privadas para los primeros días en familia',
                  'description': 'Elia es una pequeña familia de apps tranquilas, privadas y offline-first para el '
-                                'embarazo, el parto y los primeros días con tu bebé. Sin cuenta. Sin anuncios. Sin '
-                                'sincronización en la nube.',
+                                'parto, los primeros días con tu bebé y los años de infancia que siguen. Sin cuenta. '
+                                'Sin anuncios. Sin sincronización en la nube.',
                  'nav': [('Apps', '#apps'), ('Filosofía', '#philosophy'), ('Historia', '#story')],
                  'hero': ['Elia',
                           'Compañeras tranquilas para el parto y lo que viene después.',
-                          'Una pequeña familia de apps privadas y offline-first para el embarazo, el parto y los '
-                          'primeros días con tu bebé. Sin cuenta. Sin anuncios. Sin sincronización en la nube.',
+                          'Una pequeña familia de apps privadas y offline-first para el parto, los primeros días con '
+                          'tu bebé y los años de infancia que siguen. Sin cuenta. Sin anuncios. Sin sincronización '
+                          'en la nube.',
                           'Ver las apps',
                           'Por qué Elia'],
                  'apps_head': ['Las apps',
-                               'Dos apps para dos momentos.',
+                               'Tres apps para tres capítulos.',
                                'Cada una hace una cosa con calma y no se interpone.'],
                  'coming': 'Próximamente',
                  'learn': 'Más información',
@@ -668,6 +677,179 @@ SUPPORT = {'en': {'contractions': [('Is my data private?',
                      'un embudo de monetización.')]}}
 
 
+MOMENTS = {
+ 'en': {'card': ['Elia Moments',
+                 'A private home for the little firsts. Capture a memory in seconds today, and enjoy it with your '
+                 'family years later.'],
+        'app': {'title': 'Elia Moments — a private home for the little firsts',
+                'desc': 'Elia Moments is a calm, private family archive for the small firsts and meaningful memories '
+                        'of childhood. No account. No cloud. Local-first.',
+                'tag': 'Remember the little firsts.',
+                'sub': 'A calm, private family archive for the small firsts and meaningful memories that otherwise '
+                       'scatter across notes, chats, and photo libraries.',
+                'pull': ['Capture it in seconds today. Enjoy it with your family years later.',
+                         'The result is a child’s story, not a dashboard.'],
+                'head': ['What it does', 'One durable home for the memories that matter.'],
+                'left': 'In the app',
+                'right': 'Deliberately not included',
+                'yes': ['A moment with a title, date, and automatically calculated age.',
+                        'Up to five photos, copied into the app’s own storage.',
+                        'Categories, a “first” flag, description, and optional place.',
+                        'A full archive with year and month grouping, search, and filters.',
+                        'A profile for each child, with their own archive.',
+                        'Complete, portable backups you create yourself.'],
+                'no': ['A milestone checklist or developmental scoring.',
+                       'Comparison between siblings or other children.',
+                       'Streaks, targets, or anxious reminders.',
+                       'A social network or public child profile.',
+                       'A required cloud account.',
+                       'Ads or a subscription gate for the core archive.'],
+                'principles': ['Calm, private, and yours.',
+                               ['No account', 'No ads', 'No analytics', 'Local-first', 'Works offline',
+                                'Portable backups'],
+                               'Elia Moments never infers delays, diagnoses, or developmental judgement from what you '
+                               'save. Categories and prompts are ways to remember, never obligations.']},
+        'support': [('Is my data private?',
+                     'Yes. Elia Moments has no account and no hidden upload. Your moments, photos, and settings stay '
+                     'in the app’s private storage on your device. See the privacy policy for details.'),
+                    ('Does it work offline?',
+                     'Yes. Capturing, browsing, search, backup, and restore all work without a network. Optional '
+                     'place suggestions are the only online extra, and they have a manual fallback.'),
+                    ('Does it tell me whether my child is on track?',
+                     'No. Elia Moments is not a milestone checklist and never judges development. A first step and a '
+                     'first taste of sushi can be equally valuable — your family decides what matters.'),
+                    ('What happens to the photos I add?',
+                     'Photos you pick are copied into the app’s own private storage, so deleting the original from '
+                     'your gallery does not break the moment. The app uses the system photo picker and never asks for '
+                     'access to your whole gallery.'),
+                    ('How do I move everything to a new phone?',
+                     'Create a complete backup file in Settings, then restore it on the new device. It contains '
+                     'profiles, moments, settings, places, and media.'),
+                    ('Will I lose everything if I uninstall?',
+                     'Uninstalling the app or clearing its storage removes the local data, and automatic cloud backup '
+                     'is deliberately disabled. Create a backup before uninstalling, resetting, or switching devices.'),
+                    ('Are there ads or subscriptions?',
+                     'No ads, and no subscription gate for the core archive.')]},
+ 'de': {'card': ['Elia Moments',
+                 'Ein privates Zuhause für die kleinen ersten Male. Heute in Sekunden festhalten, Jahre später '
+                 'gemeinsam genießen.'],
+        'app': {'title': 'Elia Moments — ein privates Zuhause für die kleinen ersten Male',
+                'desc': 'Elia Moments ist ein ruhiges, privates Familienarchiv für die kleinen ersten Male und '
+                        'bedeutsamen Erinnerungen der Kindheit. Kein Konto. Keine Cloud. Local-first.',
+                'tag': 'Die kleinen ersten Male festhalten.',
+                'sub': 'Ein ruhiges, privates Familienarchiv für die kleinen ersten Male und bedeutsamen '
+                       'Erinnerungen, die sonst zwischen Notizen, Chats und Fotomediatheken verloren gehen.',
+                'pull': ['Heute in Sekunden festhalten. Jahre später gemeinsam genießen.',
+                         'Das Ergebnis ist die Geschichte eines Kindes, kein Dashboard.'],
+                'head': ['Was sie kann', 'Ein dauerhaftes Zuhause für die Erinnerungen, die zählen.'],
+                'left': 'In der App',
+                'right': 'Bewusst nicht enthalten',
+                'yes': ['Ein Moment mit Titel, Datum und automatisch berechnetem Alter.',
+                        'Bis zu fünf Fotos, in den eigenen Speicher der App kopiert.',
+                        'Kategorien, „Erstes Mal“-Markierung, Beschreibung und optionaler Ort.',
+                        'Ein vollständiges Archiv mit Gruppierung nach Jahr und Monat, Suche und Filtern.',
+                        'Ein Profil für jedes Kind mit eigenem Archiv.',
+                        'Vollständige, portable Backups, die du selbst erstellst.'],
+                'no': ['Eine Meilenstein-Checkliste oder Entwicklungsbewertung.',
+                       'Vergleiche zwischen Geschwistern oder anderen Kindern.',
+                       'Serien, Ziele oder beunruhigende Erinnerungen.',
+                       'Ein soziales Netzwerk oder öffentliches Kinderprofil.',
+                       'Ein verpflichtendes Cloud-Konto.',
+                       'Werbung oder eine Abo-Schranke für das Kernarchiv.'],
+                'principles': ['Ruhig, privat und deins.',
+                               ['Kein Konto', 'Keine Werbung', 'Keine Analyse', 'Local-first', 'Funktioniert offline',
+                                'Portable Backups'],
+                               'Elia Moments leitet aus deinen Einträgen niemals Verzögerungen, Diagnosen oder '
+                               'Entwicklungsurteile ab. Kategorien und Vorschläge sind Wege zu erinnern, niemals '
+                               'Pflichten.']},
+        'support': [('Sind meine Daten privat?',
+                     'Ja. Elia Moments hat kein Konto und lädt nichts heimlich hoch. Deine Momente, Fotos und '
+                     'Einstellungen bleiben im privaten Speicher der App auf deinem Gerät. Details stehen in der '
+                     'Datenschutzerklärung.'),
+                    ('Funktioniert die App offline?',
+                     'Ja. Erfassen, Durchsuchen, Suche, Backup und Wiederherstellung funktionieren ohne Netz. '
+                     'Optionale Ortsvorschläge sind die einzige Online-Ergänzung und haben eine manuelle Alternative.'),
+                    ('Sagt sie mir, ob mein Kind altersgerecht entwickelt ist?',
+                     'Nein. Elia Moments ist keine Meilenstein-Checkliste und bewertet Entwicklung nie. Ein erster '
+                     'Schritt und der erste Bissen Sushi können gleich wertvoll sein — deine Familie entscheidet, was '
+                     'zählt.'),
+                    ('Was passiert mit den Fotos, die ich hinzufüge?',
+                     'Ausgewählte Fotos werden in den privaten Speicher der App kopiert. Löschst du das Original in '
+                     'der Galerie, bleibt der Moment vollständig. Die App nutzt die System-Fotoauswahl und verlangt '
+                     'keinen Zugriff auf die gesamte Galerie.'),
+                    ('Wie ziehe ich alles auf ein neues Handy um?',
+                     'Erstelle in den Einstellungen eine vollständige Backup-Datei und stelle sie auf dem neuen Gerät '
+                     'wieder her. Sie enthält Profile, Momente, Einstellungen, Orte und Medien.'),
+                    ('Verliere ich alles, wenn ich die App deinstalliere?',
+                     'Deinstallieren oder das Löschen des App-Speichers entfernt die lokalen Daten, und automatische '
+                     'Cloud-Backups sind bewusst deaktiviert. Erstelle ein Backup, bevor du deinstallierst, '
+                     'zurücksetzt oder das Gerät wechselst.'),
+                    ('Gibt es Werbung oder Abos?',
+                     'Keine Werbung und keine Abo-Schranke für das Kernarchiv.')]},
+ 'es': {'card': ['Elia Moments',
+                 'Un hogar privado para las pequeñas primeras veces. Guárdalo en segundos hoy y disfrútalo en familia '
+                 'años después.'],
+        'app': {'title': 'Elia Moments — un hogar privado para las pequeñas primeras veces',
+                'desc': 'Elia Moments es un archivo familiar tranquilo y privado para las pequeñas primeras veces y '
+                        'los recuerdos importantes de la infancia. Sin cuenta. Sin nube. Local-first.',
+                'tag': 'Recuerda las pequeñas primeras veces.',
+                'sub': 'Un archivo familiar tranquilo y privado para las pequeñas primeras veces y los recuerdos '
+                       'que, si no, se dispersan entre notas, chats y fototecas.',
+                'pull': ['Guárdalo en segundos hoy. Disfrútalo en familia años después.',
+                         'El resultado es la historia de un niño, no un panel de métricas.'],
+                'head': ['Qué hace', 'Un hogar duradero para los recuerdos que importan.'],
+                'left': 'En la app',
+                'right': 'Deliberadamente no incluido',
+                'yes': ['Un momento con título, fecha y edad calculada automáticamente.',
+                        'Hasta cinco fotos, copiadas al almacenamiento propio de la app.',
+                        'Categorías, marca de «primera vez», descripción y lugar opcional.',
+                        'Un archivo completo con agrupación por año y mes, búsqueda y filtros.',
+                        'Un perfil para cada niño, con su propio archivo.',
+                        'Copias de seguridad completas y portables que creas tú.'],
+                'no': ['Una lista de hitos o puntuación del desarrollo.',
+                       'Comparaciones entre hermanos u otros niños.',
+                       'Rachas, objetivos o recordatorios que generan ansiedad.',
+                       'Una red social o un perfil público del niño.',
+                       'Una cuenta en la nube obligatoria.',
+                       'Anuncios o un muro de suscripción para el archivo principal.'],
+                'principles': ['Tranquila, privada y tuya.',
+                               ['Sin cuenta', 'Sin anuncios', 'Sin analíticas', 'Local-first', 'Funciona sin conexión',
+                                'Copias portables'],
+                               'Elia Moments nunca deduce retrasos, diagnósticos ni juicios sobre el desarrollo a '
+                               'partir de lo que guardas. Las categorías y las sugerencias son formas de recordar, '
+                               'nunca obligaciones.']},
+        'support': [('¿Mis datos son privados?',
+                     'Sí. Elia Moments no tiene cuenta ni sube nada de forma oculta. Tus momentos, fotos y ajustes se '
+                     'quedan en el almacenamiento privado de la app en tu dispositivo. Consulta la política de '
+                     'privacidad para más detalles.'),
+                    ('¿Funciona sin conexión?',
+                     'Sí. Guardar, explorar, buscar, crear copias y restaurar funcionan sin red. Las sugerencias de '
+                     'lugar son el único extra en línea y tienen alternativa manual.'),
+                    ('¿Me dice si mi hijo va bien para su edad?',
+                     'No. Elia Moments no es una lista de hitos y nunca juzga el desarrollo. Un primer paso y la '
+                     'primera vez que prueba sushi pueden ser igual de valiosos: tu familia decide qué importa.'),
+                    ('¿Qué pasa con las fotos que añado?',
+                     'Las fotos que eliges se copian al almacenamiento privado de la app, así que borrar el original '
+                     'de la galería no rompe el momento. La app usa el selector de fotos del sistema y nunca pide '
+                     'acceso a toda la galería.'),
+                    ('¿Cómo llevo todo a un teléfono nuevo?',
+                     'Crea un archivo de copia de seguridad completo en Ajustes y restáuralo en el nuevo dispositivo. '
+                     'Contiene perfiles, momentos, ajustes, lugares y archivos.'),
+                    ('¿Pierdo todo si desinstalo la app?',
+                     'Desinstalar la app o borrar su almacenamiento elimina los datos locales, y la copia automática '
+                     'en la nube está desactivada a propósito. Crea una copia antes de desinstalar, restablecer o '
+                     'cambiar de dispositivo.'),
+                    ('¿Hay anuncios o suscripciones?',
+                     'No hay anuncios ni muro de suscripción para el archivo principal.')]}}
+
+for _lang, _data in MOMENTS.items():
+    T[_lang]['home']['moments_card'] = _data['card']
+    APP[_lang]['moments'] = _data['app']
+    SUPPORT[_lang]['moments'] = _data['support']
+
+
+
+
 
 
 def ul(items, cls):
@@ -676,6 +858,18 @@ def ul(items, cls):
 
 def chips(items):
     return '<div class="chips">' + "".join(f'<span class="chip">{escape(x)}</span>' for x in items) + "</div>"
+
+
+def app_cards(lang):
+    t = T[lang]["home"]
+    cards = []
+    for app in APPS:
+        card = t[CARD_KEYS[app]]
+        cards.append(f"""          <a class="app-card" href="{href(lang, f"apps/{app}")}" data-accent="{CARD_ACCENTS[app]}">
+            <div class="app-card__top"><span class="app-icon is-image" aria-hidden="true"><img src="{asset(f"assets/img/icon-{app}.png", lang, "")}" alt="" width="256" height="256" loading="lazy" /></span><div><div class="app-card__title">{escape(card[0])}</div><span class="tag"><span class="tag__dot"></span>{escape(t["coming"])}</span></div></div>
+            <p class="app-card__one">{escape(card[1])}</p><div class="app-card__foot"><span class="app-card__cta">{escape(t["learn"])} <span class="arrow">→</span></span></div>
+          </a>""")
+    return "\n".join(cards)
 
 
 def home(lang):
@@ -703,14 +897,7 @@ def home(lang):
       <div class="container">
         <div class="section-head"><span class="eyebrow">{escape(t["apps_head"][0])}</span><h2>{escape(t["apps_head"][1])}</h2><p class="lead">{escape(t["apps_head"][2])}</p></div>
         <div class="apps">
-          <a class="app-card" href="{href(lang, "apps/contractions", lang, "")}" data-accent="rose">
-            <div class="app-card__top"><span class="app-icon is-image" aria-hidden="true"><img src="{asset("assets/img/icon-contractions.png", lang, "")}" alt="" width="256" height="256" /></span><div><div class="app-card__title">{escape(t["contr_card"][0])}</div><span class="tag"><span class="tag__dot"></span>{escape(t["coming"])}</span></div></div>
-            <p class="app-card__one">{escape(t["contr_card"][1])}</p><div class="app-card__foot"><span class="app-card__cta">{escape(t["learn"])} <span class="arrow">→</span></span></div>
-          </a>
-          <a class="app-card" href="{href(lang, "apps/feeding", lang, "")}" data-accent="honey">
-            <div class="app-card__top"><span class="app-icon is-image" aria-hidden="true"><img src="{asset("assets/img/icon-feeding.png", lang, "")}" alt="" width="256" height="256" /></span><div><div class="app-card__title">{escape(t["feed_card"][0])}</div><span class="tag"><span class="tag__dot"></span>{escape(t["coming"])}</span></div></div>
-            <p class="app-card__one">{escape(t["feed_card"][1])}</p><div class="app-card__foot"><span class="app-card__cta">{escape(t["learn"])} <span class="arrow">→</span></span></div>
-          </a>
+{app_cards(lang)}
         </div>
       </div>
     </section>
@@ -724,7 +911,7 @@ def home(lang):
     </section>
   </main>
 
-  {footer(lang, [("Contractions", "apps/contractions"), ("Feeding", "apps/feeding"), (t["nav"][1][0], "#philosophy"), ({"en": "Contact", "de": "Kontakt", "es": "Contacto"}[lang], "mailto:hello@getelia.app")], T[lang]["note"], "")}
+  {footer(lang, [*[(APP_NAMES[x], f"apps/{x}") for x in APPS], (t["nav"][1][0], "#philosophy"), ({"en": "Contact", "de": "Kontakt", "es": "Contacto"}[lang], "mailto:hello@getelia.app")], T[lang]["note"], "")}
 </body>
 </html>
 """
@@ -744,20 +931,15 @@ def app_page(lang, app):
     route = f"apps/{app}"
     icon = app if app in APP_ICONS else "svg"
     image = f"{BASE}/assets/img/cover-contractions.jpg" if app == "contractions" else None
-    extra = ""
-    if app == "feeding":
-        extra = """  <style>
-    body { --accent: #C9976A; --accent-dark: #A9784C; --accent-light: #F3E3D1; }
-    @media (prefers-color-scheme: dark) { body { --accent-light: #352A20; } }
-  </style>
-"""
+    extra = app_style(app)
     icon_html = f'<span class="app-icon is-image" aria-hidden="true" style="margin-top:24px;"><img src="{asset(f"assets/img/icon-{app}.png", lang, route)}" alt="" width="256" height="256" /></span>' if app in APP_ICONS else f'<span class="app-icon" aria-hidden="true" style="margin-top:24px;">{bottle_svg()}</span>'
     pre = ""
-    if app == "feeding":
+    if "pull" in a:
         pre = f"""<section id="promise" class="tint"><div class="container"><div class="story" style="margin-inline:auto; text-align:center;"><p class="pull">{escape(a["pull"][0])}</p><p class="lead">{escape(a["pull"][1])}</p></div></div></section>"""
-    route_other = "apps/feeding" if app == "contractions" else "apps/contractions"
-    other_name = "Feeding" if app == "contractions" else "Contractions"
-    sublead = f'<p class="lead">{escape(a["principles"][1])}</p>' if app == "feeding" else ""
+    others = [(APP_NAMES[x], f"apps/{x}") for x in APPS if x != app]
+    # principles is [heading, chips, callout] or [heading, sublead, chips, callout]
+    has_sublead = len(a["principles"]) == 4
+    sublead = f'<p class="lead">{escape(a["principles"][1])}</p>' if has_sublead else ""
     body = f"""<!DOCTYPE html>
 <html lang="{lang}">
 {head(lang, route, a["title"], a["desc"], icon, image, extra)}
@@ -768,9 +950,9 @@ def app_page(lang, app):
 {pre}
     <section id="what"><div class="container"><div class="section-head"><span class="eyebrow">{escape(a["head"][0])}</span><h2>{escape(a["head"][1])}</h2></div><div class="grid-2"><div class="panel"><h3>{escape(a["left"])}</h3>{ul(a["yes"], "checklist")}</div><div class="panel"><h3>{escape(a["right"])}</h3>{ul(a["no"], "notlist")}</div></div></div></section>
 {story_section(a) if app == "contractions" else ""}
-    <section id="principles"><div class="container"><div class="section-head"><span class="eyebrow">{escape(c["promise"])}</span><h2>{escape(a["principles"][0])}</h2>{sublead}</div>{chips(a["principles"][2 if app == "feeding" else 1])}<div class="callout" style="margin-top:32px;">{escape(a["principles"][3 if app == "feeding" else 2])}</div></div></section>
+    <section id="principles"><div class="container"><div class="section-head"><span class="eyebrow">{escape(c["promise"])}</span><h2>{escape(a["principles"][0])}</h2>{sublead}</div>{chips(a["principles"][2 if has_sublead else 1])}<div class="callout" style="margin-top:32px;">{escape(a["principles"][3 if has_sublead else 2])}</div></div></section>
   </main>
-  {footer(lang, [(c["support"], f"{route}/support"), (c["privacy"], f"{route}/privacy"), (other_name, route_other), (c["all"], "")], T[lang]["note"], route)}
+  {footer(lang, [(c["support"], f"{route}/support"), (c["privacy"], f"{route}/privacy"), *others, (c["all"], "")], T[lang]["note"], route)}
 </body>
 </html>
 """
@@ -792,7 +974,7 @@ def support_page(lang, app):
         "de": f"Hilfe und Antworten für {app_name} — eine ruhige, private App. Häufige Fragen und Kontakt.",
         "es": f"Ayuda y respuestas para {app_name}, una app tranquila y privada. Preguntas frecuentes y contacto.",
     }[lang]
-    extra = feeding_style() if app == "feeding" else ""
+    extra = app_style(app)
     faq = "".join(f'<details{" open" if i == 0 else ""}><summary>{escape(q)}</summary><p>{escape(a).replace("privacy policy", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">privacy policy</a>").replace("Datenschutzerklärung", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">Datenschutzerklärung</a>").replace("política de privacidad", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">política de privacidad</a>")}</p></details>' for i, (q, a) in enumerate(SUPPORT[lang][app]))
     body = f"""<!DOCTYPE html>
 <html lang="{lang}">
@@ -817,7 +999,7 @@ def privacy_page(lang, app):
         "de": f"Datenschutzerklärung für {app_name}. Kein Konto, kein Backend, kein Tracking — deine Daten bleiben auf deinem Gerät.",
         "es": f"Política de privacidad de {app_name}. Sin cuenta, sin backend, sin seguimiento: tus datos se quedan en tu dispositivo.",
     }[lang]
-    extra = feeding_style() if app == "feeding" else ""
+    extra = app_style(app)
     text = privacy_text(lang, app)
     sections = "".join(f"<h2>{escape(h)}</h2><p>{escape(p)}</p>" if isinstance(p, str) else f"<h2>{escape(h)}</h2>{ul(p, '')}" for h, p in text["sections"])
     body = f"""<!DOCTYPE html>
@@ -833,10 +1015,13 @@ def privacy_page(lang, app):
     write(lang, route, body)
 
 
-def feeding_style():
-    return """  <style>
-    body { --accent: #C9976A; --accent-dark: #A9784C; --accent-light: #F3E3D1; }
-    @media (prefers-color-scheme: dark) { body { --accent-light: #352A20; } }
+def app_style(app):
+    if app not in ACCENTS:
+        return ""
+    accent, dark, light, light_dark = ACCENTS[app]
+    return f"""  <style>
+    body {{ --accent: {accent}; --accent-dark: {dark}; --accent-light: {light}; }}
+    @media (prefers-color-scheme: dark) {{ body {{ --accent-light: {light_dark}; }} }}
   </style>
 """
 
@@ -844,7 +1029,7 @@ def feeding_style():
 def privacy_text(lang, app):
     if lang == "en":
         intro = "Elia is built to be private by design. It has no account, no backend, and no tracking. This policy explains, in plain language, what that means."
-        return {"updated": "Last updated 13 July 2026", "intro": intro, "contact": "Contact", "question": "Questions about privacy? Reach us at", "callout": APP[lang][app]["principles"][3 if app == "feeding" else 2], "sections": [
+        return {"updated": "Last updated 13 July 2026", "intro": intro, "contact": "Contact", "question": "Questions about privacy? Reach us at", "callout": APP[lang][app]["principles"][-1], "sections": [
             ("The short version", ["No account and no sign-in.", "No data is collected by Elia.", "Your data is never sold or shared.", "Everything is stored locally on your device.", "Nothing is uploaded to any Elia server."]),
             ("What the app stores", "Stored locally on your device only: your entries, history derived from them, and settings."),
             ("Data leaving your device", "Data leaves your device only when you choose to export or share it, using your device's own share options. You pick the destination. Elia does not upload your log to any service of its own."),
@@ -874,7 +1059,7 @@ def privacy_text(lang, app):
       ]),
     }
     updated, intro, contact, question, sections = data[lang]
-    return {"updated": updated, "intro": intro, "contact": contact, "question": question, "sections": sections, "callout": APP[lang][app]["principles"][3 if app == "feeding" else 2]}
+    return {"updated": updated, "intro": intro, "contact": contact, "question": question, "sections": sections, "callout": APP[lang][app]["principles"][-1]}
 
 def not_found(lang):
     route = ""
@@ -889,7 +1074,7 @@ def not_found(lang):
         (ROOT / "404.html").write_text(body, encoding="utf-8")
 
 def sitemap():
-    routes = ["", "apps/contractions", "apps/feeding", "apps/contractions/privacy", "apps/contractions/support", "apps/feeding/privacy", "apps/feeding/support"]
+    routes = [""] + [f"apps/{a}" for a in APPS] + [f"apps/{a}/{sub}" for a in APPS for sub in ("privacy", "support")]
     urls = []
     for route in routes:
         for lang in LANGS:
@@ -909,7 +1094,7 @@ def write(lang, route, body):
 
 for lang in LANGS:
     home(lang)
-    for app in ["contractions", "feeding"]:
+    for app in APPS:
         app_page(lang, app)
         privacy_page(lang, app)
         support_page(lang, app)

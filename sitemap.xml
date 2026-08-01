@@ -46,6 +46,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://getelia.app/apps/moments/</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://getelia.app/de/apps/moments/</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://getelia.app/es/apps/moments/</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://getelia.app/apps/contractions/privacy/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.3</priority>
@@ -102,6 +117,36 @@
   </url>
   <url>
     <loc>https://getelia.app/es/apps/feeding/support/</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://getelia.app/apps/moments/privacy/</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://getelia.app/de/apps/moments/privacy/</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://getelia.app/es/apps/moments/privacy/</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://getelia.app/apps/moments/support/</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://getelia.app/de/apps/moments/support/</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://getelia.app/es/apps/moments/support/</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.3</priority>
   </url>
