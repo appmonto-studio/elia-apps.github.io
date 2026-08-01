@@ -150,7 +150,7 @@ def footer(lang, links, note, route=""):
 
 T = {'en': {'lang': 'Language',
         'note': 'Not a medical device.',
-        'home': {'title': "Elia — calm, private apps for your family's first days",
+        'home': {'title': "Elia — calm, private apps for birth and the years that follow",
                  'description': 'Elia is a small family of calm, private, offline-first apps for birth, the early days '
                                 'with your baby, and the childhood years that follow. No account. No ads. No cloud.',
                  'nav': [('Apps', '#apps'), ('Philosophy', '#philosophy'), ('Story', '#story')],
@@ -194,7 +194,7 @@ T = {'en': {'lang': 'Language',
                            'family of apps for the quiet, tired, important days that follow.']}},
  'de': {'lang': 'Sprache',
         'note': 'Kein Medizinprodukt.',
-        'home': {'title': 'Elia — ruhige, private Apps für die ersten Tage als Familie',
+        'home': {'title': 'Elia — ruhige, private Apps für Geburt und Kindheit',
                  'description': 'Elia ist eine kleine Familie ruhiger, privater Offline-first-Apps für die '
                                 'Geburt, die ersten Tage mit deinem Baby und die Kindheitsjahre danach. Kein Konto. '
                                 'Keine Werbung. Keine Cloud.',
@@ -241,7 +241,7 @@ T = {'en': {'lang': 'Language',
                            'kleinen App-Familie für die leisen, müden und wichtigen Tage danach.']}},
  'es': {'lang': 'Idioma',
         'note': 'No es un dispositivo médico.',
-        'home': {'title': 'Elia — apps tranquilas y privadas para los primeros días en familia',
+        'home': {'title': 'Elia — apps tranquilas y privadas para el parto y la infancia',
                  'description': 'Elia es una pequeña familia de apps tranquilas, privadas y offline-first para el '
                                 'parto, los primeros días con tu bebé y los años de infancia que siguen. Sin cuenta. '
                                 'Sin anuncios. Sin sincronización en la nube.',
