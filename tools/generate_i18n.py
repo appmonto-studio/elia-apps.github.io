@@ -951,6 +951,7 @@ def app_page(lang, app):
   <main>
     <section class="hero app-hero"><div class="container"><a class="backlink" href="{href(lang, "", lang, route)}">{escape(c["back"])}</a>{icon_html}<h1>Elia {app.capitalize()}</h1><p class="hero__tagline">{escape(a["tag"])}</p><p class="hero__sub lead">{escape(a["sub"])}</p><div class="btn-row"><span class="tag"><span class="tag__dot"></span>{escape(T[lang]["home"]["coming"])}</span></div></div></section>
 {pre}
+{shots_section(lang, app, route)}
     <section id="what"><div class="container"><div class="section-head"><span class="eyebrow">{escape(a["head"][0])}</span><h2>{escape(a["head"][1])}</h2></div><div class="grid-2"><div class="panel"><h3>{escape(a["left"])}</h3>{ul(a["yes"], "checklist")}</div><div class="panel"><h3>{escape(a["right"])}</h3>{ul(a["no"], "notlist")}</div></div></div></section>
 {story_section(a) if app == "contractions" else ""}
     <section id="principles"><div class="container"><div class="section-head"><span class="eyebrow">{escape(c["promise"])}</span><h2>{escape(a["principles"][0])}</h2>{sublead}</div>{chips(a["principles"][2 if has_sublead else 1])}<div class="callout" style="margin-top:32px;">{escape(a["principles"][3 if has_sublead else 2])}</div></div></section>
@@ -960,6 +961,68 @@ def app_page(lang, app):
 </html>
 """
     write(lang, route, body)
+
+
+SHOTS = {
+    "contractions": ["01-single", "02-main", "03-session", "04-about"],
+}
+
+SHOTS_T = {
+    "en": {
+        "eyebrow": "A look inside",
+        "head": "What it looks like.",
+        "alt": [
+            "Track each contraction — start and stop with one tap, then stay focused on the moment.",
+            "See the rhythm at a glance — recent contractions, interval, and last duration in one calm view.",
+            "Review your session history — check start times, durations and intervals, and edit entries when needed.",
+            "Private by design — no account, no ads, no tracking. Your data stays on your device unless you choose to share it.",
+        ],
+    },
+    "de": {
+        "eyebrow": "Ein Blick hinein",
+        "head": "So sieht es aus.",
+        "alt": [
+            "Jede Wehe erfassen — mit einem Tippen starten und stoppen und im Moment bleiben.",
+            "Den Rhythmus auf einen Blick sehen — letzte Wehen, Intervall und Dauer in einer ruhigen Ansicht.",
+            "Den Sitzungsverlauf durchsehen — Startzeiten, Dauern und Intervalle prüfen und Einträge bearbeiten.",
+            "Von Grund auf privat — kein Konto, keine Werbung, kein Tracking. Deine Daten bleiben auf deinem Gerät.",
+        ],
+    },
+    "es": {
+        "eyebrow": "Un vistazo",
+        "head": "Así se ve.",
+        "alt": [
+            "Cronometra cada contracción: empieza y para con un toque, y sigue presente en el momento.",
+            "Ve el ritmo de un vistazo: contracciones recientes, intervalo y última duración en una vista tranquila.",
+            "Revisa el historial de la sesión: horas de inicio, duraciones, intervalos y edición de entradas.",
+            "Privada por diseño: sin cuenta, sin anuncios, sin seguimiento. Tus datos se quedan en tu dispositivo.",
+        ],
+    },
+}
+
+
+def shots_section(lang, app, route):
+    """Screenshot strip. Falls back to the English image set until a language
+    has its own; drop files in shots/<app>/<lang>/ and they are picked up."""
+    names = SHOTS.get(app)
+    if not names:
+        return ""
+    t = SHOTS_T[lang]
+    imgs = []
+    for i, name in enumerate(names):
+        rel = f"assets/img/shots/{app}/{lang}/{name}.jpg"
+        if not (ROOT / rel).exists():
+            rel = f"assets/img/shots/{app}/en/{name}.jpg"
+        imgs.append(
+            f'<img src="{asset(rel, lang, route)}" alt="{escape(t["alt"][i])}" '
+            f'width="480" height="853" loading="lazy" decoding="async" />'
+        )
+    return (
+        f'<section id="screens"><div class="container">'
+        f'<div class="section-head"><span class="eyebrow">{escape(t["eyebrow"])}</span>'
+        f'<h2>{escape(t["head"])}</h2></div>'
+        f'<div class="shots">{"".join(imgs)}</div></div></section>'
+    )
 
 
 def story_section(a):

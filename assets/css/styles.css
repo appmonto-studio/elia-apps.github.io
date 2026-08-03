@@ -192,6 +192,26 @@ p { margin: 0; }
 .app-card:hover .app-card__cta .arrow { transform: translateX(3px); }
 .arrow { transition: transform .2s ease; }
 
+/* App screenshots ---------------------------------------------------------- */
+.shots {
+  display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x proximity;
+  padding-bottom: 10px; scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--accent) 45%, transparent) transparent;
+}
+.shots img {
+  flex: 0 0 clamp(200px, 23vw, 240px); width: clamp(200px, 23vw, 240px); height: auto;
+  border-radius: 18px; scroll-snap-align: start;
+  box-shadow: var(--shadow-soft);
+}
+.shots::-webkit-scrollbar { height: 6px; }
+.shots::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 999px;
+}
+@media (max-width: 720px) {
+  .shots { gap: 14px; scroll-snap-type: x mandatory; }
+  .shots img { flex-basis: 68vw; width: 68vw; }
+}
+
 /* Feature / principle lists ------------------------------------------------ */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 @media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } }
