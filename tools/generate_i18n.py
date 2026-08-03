@@ -73,7 +73,10 @@ def lang_switch(lang, route, label):
 
 
 def head(lang, route, title, description, icon="svg", image=None, extra=""):
-    icon_link = f'  <link rel="icon" href="{asset("assets/img/favicon.svg", lang, route)}" type="image/svg+xml" />'
+    icon_link = '\n'.join([
+        f'  <link rel="icon" type="image/png" href="{asset("assets/img/favicon-elia.png", lang, route)}" />',
+        f'  <link rel="apple-touch-icon" href="{asset("assets/img/apple-touch-icon-elia.png", lang, route)}" />',
+    ])
     if icon in APP_ICONS:
         icon_link = '\n'.join([
             f'  <link rel="icon" type="image/png" href="{asset(f"assets/img/favicon-{icon}.png", lang, route)}" />',
@@ -119,7 +122,7 @@ def header(lang, route, nav, aria):
     return f"""<header class="site-header">
     <div class="container">
       <a class="brand" href="{href(lang, "", lang, route)}" aria-label="Elia home">
-        <img class="brand__mark" src="{asset("assets/img/favicon.svg", lang, route)}" alt="" />
+        <img class="brand__mark" src="{asset("assets/img/logo-elia.png", lang, route)}" alt="" />
         <span class="brand__name">Elia</span>
       </a>
       <nav class="nav" aria-label="Primary">
@@ -135,7 +138,7 @@ def footer(lang, links, note, route=""):
     return f"""<footer class="site-footer">
     <div class="container">
       <a class="brand" href="{href(lang, "", lang, route)}" aria-label="Elia home">
-        <img class="brand__mark" src="{asset("assets/img/favicon.svg", lang, route)}" alt="" />
+        <img class="brand__mark" src="{asset("assets/img/logo-elia.png", lang, route)}" alt="" />
         <span class="brand__name">Elia</span>
       </a>
       <div class="foot-links">
@@ -1069,7 +1072,7 @@ def not_found(lang):
     body = f"""<!DOCTYPE html>
 <html lang="{lang}">
 {head(lang, "", title, text, extra='  <meta name="robots" content="noindex" />\n')}
-<body><main><section class="hero"><div class="container"><img class="brand__mark" src="{asset("assets/img/favicon.svg", lang, route)}" alt="" style="width:40px;height:40px;border-radius:12px;margin:0 auto 24px;" /><h1 class="hero__wordmark" style="font-size:clamp(40px,9vw,72px);">{escape(title.split(" — ")[0])}</h1><p class="hero__sub lead">{escape(text)}</p><div class="btn-row"><a class="btn btn--primary" href="{href(lang, "", lang, route)}">{escape(btn)}</a></div></div></section></main></body></html>"""
+<body><main><section class="hero"><div class="container"><img class="brand__mark" src="{asset("assets/img/logo-elia.png", lang, route)}" alt="" style="width:44px;height:44px;border-radius:50%;margin:0 auto 24px;" /><h1 class="hero__wordmark" style="font-size:clamp(40px,9vw,72px);">{escape(title.split(" — ")[0])}</h1><p class="hero__sub lead">{escape(text)}</p><div class="btn-row"><a class="btn btn--primary" href="{href(lang, "", lang, route)}">{escape(btn)}</a></div></div></section></main></body></html>"""
     if lang == "en":
         (ROOT / "404.html").write_text(body, encoding="utf-8")
 
