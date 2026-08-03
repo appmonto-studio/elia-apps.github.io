@@ -198,18 +198,21 @@ p { margin: 0; }
   padding-bottom: 10px; scrollbar-width: thin;
   scrollbar-color: color-mix(in srgb, var(--accent) 45%, transparent) transparent;
 }
-.shots img {
-  flex: 0 0 clamp(200px, 23vw, 240px); width: clamp(200px, 23vw, 240px); height: auto;
-  border-radius: 18px; scroll-snap-align: start;
-  box-shadow: var(--shadow-soft);
+.shots a {
+  flex: 0 0 clamp(200px, 23vw, 240px); display: block; border-radius: 18px;
+  scroll-snap-align: start; cursor: zoom-in;
+  box-shadow: var(--shadow-soft); transition: transform .2s ease, box-shadow .2s ease;
 }
+.shots a:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.shots a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.shots img { width: 100%; height: auto; border-radius: inherit; }
 .shots::-webkit-scrollbar { height: 6px; }
 .shots::-webkit-scrollbar-thumb {
   background: color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 999px;
 }
 @media (max-width: 720px) {
   .shots { gap: 14px; scroll-snap-type: x mandatory; }
-  .shots img { flex-basis: 68vw; width: 68vw; }
+  .shots a { flex-basis: 68vw; }
 }
 
 /* Feature / principle lists ------------------------------------------------ */

@@ -970,6 +970,7 @@ SHOTS = {
 SHOTS_T = {
     "en": {
         "eyebrow": "A look inside",
+        "larger": "View larger",
         "head": "What it looks like.",
         "alt": [
             "Track each contraction — start and stop with one tap, then stay focused on the moment.",
@@ -980,6 +981,7 @@ SHOTS_T = {
     },
     "de": {
         "eyebrow": "Ein Blick hinein",
+        "larger": "Größer ansehen",
         "head": "So sieht es aus.",
         "alt": [
             "Jede Wehe erfassen — mit einem Tippen starten und stoppen und im Moment bleiben.",
@@ -990,6 +992,7 @@ SHOTS_T = {
     },
     "es": {
         "eyebrow": "Un vistazo",
+        "larger": "Ver más grande",
         "head": "Así se ve.",
         "alt": [
             "Cronometra cada contracción: empieza y para con un toque, y sigue presente en el momento.",
@@ -1008,14 +1011,20 @@ def shots_section(lang, app, route):
     if not names:
         return ""
     t = SHOTS_T[lang]
+
+    def pick(name):
+        rel = f"assets/img/shots/{app}/{lang}/{name}.jpg"
+        return rel if (ROOT / rel).exists() else f"assets/img/shots/{app}/en/{name}.jpg"
+
     imgs = []
     for i, name in enumerate(names):
-        rel = f"assets/img/shots/{app}/{lang}/{name}.jpg"
-        if not (ROOT / rel).exists():
-            rel = f"assets/img/shots/{app}/en/{name}.jpg"
-        imgs.append(
-            f'<img src="{asset(rel, lang, route)}" alt="{escape(t["alt"][i])}" '
+        img = (
+            f'<img src="{asset(pick(name), lang, route)}" alt="{escape(t["alt"][i])}" '
             f'width="480" height="853" loading="lazy" decoding="async" />'
+        )
+        imgs.append(
+            f'<a href="{asset(pick(name + "-full"), lang, route)}" target="_blank" '
+            f'rel="noopener" title="{escape(t["larger"])}">{img}</a>'
         )
     return (
         f'<section id="screens"><div class="container">'
