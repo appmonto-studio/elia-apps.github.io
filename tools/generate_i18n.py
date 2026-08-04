@@ -165,18 +165,18 @@ T = {'en': {'lang': 'Language',
                           'Why Elia'],
                  'apps_head': ['The apps',
                                'Three apps for three chapters.',
-                               'Each does one thing calmly, and gets out of your way.'],
+                               'Each does one thing well, and gets out of your way.'],
                  'coming': 'Coming soon',
                  'learn': 'Learn more',
                  'contr_card': ['Elia Contractions',
                                 'A calm companion for birth. Time contractions clearly, stay present, and share a '
                                 'simple summary with your care team.'],
                  'feed_card': ['Elia Feeding',
-                               'A calm, private feeding log for the first days with your baby. Tap what just happened '
+                               'A private feeding log for the first days with your baby. Tap what just happened '
                                '— Elia remembers the rest.'],
                  'promise': ['The promise',
                              'The interface should reduce stress, not add to it.',
-                             'Elia is warm, quiet, and trustworthy — like a calm midwife and a supportive partner, not '
+                             'Elia is warm, quiet, and trustworthy — like a steady midwife and a supportive partner, not '
                              'like hospital software. Every Elia app follows the same principles.'],
                  'chips': ['No account',
                            'No ads',
@@ -210,18 +210,18 @@ T = {'en': {'lang': 'Language',
                           'Warum Elia'],
                  'apps_head': ['Die Apps',
                                'Drei Apps für drei Kapitel.',
-                               'Jede tut ruhig eine Sache und tritt dann in den Hintergrund.'],
+                               'Jede tut eine Sache gut und tritt dann in den Hintergrund.'],
                  'coming': 'Demnächst',
                  'learn': 'Mehr erfahren',
                  'contr_card': ['Elia Contractions',
                                 'Ein ruhiger Begleiter für die Geburt. Wehen klar erfassen, präsent bleiben und bei '
                                 'Bedarf eine einfache Zusammenfassung teilen.'],
                  'feed_card': ['Elia Feeding',
-                               'Ein ruhiges, privates Still- und Fütterungsprotokoll für die ersten Tage mit deinem '
+                               'Ein privates Still- und Fütterungsprotokoll für die ersten Tage mit deinem '
                                'Baby. Tippe, was gerade passiert ist — Elia merkt sich den Rest.'],
                  'promise': ['Das Versprechen',
                              'Die Oberfläche soll Stress reduzieren, nicht erhöhen.',
-                             'Elia ist warm, leise und vertrauenswürdig — eher wie eine ruhige Hebamme und ein '
+                             'Elia ist warm, leise und vertrauenswürdig — eher wie eine verlässliche Hebamme und ein '
                              'unterstützender Partner als wie Krankenhaussoftware. Jede Elia-App folgt denselben '
                              'Prinzipien.'],
                  'chips': ['Kein Konto',
@@ -258,18 +258,18 @@ T = {'en': {'lang': 'Language',
                           'Por qué Elia'],
                  'apps_head': ['Las apps',
                                'Tres apps para tres capítulos.',
-                               'Cada una hace una cosa con calma y no se interpone.'],
+                               'Cada una hace una cosa bien y no se interpone.'],
                  'coming': 'Próximamente',
                  'learn': 'Más información',
                  'contr_card': ['Elia Contractions',
                                 'Una compañera tranquila para el parto. Registra las contracciones con claridad, '
                                 'mantente presente y comparte un resumen sencillo con tu equipo de atención.'],
                  'feed_card': ['Elia Feeding',
-                               'Un registro tranquilo y privado de alimentación para los primeros días con tu bebé. Toca lo '
+                               'Un registro privado de alimentación para los primeros días con tu bebé. Toca lo '
                                'que acaba de pasar; Elia recuerda el resto.'],
                  'promise': ['La promesa',
                              'La interfaz debería reducir el estrés, no añadirlo.',
-                             'Elia es cálida, discreta y confiable: más parecida a una presencia tranquila y una pareja '
+                             'Elia es cálida, discreta y confiable: más parecida a una presencia constante y una pareja '
                              'que acompaña que a un software de hospital. Todas las apps de Elia siguen los mismos '
                              'principios.'],
                  'chips': ['Sin cuenta',
@@ -289,7 +289,7 @@ T = {'en': {'lang': 'Language',
                            'La app añadió estrés. Elia es la respuesta a ese momento: la compañera que nos habría '
                            'gustado tener.',
                            'Su bebé nació esa noche. Elia nació el mismo día y creció hasta convertirse en una pequeña '
-                           'familia de apps para los días tranquilos, cansados e importantes que vienen después.']}}}
+                           'familia de apps para los días silenciosos, cansados e importantes que vienen después.']}}}
 
 
 APP = {'en': {'common': {'overview': 'Overview',
@@ -334,7 +334,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                                    'family to leave for the hospital — where they already were, under care.',
                                    'The app added stress. Elia is the answer to that moment.',
                                    'Their baby was born that evening. Elia was born the same day.'],
-                         'principles': ['Calm, private, and yours.',
+                         'principles': ['Private, and yours.',
                                         ['Offline-first',
                                          'Local-only',
                                          'No account',
@@ -348,7 +348,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                     'desc': 'Elia Feeding is a calm, private newborn feeding and care log for the first days with your '
                             'baby. No account. No cloud. No judgement.',
                     'tag': 'Remember just enough.',
-                    'sub': 'A calm, private feeding log for the first days with your baby. No account. No cloud. No '
+                    'sub': 'An unhurried, private feeding log for the first days with your baby. No account. No cloud. No '
                            'judgement. Just the last feed, the next action, and a simple history.',
                     'pull': ['Open the app. Tap the thing that just happened. Elia remembers.',
                              'Most baby trackers help you measure everything. Elia helps you remember just enough.'],
@@ -367,7 +367,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                            'Medical recommendations.',
                            'Sleep, medication, or pumping inventory.',
                            'Ads or billing.'],
-                    'principles': ['Calm, private, and yours.',
+                    'principles': ['Private, and yours.',
                                    'No goals, warnings, or pressure. Elia remembers what you log — nothing more.',
                                    ['No account',
                                     'No ads',
@@ -423,7 +423,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                                    'Krankenhaus fahren — wo die Familie bereits betreut wurde.',
                                    'Die App machte den Moment stressiger. Elia ist die Antwort darauf.',
                                    'Das Baby wurde an diesem Abend geboren. Elia entstand am selben Tag.'],
-                         'principles': ['Ruhig, privat und dein.',
+                         'principles': ['Privat und dein.',
                                         ['Offline-first',
                                          'Nur lokal',
                                          'Kein Konto',
@@ -437,7 +437,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                     'desc': 'Elia Feeding ist ein ruhiges, privates Protokoll für Füttern und Pflege in den ersten '
                             'Tagen mit deinem Baby. Kein Konto. Keine Cloud. Kein Urteil.',
                     'tag': 'Gerade genug merken.',
-                    'sub': 'Ein ruhiges, privates Fütterungsprotokoll für die ersten Tage mit deinem Baby. Kein Konto. '
+                    'sub': 'Ein unaufgeregtes, privates Fütterungsprotokoll für die ersten Tage mit deinem Baby. Kein Konto. '
                            'Keine Cloud. Kein Urteil. Nur die letzte Mahlzeit, die nächste Aktion und eine einfache '
                            'Historie.',
                     'pull': ['App öffnen. Antippen, was gerade passiert ist. Elia merkt es sich.',
@@ -450,7 +450,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                             'Fläschchen-Protokoll mit optionaler Menge.',
                             'Einfaches Windelprotokoll: nass, schmutzig oder beides.',
                             'Startseite mit aktuellem Zustand und dem letzten nützlichen Kontext.',
-                            'Eine ruhige Historie, die du bearbeiten oder löschen kannst.',
+                            'Eine schlichte Historie, die du bearbeiten oder löschen kannst.',
                             'Teilen oder Export als Klartext.'],
                     'no': ['Konten, Cloud oder Synchronisierung zwischen Eltern.',
                            'Wachstumskurven und Analysen.',
@@ -458,7 +458,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                            'Medizinische Empfehlungen.',
                            'Schlaf, Medikamente oder Pumpvorräte.',
                            'Werbung oder Bezahlung.'],
-                    'principles': ['Ruhig, privat und dein.',
+                    'principles': ['Privat und dein.',
                                    'Keine Ziele, Warnungen oder Druck. Elia merkt sich, was du einträgst — mehr nicht.',
                                    ['Kein Konto',
                                     'Keine Werbung',
@@ -515,7 +515,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                                    'familia que saliera hacia el hospital, donde ya estaban bajo cuidado.',
                                    'La app añadió estrés. Elia es la respuesta a ese momento.',
                                    'Su bebé nació esa noche. Elia nació el mismo día.'],
-                         'principles': ['Tranquila, privada y tuya.',
+                         'principles': ['Privada y tuya.',
                                         ['Offline-first',
                                          'Solo local',
                                          'Sin cuenta',
@@ -529,7 +529,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                     'desc': 'Elia Feeding es un registro tranquilo y privado de alimentación y cuidados del recién nacido '
                             'para los primeros días con tu bebé. Sin cuenta. Sin sincronización en la nube. Sin juicio.',
                     'tag': 'Recordar justo lo necesario.',
-                    'sub': 'Un registro tranquilo y privado de alimentación para los primeros días con tu bebé. Sin cuenta. '
+                    'sub': 'Un registro pausado y privado de alimentación para los primeros días con tu bebé. Sin cuenta. '
                            'Sin sincronización en la nube. Sin juicio. Solo la última alimentación, la siguiente acción y un historial sencillo.',
                     'pull': ['Abre la app. Toca lo que acaba de pasar. Elia lo recuerda.',
                              'La mayoría de apps para bebés ayudan a medirlo todo. Elia te ayuda a recordar justo lo '
@@ -541,7 +541,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                             'Registro de biberón, con cantidad opcional.',
                             'Registro simple de pañales: pis, caca o ambos.',
                             'Pantalla principal con el estado actual y el último contexto útil.',
-                            'Un historial tranquilo que puedes editar o borrar.',
+                            'Un historial discreto que puedes editar o borrar.',
                             'Compartir o exportar como texto plano.'],
                     'no': ['Cuentas o sincronización en la nube entre cuidadores.',
                            'Gráficas de crecimiento y analíticas.',
@@ -549,7 +549,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                            'Recomendaciones médicas.',
                            'Sueño, medicación o inventario de extracción.',
                            'Anuncios o pagos.'],
-                    'principles': ['Tranquila, privada y tuya.',
+                    'principles': ['Privada y tuya.',
                                    'Sin objetivos, alertas ni presión. Elia recuerda lo que registras, nada más.',
                                    ['Sin cuenta',
                                     'Sin anuncios',
@@ -688,7 +688,7 @@ MOMENTS = {
                 'desc': 'Elia Moments is a calm, private family archive for the small firsts and meaningful memories '
                         'of childhood. No account. No cloud. Local-first.',
                 'tag': 'Remember the little firsts.',
-                'sub': 'A calm, private family archive for the small firsts and meaningful memories that otherwise '
+                'sub': 'A private family archive for the small firsts and meaningful memories that otherwise '
                        'scatter across notes, chats, and photo libraries.',
                 'pull': ['Capture it in seconds today. Enjoy it with your family years later.',
                          'The result is a child’s story, not a dashboard.'],
@@ -707,7 +707,7 @@ MOMENTS = {
                        'A social network or public child profile.',
                        'A required cloud account.',
                        'Ads or a subscription gate for the core archive.'],
-                'principles': ['Calm, private, and yours.',
+                'principles': ['Private, and yours.',
                                ['No account', 'No ads', 'No analytics', 'Local-first', 'Works offline',
                                 'Portable backups'],
                                'Elia Moments never infers delays, diagnoses, or developmental judgement from what you '
@@ -740,7 +740,7 @@ MOMENTS = {
                 'desc': 'Elia Moments ist ein ruhiges, privates Familienarchiv für die kleinen ersten Male und '
                         'bedeutsamen Erinnerungen der Kindheit. Kein Konto. Keine Cloud. Local-first.',
                 'tag': 'Die kleinen ersten Male festhalten.',
-                'sub': 'Ein ruhiges, privates Familienarchiv für die kleinen ersten Male und bedeutsamen '
+                'sub': 'Ein privates Familienarchiv für die kleinen ersten Male und bedeutsamen '
                        'Erinnerungen, die sonst zwischen Notizen, Chats und Fotomediatheken verloren gehen.',
                 'pull': ['Heute in Sekunden festhalten. Jahre später gemeinsam genießen.',
                          'Das Ergebnis ist die Geschichte eines Kindes, kein Dashboard.'],
@@ -759,7 +759,7 @@ MOMENTS = {
                        'Ein soziales Netzwerk oder öffentliches Kinderprofil.',
                        'Ein verpflichtendes Cloud-Konto.',
                        'Werbung oder eine Abo-Schranke für das Kernarchiv.'],
-                'principles': ['Ruhig, privat und deins.',
+                'principles': ['Privat und deins.',
                                ['Kein Konto', 'Keine Werbung', 'Keine Analyse', 'Local-first', 'Funktioniert offline',
                                 'Portable Backups'],
                                'Elia Moments leitet aus deinen Einträgen niemals Verzögerungen, Diagnosen oder '
@@ -796,7 +796,7 @@ MOMENTS = {
                 'desc': 'Elia Moments es un archivo familiar tranquilo y privado para las pequeñas primeras veces y '
                         'los recuerdos importantes de la infancia. Sin cuenta. Sin nube. Local-first.',
                 'tag': 'Recuerda las pequeñas primeras veces.',
-                'sub': 'Un archivo familiar tranquilo y privado para las pequeñas primeras veces y los recuerdos '
+                'sub': 'Un archivo familiar privado para las pequeñas primeras veces y los recuerdos '
                        'que, si no, se dispersan entre notas, chats y fototecas.',
                 'pull': ['Guárdalo en segundos hoy. Disfrútalo en familia años después.',
                          'El resultado es la historia de un niño, no un panel de métricas.'],
@@ -815,7 +815,7 @@ MOMENTS = {
                        'Una red social o un perfil público del niño.',
                        'Una cuenta en la nube obligatoria.',
                        'Anuncios o un muro de suscripción para el archivo principal.'],
-                'principles': ['Tranquila, privada y tuya.',
+                'principles': ['Privada y tuya.',
                                ['Sin cuenta', 'Sin anuncios', 'Sin analíticas', 'Local-first', 'Funciona sin conexión',
                                 'Copias portables'],
                                'Elia Moments nunca deduce retrasos, diagnósticos ni juicios sobre el desarrollo a '
