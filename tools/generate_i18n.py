@@ -14,6 +14,14 @@ APP_ICONS = ["contractions", "feeding", "moments"]
 APP_NAMES = {"contractions": "Contractions", "feeding": "Feeding", "moments": "Moments"}
 CARD_ACCENTS = {"contractions": "rose", "feeding": "honey", "moments": "sage"}
 CARD_KEYS = {"contractions": "contr_card", "feeding": "feed_card", "moments": "moments_card"}
+
+# Published store listings. An app absent from this map is still "Coming soon".
+# Only add a URL after confirming the listing is publicly reachable.
+STORES = {
+    "contractions": {
+        "google_play": "https://play.google.com/store/apps/details?id=app.elia.contractions",
+    },
+}
 ACCENTS = {
     "feeding": ("#C9976A", "#A9784C", "#F3E3D1", "#352A20"),
     "moments": ("#687F59", "#53663F", "#DCE5D5", "#2B3526"),
@@ -167,6 +175,8 @@ T = {'en': {'lang': 'Language',
                                'Three apps for three chapters.',
                                'Each does one thing well, and gets out of your way.'],
                  'coming': 'Coming soon',
+                 'on_play': 'On Google Play',
+                 'get_play': 'Get it on Google Play',
                  'learn': 'Learn more',
                  'contr_card': ['Elia Contractions',
                                 'A calm companion for birth. Time contractions clearly, stay present, and share a '
@@ -212,6 +222,8 @@ T = {'en': {'lang': 'Language',
                                'Drei Apps für drei Kapitel.',
                                'Jede tut eine Sache gut und tritt dann in den Hintergrund.'],
                  'coming': 'Demnächst',
+                 'on_play': 'Bei Google Play',
+                 'get_play': 'Bei Google Play herunterladen',
                  'learn': 'Mehr erfahren',
                  'contr_card': ['Elia Contractions',
                                 'Ein ruhiger Begleiter für die Geburt. Wehen klar erfassen, präsent bleiben und bei '
@@ -260,6 +272,8 @@ T = {'en': {'lang': 'Language',
                                'Tres apps para tres capítulos.',
                                'Cada una hace una cosa bien y no se interpone.'],
                  'coming': 'Próximamente',
+                 'on_play': 'En Google Play',
+                 'get_play': 'Consíguelo en Google Play',
                  'learn': 'Más información',
                  'contr_card': ['Elia Contractions',
                                 'Una compañera tranquila para el parto. Registra las contracciones con claridad, '
@@ -863,13 +877,30 @@ def chips(items):
     return '<div class="chips">' + "".join(f'<span class="chip">{escape(x)}</span>' for x in items) + "</div>"
 
 
+def status_badge(lang, app):
+    """Card badge. The card is itself a link, so this must never be one."""
+    t = T[lang]["home"]
+    if "google_play" in STORES.get(app, {}):
+        return f'<span class="tag tag--live"><span class="tag__dot"></span>{escape(t["on_play"])}</span>'
+    return f'<span class="tag"><span class="tag__dot"></span>{escape(t["coming"])}</span>'
+
+
+def store_cta(lang, app):
+    """Hero call to action: a real link once the app is published."""
+    t = T[lang]["home"]
+    url = STORES.get(app, {}).get("google_play")
+    if url:
+        return f'<a class="btn btn--primary" href="{url}" target="_blank" rel="noopener">{escape(t["get_play"])}</a>'
+    return f'<span class="tag"><span class="tag__dot"></span>{escape(t["coming"])}</span>'
+
+
 def app_cards(lang):
     t = T[lang]["home"]
     cards = []
     for app in APPS:
         card = t[CARD_KEYS[app]]
         cards.append(f"""          <a class="app-card" href="{href(lang, f"apps/{app}")}" data-accent="{CARD_ACCENTS[app]}">
-            <div class="app-card__top"><span class="app-icon is-image" aria-hidden="true"><img src="{asset(f"assets/img/icon-{app}.png", lang, "")}" alt="" width="256" height="256" loading="lazy" /></span><div><div class="app-card__title">{escape(card[0])}</div><span class="tag"><span class="tag__dot"></span>{escape(t["coming"])}</span></div></div>
+            <div class="app-card__top"><span class="app-icon is-image" aria-hidden="true"><img src="{asset(f"assets/img/icon-{app}.png", lang, "")}" alt="" width="256" height="256" loading="lazy" /></span><div><div class="app-card__title">{escape(card[0])}</div>{status_badge(lang, app)}</div></div>
             <p class="app-card__one">{escape(card[1])}</p><div class="app-card__foot"><span class="app-card__cta">{escape(t["learn"])} <span class="arrow">→</span></span></div>
           </a>""")
     return "\n".join(cards)
@@ -949,7 +980,7 @@ def app_page(lang, app):
 <body>
   {header(lang, route, [(c["overview"], "#what"), (c["support"], f"{route}/support"), (c["privacy"], f"{route}/privacy"), (c["all"], "")], T[lang]["lang"])}
   <main>
-    <section class="hero app-hero"><div class="container"><a class="backlink" href="{href(lang, "", lang, route)}">{escape(c["back"])}</a>{icon_html}<h1>Elia {app.capitalize()}</h1><p class="hero__tagline">{escape(a["tag"])}</p><p class="hero__sub lead">{escape(a["sub"])}</p><div class="btn-row"><span class="tag"><span class="tag__dot"></span>{escape(T[lang]["home"]["coming"])}</span></div></div></section>
+    <section class="hero app-hero"><div class="container"><a class="backlink" href="{href(lang, "", lang, route)}">{escape(c["back"])}</a>{icon_html}<h1>Elia {app.capitalize()}</h1><p class="hero__tagline">{escape(a["tag"])}</p><p class="hero__sub lead">{escape(a["sub"])}</p><div class="btn-row">{store_cta(lang, app)}</div></div></section>
 {pre}
 {shots_section(lang, app, route)}
     <section id="what"><div class="container"><div class="section-head"><span class="eyebrow">{escape(a["head"][0])}</span><h2>{escape(a["head"][1])}</h2></div><div class="grid-2"><div class="panel"><h3>{escape(a["left"])}</h3>{ul(a["yes"], "checklist")}</div><div class="panel"><h3>{escape(a["right"])}</h3>{ul(a["no"], "notlist")}</div></div></div></section>

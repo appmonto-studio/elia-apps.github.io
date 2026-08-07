@@ -150,6 +150,12 @@ p { margin: 0; }
 @media (prefers-color-scheme: dark) { .tag { color: var(--accent); } }
 .tag__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 
+/* Published, as opposed to the quieter "coming soon" state.
+   Ink-on-background inverts with the theme and clears WCAG AA at this size;
+   white on --accent only reaches 3.1:1. */
+.tag--live { background: var(--ink); color: var(--bg); }
+.tag--live .tag__dot { background: var(--accent); }
+
 /* App grid (landing) ------------------------------------------------------- */
 .section-head { max-width: 620px; margin-bottom: 40px; }
 .section-head .eyebrow { display: block; margin-bottom: 12px; }
