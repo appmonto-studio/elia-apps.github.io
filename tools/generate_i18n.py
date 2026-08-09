@@ -1,5 +1,11 @@
+from datetime import date
 from pathlib import Path
 from html import escape
+
+# Every page is rendered from this one file, so when it changes they all change.
+# A single generation-day stamp is therefore honest, and never goes stale the way
+# a hardcoded date does.
+LASTMOD = date.today().isoformat()
 from urllib.parse import urlparse
 
 
@@ -395,7 +401,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                                    "advice and does not define what is normal. For anything about your baby's health, "
                                    'talk to your pediatrician or midwife.']}},
  'de': {'common': {'overview': 'Überblick',
-                   'support': 'Support',
+                   'support': 'Hilfe',
                    'privacy': 'Datenschutz',
                    'all': 'Alle Apps',
                    'back': '← Alle Elia-Apps',
@@ -1186,7 +1192,7 @@ def sitemap():
         for lang in LANGS:
             urls.append(f"""  <url>
     <loc>{url(lang, route)}</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>{LASTMOD}</lastmod>
     <priority>{"1.0" if route == "" else "0.8" if route.count("/") == 1 else "0.3"}</priority>
   </url>""")
     (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(urls) + "\n</urlset>\n", encoding="utf-8")
