@@ -63,6 +63,12 @@ A claim on this site that an app cannot honour is a defect, not marketing licenc
 If a page needs to say something the boundary forbids, raise it rather than
 softening the wording — the boundary changes in the Foundation, never here.
 
+**The summary above is a public-safe approximation, deliberately.** The full rules
+are private and are not reproduced here. That makes it a second copy that can go
+stale: when the Foundation changes its voice or medical-boundary rules, this
+section must be reviewed for drift and corrected in the same piece of work. Review
+it by hand — there is no automated check, and none is planned for now.
+
 ## Conventions
 
 - Internal links are root-relative and end in a slash (`/apps/feeding/`), never
