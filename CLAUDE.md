@@ -40,6 +40,29 @@ addresses, workspace names, or other internal topology into it.
 
 See [`docs/elia-ecosystem.md`](docs/elia-ecosystem.md) for the full boundary.
 
+## Voice and medical boundary
+
+Marketing copy is still Elia copy. The **private Elia Foundation repository** is
+canonical for how Elia speaks and for what any Elia surface may say about health.
+This site follows it; it does not set it.
+
+The rules that bite hardest here, where enthusiasm is the occupational hazard:
+
+- **No medical claims of any kind.** Never state or imply that an app assesses,
+  monitors, detects, or reassures about health, labor progress, or a baby's
+  wellbeing. No "normal", "healthy", "safe", "abnormal", or "warning" applied to a
+  person. The apps record what a parent enters; the site must not promise more.
+- **No pressure, no praise, no urgency.** No streaks, targets, countdowns,
+  scarcity, "don't miss", or achievement framing.
+- **Say less.** Calm, warm, plain. Never excited about someone's hardest hours.
+- **Describe, do not evaluate.** The apps restate what a parent recorded; they do
+  not analyse it. Copy implying insight, trends, or intelligence oversells the
+  product and crosses the medical boundary at the same time.
+
+A claim on this site that an app cannot honour is a defect, not marketing licence.
+If a page needs to say something the boundary forbids, raise it rather than
+softening the wording — the boundary changes in the Foundation, never here.
+
 ## Conventions
 
 - Internal links are root-relative and end in a slash (`/apps/feeding/`), never

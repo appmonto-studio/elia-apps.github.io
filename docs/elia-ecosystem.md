@@ -39,11 +39,18 @@ There is **no current runtime dependency on Elia Platform.**
 | Elia Feeding | Private application repository |
 | Elia Moments | Private application repository |
 | Elia Platform | Private shared platform repository |
+| Elia Foundation | Private shared product-philosophy repository |
 
 Application implementation lives in the private application repositories. Shared
 account, family, Premium, synchronization, cloud, and security architecture
 lives in the private Elia Platform repository. Neither is described in detail
 here, and neither is a dependency of this site.
+
+Shared product philosophy — product principles, voice and copy rules, medical
+boundaries, trust and data philosophy — lives in the private Elia Foundation
+repository. That one **does** govern this site: the copy published here follows
+the same voice and the same medical boundary as the applications. See the *Voice
+and medical boundary* section of [`CLAUDE.md`](../CLAUDE.md).
 
 ## Applications represented on the site
 
