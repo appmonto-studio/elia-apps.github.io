@@ -33,6 +33,11 @@ There is **no current runtime dependency on Elia Platform.**
 
 ## Where the rest of Elia lives
 
+Elia is one of several brands published by **Appmonto Studio**, an independent
+app studio in Austria. The studio site at <https://appmonto.com> carries the
+imprint that covers every brand, which is why this site links to it rather than
+duplicating those details.
+
 | Part of the ecosystem | Where it lives |
 | --- | --- |
 | Elia Contractions | Private application repository |

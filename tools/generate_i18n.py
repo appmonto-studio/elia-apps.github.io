@@ -147,6 +147,30 @@ def header(lang, route, nav, aria):
   </header>"""
 
 
+# Elia is a brand of Appmonto Studio. The studio site carries the Austrian
+# imprint for every brand, so link to it rather than duplicating the text here.
+STUDIO_NAME = "Appmonto Studio"
+STUDIO_URL = "https://appmonto.com"
+STUDIO_IMPRINT_URL = "https://appmonto.com/legal/"
+
+
+def studio_line(lang):
+    t = STUDIO[lang]
+    brand = f'<a href="{STUDIO_URL}" rel="noopener">{STUDIO_NAME}</a>'
+    imprint = f'<a href="{STUDIO_IMPRINT_URL}" rel="noopener">{escape(t["imprint"])}</a>'
+    return f'{t["brand_of"].format(studio=brand)} · {imprint}'
+
+
+STUDIO = {
+    "en": {"brand_of": "An {studio} brand", "imprint": "Imprint",
+           "operator": f"Elia is a brand of {STUDIO_NAME}, Austria."},
+    "de": {"brand_of": "Eine Marke von {studio}", "imprint": "Impressum",
+           "operator": f"Elia ist eine Marke von {STUDIO_NAME}, Österreich."},
+    "es": {"brand_of": "Una marca de {studio}", "imprint": "Aviso legal",
+           "operator": f"Elia es una marca de {STUDIO_NAME}, Austria."},
+}
+
+
 def footer(lang, links, note, route=""):
     links_html = "\n        ".join(f'<a href="{href(lang, link, lang, route)}">{escape(text)}</a>' if not link.startswith("mailto:") and not link.startswith("#") else f'<a href="{link}">{escape(text)}</a>' for text, link in links)
     return f"""<footer class="site-footer">
@@ -158,7 +182,7 @@ def footer(lang, links, note, route=""):
       <div class="foot-links">
         {links_html}
       </div>
-      <small>{escape(note)} © <span id="year">2026</span> Elia.</small>
+      <small>{escape(note)} © <span id="year">2026</span> Elia. {studio_line(lang)}</small>
     </div>
   </footer>
 
@@ -1119,7 +1143,7 @@ def privacy_page(lang, app):
 {head(lang, route, title, desc, "svg", None, extra)}
 <body>
   {header(lang, route, [(app.capitalize(), f"apps/{app}"), (c["support"], f"apps/{app}/support"), (c["promise"], "home#philosophy")], T[lang]["lang"])}
-  <main><section class="hero doc-hero"><div class="container"><a class="backlink" href="{href(lang, f"apps/{app}", lang, route)}">← {app_name}</a><h1>{escape(c["privacy"])}</h1><p class="updated">{app_name} · {escape(text["updated"])}</p></div></section><section><div class="container prose"><p>{escape(text["intro"])}</p>{sections}<h2>{escape(text["contact"])}</h2><p>{escape(text["question"])} <a href="mailto:{app}@getelia.app">{app}@getelia.app</a>.</p><div class="callout">{escape(text["callout"])}</div></div></section></main>
+  <main><section class="hero doc-hero"><div class="container"><a class="backlink" href="{href(lang, f"apps/{app}", lang, route)}">← {app_name}</a><h1>{escape(c["privacy"])}</h1><p class="updated">{app_name} · {escape(text["updated"])}</p></div></section><section><div class="container prose"><p>{escape(text["intro"])}</p>{sections}<h2>{escape(text["contact"])}</h2><p>{escape(text["question"])} <a href="mailto:{app}@getelia.app">{app}@getelia.app</a>.</p><p class="muted">{escape(STUDIO[lang]["operator"])} <a href="{STUDIO_IMPRINT_URL}" rel="noopener">{escape(STUDIO[lang]["imprint"])}</a>.</p><div class="callout">{escape(text["callout"])}</div></div></section></main>
   {footer(lang, [(c["overview"], f"apps/{app}"), (c["support"], f"apps/{app}/support"), (c["all"], "")], T[lang]["note"], route)}
 </body>
 </html>

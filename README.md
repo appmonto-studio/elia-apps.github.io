@@ -4,7 +4,8 @@ The **public marketing and application-information site** for Elia — a small
 family of calm, private, offline-first apps for birth, the early days with your
 baby, and the childhood years that follow.
 
-Live at **https://getelia.app** (custom domain; also served at https://elia-apps.github.io)
+Live at **https://getelia.app** — a brand of [Appmonto Studio](https://appmonto.com),
+published through GitHub Pages.
 
 ## Role in the Elia ecosystem
 
