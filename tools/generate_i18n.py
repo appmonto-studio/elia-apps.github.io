@@ -27,6 +27,9 @@ STORES = {
     "contractions": {
         "google_play": "https://play.google.com/store/apps/details?id=app.elia.contractions",
     },
+    "feeding": {
+        "google_play": "https://play.google.com/store/apps/details?id=app.elia.feeding",
+    },
 }
 ACCENTS = {
     "feeding": ("#C9976A", "#A9784C", "#F3E3D1", "#352A20"),
