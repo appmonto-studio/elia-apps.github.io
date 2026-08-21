@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('elia-theme')==='dark'?'dark':'light'}catch(_){document.documentElement.dataset.theme='light'}</script>
   <title>Soporte — Elia Moments</title>
   <meta name="description" content="Ayuda y respuestas para Elia Moments, una app tranquila y privada. Preguntas frecuentes y contacto." />
-  <meta name="theme-color" content="#FBF9F8" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#271F25" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#FBF9F8" />
   <link rel="icon" type="image/png" href="../../../../assets/img/favicon-elia.png" />
   <link rel="apple-touch-icon" href="../../../../assets/img/apple-touch-icon-elia.png" />
   <link rel="stylesheet" href="../../../../assets/css/styles.css" />
@@ -25,7 +25,7 @@
   <meta property="og:locale:alternate" content="de_DE" />
   <style>
     body { --accent: #687F59; --accent-dark: #53663F; --accent-light: #DCE5D5; }
-    @media (prefers-color-scheme: dark) { body { --accent-light: #2B3526; } }
+    [data-theme="dark"] body { --accent-light: #2B3526; }
   </style>
 </head>
 <body>
@@ -40,7 +40,10 @@
         <a href="/es/apps/moments/privacy/">Privacidad</a>
         <a href="/es/#philosophy">La promesa</a>
       </nav>
-      <nav class="lang-switch" aria-label="Idioma"><a href="/apps/moments/support/" hreflang="en" lang="en">EN</a><a href="/de/apps/moments/support/" hreflang="de" lang="de">DE</a><a href="/es/apps/moments/support/" aria-current="true" hreflang="es" lang="es">ES</a></nav>
+      <div class="header-tools">
+        <nav class="lang-switch" aria-label="Idioma"><a href="/apps/moments/support/" hreflang="en" lang="en">EN</a><a href="/de/apps/moments/support/" hreflang="de" lang="de">DE</a><a href="/es/apps/moments/support/" aria-current="true" hreflang="es" lang="es">ES</a></nav>
+        <button class="theme-toggle" type="button" data-theme-toggle data-label-dark="Usar tema oscuro" data-label-light="Usar tema claro" aria-label="Usar tema oscuro" aria-pressed="false"><svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg><svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.1A8.5 8.5 0 0 1 8.9 4a8.5 8.5 0 1 0 11.1 11.1Z"/></svg></button>
+      </div>
     </div>
   </header>
   <main><section class="hero doc-hero"><div class="container"><a class="backlink" href="/es/apps/moments/">← Elia Moments</a><h1>Soporte</h1><p class="updated">Lo mantenemos simple. Estas son las preguntas más frecuentes.</p></div></section><section><div class="container"><div class="faq"><details open><summary>¿Mis datos son privados?</summary><p>Sí. Elia Moments no tiene cuenta ni sube nada de forma oculta. Tus momentos, fotos y ajustes se quedan en el almacenamiento privado de la app en tu dispositivo. Consulta la <a href="/es/apps/moments/privacy/">política de privacidad</a> para más detalles.</p></details><details><summary>¿Funciona sin conexión?</summary><p>Sí. Guardar, explorar, buscar, crear copias y restaurar funcionan sin red. Las sugerencias de lugar son el único extra en línea y tienen alternativa manual.</p></details><details><summary>¿Me dice si mi hijo va bien para su edad?</summary><p>No. Elia Moments no es una lista de hitos y nunca juzga el desarrollo. Un primer paso y la primera vez que prueba sushi pueden ser igual de valiosos: tu familia decide qué importa.</p></details><details><summary>¿Qué pasa con las fotos que añado?</summary><p>Las fotos que eliges se copian al almacenamiento privado de la app, así que borrar el original de la galería no rompe el momento. La app usa el selector de fotos del sistema y nunca pide acceso a toda la galería.</p></details><details><summary>¿Cómo llevo todo a un teléfono nuevo?</summary><p>Crea un archivo de copia de seguridad completo en Ajustes y restáuralo en el nuevo dispositivo. Contiene perfiles, momentos, ajustes, lugares y archivos.</p></details><details><summary>¿Pierdo todo si desinstalo la app?</summary><p>Desinstalar la app o borrar su almacenamiento elimina los datos locales, y la copia automática en la nube está desactivada a propósito. Crea una copia antes de desinstalar, restablecer o cambiar de dispositivo.</p></details><details><summary>¿Hay anuncios o suscripciones?</summary><p>No hay anuncios ni muro de suscripción para el archivo principal.</p></details></div><div class="prose" style="margin-top:40px;"><h2>¿Necesitas ayuda?</h2><p>Escríbenos a <a href="mailto:moments@getelia.app?subject=Elia%20Moments%20support">moments@getelia.app</a>. Leemos todos los mensajes.</p></div></div></section></main>
@@ -59,6 +62,6 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../../../../assets/js/site.js" defer></script>
 </body>
 </html>

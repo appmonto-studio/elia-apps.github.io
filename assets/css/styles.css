@@ -4,7 +4,8 @@
    Palette and mood sourced from the Elia brand & design docs.
    ========================================================================== */
 
-:root {
+:root,
+:root[data-theme="light"] {
   /* Brand */
   --rose: #C77C8A;
   --rose-dark: #9F5F6C;
@@ -38,8 +39,7 @@
   --maxw: 1080px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+:root[data-theme="dark"] {
     --bg: #271F25;
     --bg-tint: #2E242B;
     --surface: #31272E;
@@ -50,7 +50,6 @@
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 40px rgba(0, 0, 0, 0.35);
     --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.25), 0 6px 20px rgba(0, 0, 0, 0.3);
     --accent-light: #402E35;
-  }
 }
 
 /* Reset -------------------------------------------------------------------- */
@@ -83,7 +82,7 @@ section { padding-block: clamp(48px, 8vw, 96px); }
   font-weight: 600;
   color: var(--accent-dark);
 }
-@media (prefers-color-scheme: dark) { .eyebrow { color: var(--accent); } }
+[data-theme="dark"] .eyebrow { color: var(--accent); }
 
 h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.12; letter-spacing: -0.01em; margin: 0; }
 h2 { font-size: clamp(28px, 4vw, 40px); }
@@ -92,12 +91,11 @@ p { margin: 0; }
 .lead { font-size: clamp(18px, 2.2vw, 21px); color: var(--soft-ink); }
 
 /* Language switcher --------------------------------------------------------- */
-.lang-switch { display: inline-flex; align-items: center; gap: 4px; margin-left: 18px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: color-mix(in srgb, var(--surface) 76%, transparent); }
+.lang-switch { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: color-mix(in srgb, var(--surface) 76%, transparent); }
 .lang-switch a { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; min-height: 28px; padding: 4px 9px; border-radius: 999px; color: var(--soft-ink); text-decoration: none; font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; transition: background .2s, color .2s; }
 .lang-switch a:hover { color: var(--accent-dark); }
 .lang-switch a[aria-current="true"] { background: var(--surface); color: var(--accent-dark); box-shadow: var(--shadow-soft); }
-@media (prefers-color-scheme: dark) { .lang-switch a:hover, .lang-switch a[aria-current="true"] { color: var(--accent); } }
-@media (max-width: 720px) { .site-header .container { gap: 12px; } .lang-switch { margin-left: auto; } }
+[data-theme="dark"] .lang-switch a:hover, [data-theme="dark"] .lang-switch a[aria-current="true"] { color: var(--accent); }
 
 /* Header ------------------------------------------------------------------- */
 .site-header {
@@ -106,14 +104,28 @@ p { margin: 0; }
   background: color-mix(in srgb, var(--bg) 82%, transparent);
   border-bottom: 1px solid var(--line);
 }
-.site-header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.site-header .container { display: flex; align-items: center; gap: 24px; min-height: 64px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; }
 .brand__mark { width: 28px; height: 28px; border-radius: 50%; }
 .brand__name { font-family: var(--font-display); font-size: 21px; letter-spacing: 0.01em; }
-.nav { display: flex; gap: 26px; }
+.nav { display: flex; gap: 26px; margin-left: auto; }
 .nav a { text-decoration: none; color: var(--soft-ink); font-size: 15px; font-weight: 500; transition: color .2s; }
 .nav a:hover { color: var(--ink); }
-@media (max-width: 560px) { .nav { display: none; } }
+.header-tools { display: flex; align-items: center; gap: 8px; }
+.theme-toggle { width: 36px; height: 36px; padding: 0; border: 1px solid var(--line); border-radius: 50%; display: grid; place-items: center; cursor: pointer; color: var(--soft-ink); background: color-mix(in srgb, var(--surface) 76%, transparent); }
+.theme-toggle:hover { color: var(--ink); border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); }
+.theme-toggle svg { width: 17px; height: 17px; }
+.theme-toggle__moon { display: none; }
+[data-theme="dark"] .theme-toggle__sun { display: none; }
+[data-theme="dark"] .theme-toggle__moon { display: block; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 760px) {
+  .site-header .container { flex-wrap: wrap; gap: 10px 14px; padding-block: 10px; }
+  .header-tools { margin-left: auto; }
+  .nav { order: 3; width: 100%; margin: 0; gap: 20px; overflow-x: auto; }
+  .nav a { white-space: nowrap; font-size: 14px; }
+}
+@media (max-width: 520px) { .container { padding-inline: 18px; } .lang-switch a { min-width: 30px; padding-inline: 6px; } }
 
 /* Hero --------------------------------------------------------------------- */
 .hero { position: relative; overflow: hidden; text-align: center; padding-block: clamp(64px, 12vw, 128px); }
@@ -137,7 +149,7 @@ p { margin: 0; }
 .btn--primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
 .btn--ghost { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn--ghost:hover { border-color: var(--accent); color: var(--accent-dark); }
-@media (prefers-color-scheme: dark) { .btn--ghost:hover { color: var(--accent); } }
+[data-theme="dark"] .btn--ghost:hover { color: var(--accent); }
 .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
 
 /* Tag / badge -------------------------------------------------------------- */
@@ -147,7 +159,7 @@ p { margin: 0; }
   padding: 6px 12px; border-radius: 999px;
   background: var(--accent-light); color: var(--accent-dark);
 }
-@media (prefers-color-scheme: dark) { .tag { color: var(--accent); } }
+[data-theme="dark"] .tag { color: var(--accent); }
 .tag__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 
 /* Published, as opposed to the quieter "coming soon" state.
@@ -175,10 +187,8 @@ p { margin: 0; }
 .app-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
 .app-card[data-accent="honey"] { --accent: #C9976A; --accent-dark: #A9784C; --accent-light: #F3E3D1; }
 .app-card[data-accent="sage"] { --accent: #687F59; --accent-dark: #53663F; --accent-light: #DCE5D5; }
-@media (prefers-color-scheme: dark) {
-  .app-card[data-accent="honey"] { --accent-light: #352A20; }
-  .app-card[data-accent="sage"] { --accent-light: #2B3526; }
-}
+[data-theme="dark"] .app-card[data-accent="honey"] { --accent-light: #352A20; }
+[data-theme="dark"] .app-card[data-accent="sage"] { --accent-light: #2B3526; }
 
 .app-card__top { display: flex; align-items: center; gap: 16px; }
 .app-icon {
@@ -194,7 +204,7 @@ p { margin: 0; }
 .app-card__one { color: var(--soft-ink); }
 .app-card__foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; }
 .app-card__cta { font-weight: 600; font-size: 15px; color: var(--accent-dark); display: inline-flex; align-items: center; gap: 6px; }
-@media (prefers-color-scheme: dark) { .app-card__cta { color: var(--accent); } }
+[data-theme="dark"] .app-card__cta { color: var(--accent); }
 .app-card:hover .app-card__cta .arrow { transform: translateX(3px); }
 .arrow { transition: transform .2s ease; }
 
@@ -309,7 +319,7 @@ p { margin: 0; }
     center / 13px no-repeat;
 }
 .prose a { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
-@media (prefers-color-scheme: dark) { .prose a { color: var(--accent); } }
+[data-theme="dark"] .prose a { color: var(--accent); }
 .prose .callout { margin-top: 24px; }
 
 /* FAQ ---------------------------------------------------------------------- */

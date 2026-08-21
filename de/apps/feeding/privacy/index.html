@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('elia-theme')==='dark'?'dark':'light'}catch(_){document.documentElement.dataset.theme='light'}</script>
   <title>Datenschutz — Elia Feeding</title>
   <meta name="description" content="Datenschutzerklärung für Elia Feeding. Kein Konto, kein Backend, kein Tracking — deine Daten bleiben auf deinem Gerät." />
-  <meta name="theme-color" content="#FBF9F8" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#271F25" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#FBF9F8" />
   <link rel="icon" type="image/png" href="../../../../assets/img/favicon-elia.png" />
   <link rel="apple-touch-icon" href="../../../../assets/img/apple-touch-icon-elia.png" />
   <link rel="stylesheet" href="../../../../assets/css/styles.css" />
@@ -25,7 +25,7 @@
   <meta property="og:locale:alternate" content="es_ES" />
   <style>
     body { --accent: #C9976A; --accent-dark: #A9784C; --accent-light: #F3E3D1; }
-    @media (prefers-color-scheme: dark) { body { --accent-light: #352A20; } }
+    [data-theme="dark"] body { --accent-light: #352A20; }
   </style>
 </head>
 <body>
@@ -40,7 +40,10 @@
         <a href="/de/apps/feeding/support/">Hilfe</a>
         <a href="/de/#philosophy">Versprechen</a>
       </nav>
-      <nav class="lang-switch" aria-label="Sprache"><a href="/apps/feeding/privacy/" hreflang="en" lang="en">EN</a><a href="/de/apps/feeding/privacy/" aria-current="true" hreflang="de" lang="de">DE</a><a href="/es/apps/feeding/privacy/" hreflang="es" lang="es">ES</a></nav>
+      <div class="header-tools">
+        <nav class="lang-switch" aria-label="Sprache"><a href="/apps/feeding/privacy/" hreflang="en" lang="en">EN</a><a href="/de/apps/feeding/privacy/" aria-current="true" hreflang="de" lang="de">DE</a><a href="/es/apps/feeding/privacy/" hreflang="es" lang="es">ES</a></nav>
+        <button class="theme-toggle" type="button" data-theme-toggle data-label-dark="Dunkles Design verwenden" data-label-light="Helles Design verwenden" aria-label="Dunkles Design verwenden" aria-pressed="false"><svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg><svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.1A8.5 8.5 0 0 1 8.9 4a8.5 8.5 0 1 0 11.1 11.1Z"/></svg></button>
+      </div>
     </div>
   </header>
   <main><section class="hero doc-hero"><div class="container"><a class="backlink" href="/de/apps/feeding/">← Elia Feeding</a><h1>Datenschutz</h1><p class="updated">Elia Feeding · Zuletzt aktualisiert am 13. Juli 2026</p></div></section><section><div class="container prose"><p>Elia ist von Anfang an privat gedacht. Es gibt kein Konto, kein Backend und kein Tracking. Diese Richtlinie erklärt in einfacher Sprache, was das bedeutet.</p><h2>Kurzfassung</h2><ul class=""><li>Kein Konto und keine Anmeldung.</li><li>Elia sammelt keine Daten.</li><li>Deine Daten werden nie verkauft oder geteilt.</li><li>Alles wird lokal auf deinem Gerät gespeichert.</li><li>Nichts wird auf Elia-Server hochgeladen.</li></ul><h2>Was die App speichert</h2><p>Nur lokal auf deinem Gerät: deine Einträge, daraus abgeleitete Historie und Einstellungen.</p><h2>Wenn Daten dein Gerät verlassen</h2><p>Daten verlassen dein Gerät nur, wenn du sie selbst über die Teilen-Funktionen deines Geräts exportierst oder teilst. Du wählst das Ziel.</p><h2>Backups</h2><p>Automatische Cloud-Backups und Geräteübertragung von App-Daten sind deaktiviert. Dein Protokoll bewegt sich nur durch einen Export, den du selbst startest.</p><h2>Netzwerk und Berechtigungen</h2><p>Die Kernnutzung braucht keine Registrierung und keine Verbindung. Die App vermeidet unnötige Berechtigungen und enthält keine Werbung, Analyse oder Tracking-SDKs.</p><h2>Daten löschen</h2><p>Wenn du App-Daten löschst oder die App deinstallierst, werden die lokalen Daten vom Gerät entfernt. Da nichts anderswo gespeichert wird, reicht das aus.</p><h2>Kinder</h2><p>Elia ist als Werkzeug für Erwachsene und Betreuungspersonen gedacht. Sie sammelt wissentlich keine Daten von irgendwem.</p><h2>Kontakt</h2><p>Fragen zum Datenschutz? Schreib uns an <a href="mailto:feeding@getelia.app">feeding@getelia.app</a>.</p><p class="muted">Elia ist eine Marke von Appmonto Studio, Österreich. <a href="https://appmonto.com/legal/" rel="noopener">Impressum</a>.</p><div class="callout">Elia Feeding ist eine ruhige Gedächtnisstütze, kein medizinisches Werkzeug. Sie gibt keine medizinischen Ratschläge und definiert nicht, was normal ist. Wenn es um die Gesundheit deines Babys geht, sprich mit Kinderarzt, Kinderärztin oder Hebamme.</div></div></section></main>
@@ -59,6 +62,6 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../../../../assets/js/site.js" defer></script>
 </body>
 </html>

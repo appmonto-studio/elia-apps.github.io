@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('elia-theme')==='dark'?'dark':'light'}catch(_){document.documentElement.dataset.theme='light'}</script>
   <title>Soporte — Elia Contractions</title>
   <meta name="description" content="Ayuda y respuestas para Elia Contractions, una app tranquila y privada. Preguntas frecuentes y contacto." />
-  <meta name="theme-color" content="#FBF9F8" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#271F25" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#FBF9F8" />
   <link rel="icon" type="image/png" href="../../../../assets/img/favicon-elia.png" />
   <link rel="apple-touch-icon" href="../../../../assets/img/apple-touch-icon-elia.png" />
   <link rel="stylesheet" href="../../../../assets/css/styles.css" />
@@ -36,7 +36,10 @@
         <a href="/es/apps/contractions/privacy/">Privacidad</a>
         <a href="/es/#philosophy">La promesa</a>
       </nav>
-      <nav class="lang-switch" aria-label="Idioma"><a href="/apps/contractions/support/" hreflang="en" lang="en">EN</a><a href="/de/apps/contractions/support/" hreflang="de" lang="de">DE</a><a href="/es/apps/contractions/support/" aria-current="true" hreflang="es" lang="es">ES</a></nav>
+      <div class="header-tools">
+        <nav class="lang-switch" aria-label="Idioma"><a href="/apps/contractions/support/" hreflang="en" lang="en">EN</a><a href="/de/apps/contractions/support/" hreflang="de" lang="de">DE</a><a href="/es/apps/contractions/support/" aria-current="true" hreflang="es" lang="es">ES</a></nav>
+        <button class="theme-toggle" type="button" data-theme-toggle data-label-dark="Usar tema oscuro" data-label-light="Usar tema claro" aria-label="Usar tema oscuro" aria-pressed="false"><svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg><svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.1A8.5 8.5 0 0 1 8.9 4a8.5 8.5 0 1 0 11.1 11.1Z"/></svg></button>
+      </div>
     </div>
   </header>
   <main><section class="hero doc-hero"><div class="container"><a class="backlink" href="/es/apps/contractions/">← Elia Contractions</a><h1>Soporte</h1><p class="updated">Lo mantenemos simple. Estas son las preguntas más frecuentes.</p></div></section><section><div class="container"><div class="faq"><details open><summary>¿Mis datos son privados?</summary><p>Sí. Elia Contractions no tiene cuenta ni backend. Tus tiempos de contracciones, historial y ajustes se quedan en tu dispositivo. Consulta la <a href="/es/apps/contractions/privacy/">política de privacidad</a> para más detalles.</p></details><details><summary>¿Funciona sin conexión?</summary><p>Sí. Registrar contracciones nunca necesita conexión a internet. La app está pensada para ser fiable en una sala de parto, no para depender de la señal.</p></details><details><summary>¿Me dice cuándo ir al hospital?</summary><p>No. Elia no diagnostica ni da instrucciones médicas. Muestra tus contracciones con claridad para que puedas compartirlas con tu equipo de atención. Sigue siempre las indicaciones de tus profesionales de salud.</p></details><details><summary>¿Puedo corregir un error?</summary><p>Sí. Puedes editar o borrar entradas con calma. Nada queda permanente por accidente.</p></details><details><summary>¿Cómo comparto un resumen con mi equipo de salud?</summary><p>Puedes exportar o compartir tu sesión como texto plano usando las opciones de compartir de tu dispositivo. Tú eliges el destino; Elia nunca envía nada por su cuenta.</p></details><details><summary>¿Hay suscripción?</summary><p>La experiencia principal no es una trampa de suscripción. Elia nunca bloqueará funciones esenciales del parto detrás de un pago ni mostrará anuncios.</p></details></div><div class="prose" style="margin-top:40px;"><h2>¿Necesitas ayuda?</h2><p>Escríbenos a <a href="mailto:contractions@getelia.app?subject=Elia%20Contractions%20support">contractions@getelia.app</a>. Leemos todos los mensajes.</p></div></div></section></main>
@@ -55,6 +58,6 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../../../../assets/js/site.js" defer></script>
 </body>
 </html>

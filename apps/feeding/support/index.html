@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('elia-theme')==='dark'?'dark':'light'}catch(_){document.documentElement.dataset.theme='light'}</script>
   <title>Support — Elia Feeding</title>
   <meta name="description" content="Help and answers for Elia Feeding — a calm, private app. Common questions and how to reach us." />
-  <meta name="theme-color" content="#FBF9F8" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#271F25" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#FBF9F8" />
   <link rel="icon" type="image/png" href="../../../assets/img/favicon-elia.png" />
   <link rel="apple-touch-icon" href="../../../assets/img/apple-touch-icon-elia.png" />
   <link rel="stylesheet" href="../../../assets/css/styles.css" />
@@ -25,7 +25,7 @@
   <meta property="og:locale:alternate" content="es_ES" />
   <style>
     body { --accent: #C9976A; --accent-dark: #A9784C; --accent-light: #F3E3D1; }
-    @media (prefers-color-scheme: dark) { body { --accent-light: #352A20; } }
+    [data-theme="dark"] body { --accent-light: #352A20; }
   </style>
 </head>
 <body>
@@ -40,7 +40,10 @@
         <a href="/apps/feeding/privacy/">Privacy</a>
         <a href="/#philosophy">The promise</a>
       </nav>
-      <nav class="lang-switch" aria-label="Language"><a href="/apps/feeding/support/" aria-current="true" hreflang="en" lang="en">EN</a><a href="/de/apps/feeding/support/" hreflang="de" lang="de">DE</a><a href="/es/apps/feeding/support/" hreflang="es" lang="es">ES</a></nav>
+      <div class="header-tools">
+        <nav class="lang-switch" aria-label="Language"><a href="/apps/feeding/support/" aria-current="true" hreflang="en" lang="en">EN</a><a href="/de/apps/feeding/support/" hreflang="de" lang="de">DE</a><a href="/es/apps/feeding/support/" hreflang="es" lang="es">ES</a></nav>
+        <button class="theme-toggle" type="button" data-theme-toggle data-label-dark="Use dark theme" data-label-light="Use light theme" aria-label="Use dark theme" aria-pressed="false"><svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg><svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.1A8.5 8.5 0 0 1 8.9 4a8.5 8.5 0 1 0 11.1 11.1Z"/></svg></button>
+      </div>
     </div>
   </header>
   <main><section class="hero doc-hero"><div class="container"><a class="backlink" href="/apps/feeding/">← Elia Feeding</a><h1>Support</h1><p class="updated">We keep things simple. Here are the common questions.</p></div></section><section><div class="container"><div class="faq"><details open><summary>Is my data private?</summary><p>Yes. Elia Feeding has no account, no backend, and no cloud. Your entries and settings stay on your device. See the <a href="/apps/feeding/privacy/">privacy policy</a> for details.</p></details><details><summary>Does it work offline?</summary><p>Yes. Logging a feed, bottle, or diaper never needs an internet connection.</p></details><details><summary>Does it tell me if my baby is feeding enough?</summary><p>No. Elia does not set targets, warnings, or judgements, and does not define what is normal. It simply remembers what you log. For anything about your baby&#x27;s health, talk to your pediatrician or midwife.</p></details><details><summary>Can I edit or delete an entry?</summary><p>Yes. You can edit or delete any entry. Nothing is permanent by accident.</p></details><details><summary>Can two parents share the same log?</summary><p>Not in the current version. Elia Feeding is local-only by design, so there is no cloud sync between devices. Everything lives on the one device you log on.</p></details><details><summary>How do I move my log somewhere else?</summary><p>You can export or share it as plain text using your device&#x27;s share options. You choose the destination; Elia never sends it anywhere on its own.</p></details><details><summary>Are there ads or subscriptions?</summary><p>No ads, no subscriptions, no billing. Elia Feeding is a calm memory aid, not a monetization funnel.</p></details></div><div class="prose" style="margin-top:40px;"><h2>Still need help?</h2><p>Write to us at <a href="mailto:feeding@getelia.app?subject=Elia%20Feeding%20support">feeding@getelia.app</a>. We read every message.</p></div></div></section></main>
@@ -59,6 +62,6 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../../../assets/js/site.js" defer></script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('elia-theme')==='dark'?'dark':'light'}catch(_){document.documentElement.dataset.theme='light'}</script>
   <title>Elia Contractions — ein ruhiger Begleiter für die Geburt</title>
   <meta name="description" content="Elia Contractions ist ein ruhiger Offline-first-Begleiter für Familien während der Geburt. Wehen klar erfassen, präsent bleiben und eine einfache Zusammenfassung teilen." />
-  <meta name="theme-color" content="#FBF9F8" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#271F25" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#FBF9F8" />
   <link rel="icon" type="image/png" href="../../../assets/img/favicon-contractions.png" />
   <link rel="apple-touch-icon" href="../../../assets/img/apple-touch-icon-contractions.png" />
   <link rel="stylesheet" href="../../../assets/css/styles.css" />
@@ -43,7 +43,10 @@
         <a href="/de/apps/contractions/privacy/">Datenschutz</a>
         <a href="/de/">Alle Apps</a>
       </nav>
-      <nav class="lang-switch" aria-label="Sprache"><a href="/apps/contractions/" hreflang="en" lang="en">EN</a><a href="/de/apps/contractions/" aria-current="true" hreflang="de" lang="de">DE</a><a href="/es/apps/contractions/" hreflang="es" lang="es">ES</a></nav>
+      <div class="header-tools">
+        <nav class="lang-switch" aria-label="Sprache"><a href="/apps/contractions/" hreflang="en" lang="en">EN</a><a href="/de/apps/contractions/" aria-current="true" hreflang="de" lang="de">DE</a><a href="/es/apps/contractions/" hreflang="es" lang="es">ES</a></nav>
+        <button class="theme-toggle" type="button" data-theme-toggle data-label-dark="Dunkles Design verwenden" data-label-light="Helles Design verwenden" aria-label="Dunkles Design verwenden" aria-pressed="false"><svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg><svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.1A8.5 8.5 0 0 1 8.9 4a8.5 8.5 0 1 0 11.1 11.1Z"/></svg></button>
+      </div>
     </div>
   </header>
   <main>
@@ -71,6 +74,6 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../../../assets/js/site.js" defer></script>
 </body>
 </html>

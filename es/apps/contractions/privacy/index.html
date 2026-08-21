@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('elia-theme')==='dark'?'dark':'light'}catch(_){document.documentElement.dataset.theme='light'}</script>
   <title>Privacidad — Elia Contractions</title>
   <meta name="description" content="Política de privacidad de Elia Contractions. Sin cuenta, sin backend, sin seguimiento: tus datos se quedan en tu dispositivo." />
-  <meta name="theme-color" content="#FBF9F8" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#271F25" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#FBF9F8" />
   <link rel="icon" type="image/png" href="../../../../assets/img/favicon-elia.png" />
   <link rel="apple-touch-icon" href="../../../../assets/img/apple-touch-icon-elia.png" />
   <link rel="stylesheet" href="../../../../assets/css/styles.css" />
@@ -36,7 +36,10 @@
         <a href="/es/apps/contractions/support/">Soporte</a>
         <a href="/es/#philosophy">La promesa</a>
       </nav>
-      <nav class="lang-switch" aria-label="Idioma"><a href="/apps/contractions/privacy/" hreflang="en" lang="en">EN</a><a href="/de/apps/contractions/privacy/" hreflang="de" lang="de">DE</a><a href="/es/apps/contractions/privacy/" aria-current="true" hreflang="es" lang="es">ES</a></nav>
+      <div class="header-tools">
+        <nav class="lang-switch" aria-label="Idioma"><a href="/apps/contractions/privacy/" hreflang="en" lang="en">EN</a><a href="/de/apps/contractions/privacy/" hreflang="de" lang="de">DE</a><a href="/es/apps/contractions/privacy/" aria-current="true" hreflang="es" lang="es">ES</a></nav>
+        <button class="theme-toggle" type="button" data-theme-toggle data-label-dark="Usar tema oscuro" data-label-light="Usar tema claro" aria-label="Usar tema oscuro" aria-pressed="false"><svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg><svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.1A8.5 8.5 0 0 1 8.9 4a8.5 8.5 0 1 0 11.1 11.1Z"/></svg></button>
+      </div>
     </div>
   </header>
   <main><section class="hero doc-hero"><div class="container"><a class="backlink" href="/es/apps/contractions/">← Elia Contractions</a><h1>Privacidad</h1><p class="updated">Elia Contractions · Última actualización: 13 de julio de 2026</p></div></section><section><div class="container prose"><p>Elia está diseñada para ser privada desde el principio. No tiene cuenta, backend ni seguimiento. Esta política explica en lenguaje sencillo qué significa eso.</p><h2>La versión corta</h2><ul class=""><li>Sin cuenta ni inicio de sesión.</li><li>Elia no recoge datos.</li><li>Tus datos nunca se venden ni se comparten.</li><li>Todo se guarda localmente en tu dispositivo.</li><li>Nada se sube a servidores de Elia.</li></ul><h2>Qué guarda la app</h2><p>Solo localmente en tu dispositivo: tus entradas, el historial derivado de ellas y tus ajustes.</p><h2>Cuando los datos salen de tu dispositivo</h2><p>Los datos salen de tu dispositivo solo cuando decides exportarlos o compartirlos usando las opciones de compartir del propio dispositivo. Tú eliges el destino.</p><h2>Copias de seguridad</h2><p>Las copias de seguridad automáticas en la nube y la transferencia de datos entre dispositivos están desactivadas. Tu registro se mueve solo mediante una exportación que tú inicias.</p><h2>Red y permisos</h2><p>El uso principal no requiere registro ni conexión. La app evita permisos innecesarios y no contiene publicidad, analíticas ni SDKs de seguimiento de terceros.</p><h2>Borrar tus datos</h2><p>Borrar los datos de la app o desinstalarla elimina los datos locales del dispositivo. Como no se guardan en ningún otro lugar, eso es suficiente.</p><h2>Menores</h2><p>Elia está pensada como herramienta para adultos y cuidadores. No recoge datos de nadie de forma consciente.</p><h2>Contacto</h2><p>¿Preguntas sobre privacidad? Escríbenos a <a href="mailto:contractions@getelia.app">contractions@getelia.app</a>.</p><p class="muted">Elia es una marca de Appmonto Studio, Austria. <a href="https://appmonto.com/legal/" rel="noopener">Aviso legal</a>.</p><div class="callout">Elia Contractions no es un dispositivo médico y no ofrece consejo médico ni diagnóstico. Nunca te dice cuándo ir al hospital. Sigue siempre las indicaciones de tus profesionales de salud.</div></div></section></main>
@@ -55,6 +58,6 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../../../../assets/js/site.js" defer></script>
 </body>
 </html>

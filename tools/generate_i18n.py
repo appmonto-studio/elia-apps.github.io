@@ -14,6 +14,11 @@ BASE = "https://getelia.app"
 LANGS = ["en", "de", "es"]
 LOCALES = {"en": "en_US", "de": "de_DE", "es": "es_ES"}
 LANG_LABELS = {"en": "EN", "de": "DE", "es": "ES"}
+THEME_LABELS = {
+    "en": ("Use dark theme", "Use light theme"),
+    "de": ("Dunkles Design verwenden", "Helles Design verwenden"),
+    "es": ("Usar tema oscuro", "Usar tema claro"),
+}
 URL_PREFIXES = {"en": "", "de": "de", "es": "es"}
 APPS = ["contractions", "feeding", "moments"]
 APP_ICONS = ["contractions", "feeding", "moments"]
@@ -111,10 +116,10 @@ def head(lang, route, title, description, icon="svg", image=None, extra=""):
     return f"""<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>try{{document.documentElement.dataset.theme=localStorage.getItem('elia-theme')==='dark'?'dark':'light'}}catch(_){{document.documentElement.dataset.theme='light'}}</script>
   <title>{escape(title)}</title>
   <meta name="description" content="{escape(description)}" />
-  <meta name="theme-color" content="#FBF9F8" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#271F25" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#FBF9F8" />
 {icon_link}
   <link rel="stylesheet" href="{asset('assets/css/styles.css', lang, route)}" />
   <link rel="canonical" href="{url(lang, route)}" />
@@ -136,6 +141,7 @@ def header(lang, route, nav, aria):
             return href(lang, "", lang, route) + link.removeprefix("home")
         return href(lang, link, lang, route)
     nav_html = "\n        ".join(f'<a href="{nav_href(link)}">{escape(text)}</a>' for text, link in nav)
+    dark_label, light_label = THEME_LABELS[lang]
     return f"""<header class="site-header">
     <div class="container">
       <a class="brand" href="{href(lang, "", lang, route)}" aria-label="Elia home">
@@ -145,7 +151,10 @@ def header(lang, route, nav, aria):
       <nav class="nav" aria-label="Primary">
         {nav_html}
       </nav>
-      {lang_switch(lang, route, aria)}
+      <div class="header-tools">
+        {lang_switch(lang, route, aria)}
+        <button class="theme-toggle" type="button" data-theme-toggle data-label-dark="{escape(dark_label)}" data-label-light="{escape(light_label)}" aria-label="{escape(dark_label)}" aria-pressed="false"><svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg><svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.1A8.5 8.5 0 0 1 8.9 4a8.5 8.5 0 1 0 11.1 11.1Z"/></svg></button>
+      </div>
     </div>
   </header>"""
 
@@ -189,7 +198,7 @@ def footer(lang, links, note, route=""):
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>"""
+  <script src="{asset('assets/js/site.js', lang, route)}" defer></script>"""
 
 
 T = {'en': {'lang': 'Language',
@@ -942,7 +951,7 @@ def app_cards(lang):
 def home(lang):
     t = T[lang]["home"]
     body = f"""<!DOCTYPE html>
-<html lang="{lang}">
+<html lang="{lang}" data-theme="light">
 {head(lang, "", t["title"], t["description"])}
 <body>
   {header(lang, "", t["nav"], T[lang]["lang"])}
@@ -1008,7 +1017,7 @@ def app_page(lang, app):
     has_sublead = len(a["principles"]) == 4
     sublead = f'<p class="lead">{escape(a["principles"][1])}</p>' if has_sublead else ""
     body = f"""<!DOCTYPE html>
-<html lang="{lang}">
+<html lang="{lang}" data-theme="light">
 {head(lang, route, a["title"], a["desc"], icon, image, extra)}
 <body>
   {header(lang, route, [(c["overview"], "#what"), (c["support"], f"{route}/support"), (c["privacy"], f"{route}/privacy"), (c["all"], "")], T[lang]["lang"])}
@@ -1116,7 +1125,7 @@ def support_page(lang, app):
     extra = app_style(app)
     faq = "".join(f'<details{" open" if i == 0 else ""}><summary>{escape(q)}</summary><p>{escape(a).replace("privacy policy", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">privacy policy</a>").replace("Datenschutzerklärung", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">Datenschutzerklärung</a>").replace("política de privacidad", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">política de privacidad</a>")}</p></details>' for i, (q, a) in enumerate(SUPPORT[lang][app]))
     body = f"""<!DOCTYPE html>
-<html lang="{lang}">
+<html lang="{lang}" data-theme="light">
 {head(lang, route, title, desc, "svg", None, extra)}
 <body>
   {header(lang, route, [(app.capitalize(), f"apps/{app}"), (c["privacy"], f"apps/{app}/privacy"), (c["promise"], "home#philosophy")], T[lang]["lang"])}
@@ -1142,7 +1151,7 @@ def privacy_page(lang, app):
     text = privacy_text(lang, app)
     sections = "".join(f"<h2>{escape(h)}</h2><p>{escape(p)}</p>" if isinstance(p, str) else f"<h2>{escape(h)}</h2>{ul(p, '')}" for h, p in text["sections"])
     body = f"""<!DOCTYPE html>
-<html lang="{lang}">
+<html lang="{lang}" data-theme="light">
 {head(lang, route, title, desc, "svg", None, extra)}
 <body>
   {header(lang, route, [(app.capitalize(), f"apps/{app}"), (c["support"], f"apps/{app}/support"), (c["promise"], "home#philosophy")], T[lang]["lang"])}
@@ -1160,7 +1169,7 @@ def app_style(app):
     accent, dark, light, light_dark = ACCENTS[app]
     return f"""  <style>
     body {{ --accent: {accent}; --accent-dark: {dark}; --accent-light: {light}; }}
-    @media (prefers-color-scheme: dark) {{ body {{ --accent-light: {light_dark}; }} }}
+    [data-theme="dark"] body {{ --accent-light: {light_dark}; }}
   </style>
 """
 
@@ -1206,7 +1215,7 @@ def not_found(lang):
     text = {"en": "Take a breath. This page doesn't exist — but the rest of Elia does.", "de": "Atme kurz durch. Diese Seite gibt es nicht — der Rest von Elia schon.", "es": "Respira. Esta página no existe, pero el resto de Elia sí."}[lang]
     btn = {"en": "Back to Elia", "de": "Zurück zu Elia", "es": "Volver a Elia"}[lang]
     body = f"""<!DOCTYPE html>
-<html lang="{lang}">
+<html lang="{lang}" data-theme="light">
 {head(lang, "", title, text, extra='  <meta name="robots" content="noindex" />\n')}
 <body><main><section class="hero"><div class="container"><img class="brand__mark" src="{asset("assets/img/logo-elia.png", lang, route)}" alt="" style="width:44px;height:44px;border-radius:50%;margin:0 auto 24px;" /><h1 class="hero__wordmark" style="font-size:clamp(40px,9vw,72px);">{escape(title.split(" — ")[0])}</h1><p class="hero__sub lead">{escape(text)}</p><div class="btn-row"><a class="btn btn--primary" href="{href(lang, "", lang, route)}">{escape(btn)}</a></div></div></section></main></body></html>"""
     if lang == "en":
