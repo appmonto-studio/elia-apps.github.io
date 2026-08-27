@@ -1038,6 +1038,12 @@ def app_page(lang, app):
 
 SHOTS = {
     "contractions": ["01-single", "02-main", "03-session", "04-about"],
+    "feeding": ["01-feeding", "02-bottle", "03-diaper", "04-main", "05-summary", "06-history"],
+}
+
+SHOT_DIMENSIONS = {
+    "contractions": (480, 853),
+    "feeding": (480, 1029),
 }
 
 SHOTS_T = {
@@ -1045,34 +1051,64 @@ SHOTS_T = {
         "eyebrow": "A look inside",
         "larger": "View larger",
         "head": "What it looks like.",
-        "alt": [
-            "Track each contraction — start and stop with one tap, then stay focused on the moment.",
-            "See the rhythm at a glance — recent contractions, interval, and last duration in one calm view.",
-            "Review your session history — check start times, durations and intervals, and edit entries when needed.",
-            "Private by design — no account, no ads, no tracking. Your data stays on your device unless you choose to share it.",
-        ],
+        "alt": {
+            "contractions": [
+                "Track each contraction — start and stop with one tap, then stay focused on the moment.",
+                "See the rhythm at a glance — recent contractions, interval, and last duration in one calm view.",
+                "Review your session history — check start times, durations and intervals, and edit entries when needed.",
+                "Private by design — no account, no ads, no tracking. Your data stays on your device unless you choose to share it.",
+            ],
+            "feeding": [
+                "Track a breastfeeding session, switch sides with one tap, and see the time for each side.",
+                "Log a bottle feed with an optional amount using a simple visual scale.",
+                "Log a wet, dirty, or combined diaper change in one tap.",
+                "Start a feed or log a bottle, diaper, or pumping session from the calm home screen.",
+                "See a clear daily summary of feeding time, bottle amounts, and care events.",
+                "Review and filter the complete history of breastfeeding, bottles, diapers, and pumping.",
+            ],
+        },
     },
     "de": {
         "eyebrow": "Ein Blick hinein",
         "larger": "Größer ansehen",
         "head": "So sieht es aus.",
-        "alt": [
-            "Jede Wehe erfassen — mit einem Tippen starten und stoppen und im Moment bleiben.",
-            "Den Rhythmus auf einen Blick sehen — letzte Wehen, Intervall und Dauer in einer ruhigen Ansicht.",
-            "Den Sitzungsverlauf durchsehen — Startzeiten, Dauern und Intervalle prüfen und Einträge bearbeiten.",
-            "Von Grund auf privat — kein Konto, keine Werbung, kein Tracking. Deine Daten bleiben auf deinem Gerät.",
-        ],
+        "alt": {
+            "contractions": [
+                "Jede Wehe erfassen — mit einem Tippen starten und stoppen und im Moment bleiben.",
+                "Den Rhythmus auf einen Blick sehen — letzte Wehen, Intervall und Dauer in einer ruhigen Ansicht.",
+                "Den Sitzungsverlauf durchsehen — Startzeiten, Dauern und Intervalle prüfen und Einträge bearbeiten.",
+                "Von Grund auf privat — kein Konto, keine Werbung, kein Tracking. Deine Daten bleiben auf deinem Gerät.",
+            ],
+            "feeding": [
+                "Eine Stillmahlzeit erfassen, mit einem Tippen die Seite wechseln und die Zeit pro Seite sehen.",
+                "Eine Flaschenmahlzeit mit optionaler Menge über eine einfache visuelle Skala eintragen.",
+                "Eine nasse, volle oder kombinierte Windel mit einem Tippen eintragen.",
+                "Auf dem ruhigen Startbildschirm eine Mahlzeit starten oder Flasche, Windel und Abpumpen eintragen.",
+                "Eine klare Tagesübersicht über Stillzeiten, Flaschenmengen und Pflegeereignisse sehen.",
+                "Den vollständigen Verlauf von Stillen, Flaschen, Windeln und Abpumpen ansehen und filtern.",
+            ],
+        },
     },
     "es": {
         "eyebrow": "Un vistazo",
         "larger": "Ver más grande",
         "head": "Así se ve.",
-        "alt": [
-            "Cronometra cada contracción: empieza y para con un toque, y sigue presente en el momento.",
-            "Ve el ritmo de un vistazo: contracciones recientes, intervalo y última duración en una vista tranquila.",
-            "Revisa el historial de la sesión: horas de inicio, duraciones, intervalos y edición de entradas.",
-            "Privada por diseño: sin cuenta, sin anuncios, sin seguimiento. Tus datos se quedan en tu dispositivo.",
-        ],
+        "alt": {
+            "contractions": [
+                "Cronometra cada contracción: empieza y para con un toque, y sigue presente en el momento.",
+                "Ve el ritmo de un vistazo: contracciones recientes, intervalo y última duración en una vista tranquila.",
+                "Revisa el historial de la sesión: horas de inicio, duraciones, intervalos y edición de entradas.",
+                "Privada por diseño: sin cuenta, sin anuncios, sin seguimiento. Tus datos se quedan en tu dispositivo.",
+            ],
+            "feeding": [
+                "Registra una toma de pecho, cambia de lado con un toque y consulta el tiempo de cada lado.",
+                "Registra una toma con biberón y una cantidad opcional mediante una sencilla escala visual.",
+                "Registra con un toque un pañal mojado, sucio o ambas cosas.",
+                "Inicia una toma o registra biberón, pañal o extracción desde una pantalla de inicio tranquila.",
+                "Consulta un resumen diario claro del tiempo de lactancia, los biberones y los cuidados.",
+                "Revisa y filtra el historial completo de lactancia, biberones, pañales y extracciones.",
+            ],
+        },
     },
 }
 
@@ -1084,6 +1120,7 @@ def shots_section(lang, app, route):
     if not names:
         return ""
     t = SHOTS_T[lang]
+    width, height = SHOT_DIMENSIONS[app]
 
     def pick(name):
         rel = f"assets/img/shots/{app}/{lang}/{name}.jpg"
@@ -1092,8 +1129,8 @@ def shots_section(lang, app, route):
     imgs = []
     for i, name in enumerate(names):
         img = (
-            f'<img src="{asset(pick(name), lang, route)}" alt="{escape(t["alt"][i])}" '
-            f'width="480" height="853" loading="lazy" decoding="async" />'
+            f'<img src="{asset(pick(name), lang, route)}" alt="{escape(t["alt"][app][i])}" '
+            f'width="{width}" height="{height}" loading="lazy" decoding="async" />'
         )
         imgs.append(
             f'<a href="{asset(pick(name + "-full"), lang, route)}" target="_blank" '
