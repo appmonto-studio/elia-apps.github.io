@@ -162,11 +162,15 @@ p { margin: 0; }
 [data-theme="dark"] .tag { color: var(--accent); }
 .tag__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 
-/* Published, as opposed to the quieter "coming soon" state.
-   Ink-on-background inverts with the theme and clears WCAG AA at this size;
-   white on --accent only reaches 3.1:1. */
-.tag--live { background: var(--ink); color: var(--bg); }
+/* Published, as opposed to the quieter "coming soon" state. Keep the light
+   theme warm and app-specific while darkening the label enough for WCAG AA. */
+.tag--live {
+  background: var(--accent-light);
+  color: color-mix(in srgb, var(--accent-dark) 70%, var(--ink));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 20%, transparent);
+}
 .tag--live .tag__dot { background: var(--accent); }
+[data-theme="dark"] .tag--live { background: var(--ink); color: var(--bg); box-shadow: none; }
 
 /* App grid (landing) ------------------------------------------------------- */
 .section-head { max-width: 620px; margin-bottom: 40px; }
