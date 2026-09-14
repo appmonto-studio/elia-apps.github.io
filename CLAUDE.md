@@ -97,3 +97,22 @@ claim about release readiness or store availability.
 
 Keep its `sources` paths correct when a referenced document moves. Do not add derived state to it:
 if a fact already lives in a document, the descriptor points at that document instead.
+
+## Where future work is recorded
+
+- `docs/roadmap.md` is the only task source in this repository. Record intended work there, not
+  in a new file, a handoff, or a comment — a second inventory drifts from the first and
+  studio tooling will report it as an undeclared task source.
+- One heading is one task. Bullets under it are its specification. If a bullet is
+  something you would close and report on its own, give it its own heading.
+- Each entry carries `**<ID>** · `<status>`` directly under its heading, where status is
+  `ready`, `blocked` or `idea`. A `blocked` entry names its blocker on the same line. A
+  `ready` entry carries a `**Done when:**` paragraph stating a checkable condition.
+- Identifiers use the `EWEB-NNN` form and are never reused, including after deletion.
+  Take the next number from the file's header and raise the header in the same change.
+- Delete an entry once delivered, but only after the decision behind it is recorded
+  outside the task file. Record the choice, its reason, and the constraint it places on
+  future work — including decisions to stop or revert, which are the easiest to lose and
+  save the most. "We did it" is not worth keeping; version control already has that.
+- The exact grammar, including the markers for sections that are not tasks, is in the
+  header of the task file itself.
