@@ -21,3 +21,6 @@ sources:
   readme:
     path: README.md
     kind: file
+  backlog:
+    path: docs/roadmap.md
+    kind: file
