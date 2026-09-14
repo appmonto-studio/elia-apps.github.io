@@ -1,0 +1,23 @@
+# Appmonto Project Standard v1 descriptor: identity and pointers to sources that
+# already exist here. Data and references only — no commands, credentials, checkout
+# paths, status, version numbers, or copies of evidence. It asserts nothing about
+# release readiness or store availability.
+#
+# lifecycle is an owner declaration and explicitly not store availability.
+
+schemaVersion: 1
+product:
+  id: elia.website
+  name: Elia Apps Website
+  brand: elia
+  lifecycle: development
+repository:
+  id: elia-apps.github.io
+  url: https://github.com/appmonto-studio/elia-apps.github.io.git
+platforms:
+  web:
+    stage: implemented
+sources:
+  readme:
+    path: README.md
+    kind: file
