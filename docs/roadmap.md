@@ -7,12 +7,25 @@ or `README.md`, the entry is removed and Git history preserves the wording.
 Release and publication state is deliberately absent; it belongs to release evidence
 and store records, never to a second copy here.
 
-Task IDs: prefix **EWEB**, next unused **EWEB-001**. Numbers are never reused.
+Task IDs: prefix **EWEB**, next unused **EWEB-002**. Numbers are never reused.
 
 One heading is one task. Bullets under a heading are its specification, not separate
 tasks. Status is `ready`, `blocked`, or `idea`; a `ready` entry carries a
 `**Done when:**` paragraph. A section recording anti-goals rather than work carries
 `**Not tasks** · `anti-goals`` instead of a metadata line.
 
-_No entries yet. This file is empty because nothing is currently tracked — which is
-a different statement from nothing having been looked at._
+## Make the deployed revision verifiable
+
+**EWEB-001** · `ready`
+
+**Done when:** every served page carries the commit it was built from — a meta tag, a
+comment, or a small generated file — so that comparing what is live against `main` is a
+single check rather than an assumption.
+
+The site is served by GitHub Pages from `main` and responds at its domain, but nothing
+on the page identifies which revision is deployed. Availability and deployed revision
+are different claims, and only the first can currently be established: a fetch proves
+the site answers and says nothing about what is in it.
+
+Keep it a static marker written at publish time. Do not add analytics, a build service
+or a runtime dependency to answer a question that one string can answer.
