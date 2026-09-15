@@ -117,11 +117,12 @@ if a fact already lives in a document, the descriptor points at that document in
 - The exact grammar, including the markers for sections that are not tasks, is in the
   header of the task file itself.
 
-## Before you finish a session
+## Keeping the recorded state true
 
-Leave this repository describing what actually happened, so the studio board reads true without
-anyone being asked. Ask for this with "wrap up" or "leave the status accurate"; it takes a
-minute, and it is the difference between a board worth reading and one worth ignoring.
+This is what the standing obligation to keep documentation current means for the task file and
+the descriptor. Each item belongs in the change that causes it, not in a separate pass at the
+end, and none of it waits to be asked for. If you suspect the record has drifted anyway, "wrap
+up" asks for a sweep of the list below — but a sweep is a safety net, not the mechanism.
 
 - **Work you finished:** delete its entry from `docs/roadmap.md` and record the decision behind
   it in `README.md` — the choice, its reason, and the constraint it now places on future work.
