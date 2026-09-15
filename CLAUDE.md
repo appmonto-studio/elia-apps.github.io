@@ -116,3 +116,26 @@ if a fact already lives in a document, the descriptor points at that document in
   save the most. "We did it" is not worth keeping; version control already has that.
 - The exact grammar, including the markers for sections that are not tasks, is in the
   header of the task file itself.
+
+## Before you finish a session
+
+Leave this repository describing what actually happened, so the studio board reads true without
+anyone being asked. Ask for this with "wrap up" or "leave the status accurate"; it takes a
+minute, and it is the difference between a board worth reading and one worth ignoring.
+
+- **Work you finished:** delete its entry from `docs/roadmap.md` and record the decision behind
+  it in `README.md` — the choice, its reason, and the constraint it now places on future work.
+  "We did it" is not worth keeping; Git history already has that.
+- **Work you decided to do:** add an entry, taking the next identifier from the file's header
+  and raising that counter in the same change.
+- **Work that became stuck:** set the entry to `blocked` and name what blocks it on the same
+  line. A blocked entry that does not say why reads as neglect.
+- **Work that turned out to need a decision rather than effort:** set it to `idea` and say what
+  the decision is.
+- **A `ready` entry you touched:** check its `**Done when:**` still describes what finishing
+  means. If the work changed shape, the condition is stale.
+- **A source that moved:** update the matching path in `appmonto.yaml`, or the board will report
+  it missing.
+
+Nothing here requires the studio console to be present. If it is, running its validator against
+this checkout confirms the descriptor and its declared paths in one step.
