@@ -106,8 +106,8 @@ if a fact already lives in a document, the descriptor points at that document in
 - One heading is one task. Bullets under it are its specification. If a bullet is
   something you would close and report on its own, give it its own heading.
 - Each entry carries `**<ID>** · `<status>`` directly under its heading, where status is
-  `ready`, `blocked` or `idea`. A `blocked` entry names its blocker on the same line. A
-  `ready` entry carries a `**Done when:**` paragraph stating a checkable condition.
+  `todo`, `blocked` or `idea`. A `blocked` entry names its blocker on the same line. A
+  `todo` entry carries a `**Done when:**` paragraph stating a checkable condition.
 - Identifiers use the `EWEB-NNN` form and are never reused, including after deletion.
   Take the next number from the file's header and raise the header in the same change.
 - Delete an entry once delivered, but only after the decision behind it is recorded
@@ -133,7 +133,7 @@ up" asks for a sweep of the list below — but a sweep is a safety net, not the 
   line. A blocked entry that does not say why reads as neglect.
 - **Work that turned out to need a decision rather than effort:** set it to `idea` and say what
   the decision is.
-- **A `ready` entry you touched:** check its `**Done when:**` still describes what finishing
+- **A `todo` entry you touched:** check its `**Done when:**` still describes what finishing
   means. If the work changed shape, the condition is stale.
 - **A source that moved:** update the matching path in `appmonto.yaml`, or the board will report
   it missing.

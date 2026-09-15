@@ -10,13 +10,13 @@ and store records, never to a second copy here.
 Task IDs: prefix **EWEB**, next unused **EWEB-002**. Numbers are never reused.
 
 One heading is one task. Bullets under a heading are its specification, not separate
-tasks. Status is `ready`, `blocked`, or `idea`; a `ready` entry carries a
+tasks. Status is `todo`, `blocked`, or `idea`; a `todo` entry carries a
 `**Done when:**` paragraph. A section recording anti-goals rather than work carries
 `**Not tasks** · `anti-goals`` instead of a metadata line.
 
 ## Make the deployed revision verifiable
 
-**EWEB-001** · `ready`
+**EWEB-001** · `todo`
 
 **Done when:** every served page carries the commit it was built from — a meta tag, a
 comment, or a small generated file — so that comparing what is live against `main` is a
