@@ -145,8 +145,8 @@ p { margin: 0; }
   padding: 13px 22px; border-radius: 999px; font-weight: 600; font-size: 15px;
   text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform .15s ease, background .2s;
 }
-.btn--primary { background: var(--accent); color: #fff; }
-.btn--primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.btn--primary { background: var(--accent); color: #21171b; }
+.btn--primary:hover { background: color-mix(in srgb, var(--accent) 88%, white); transform: translateY(-1px); }
 .btn--ghost { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn--ghost:hover { border-color: var(--accent); color: var(--accent-dark); }
 [data-theme="dark"] .btn--ghost:hover { color: var(--accent); }

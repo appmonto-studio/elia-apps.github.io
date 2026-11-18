@@ -168,7 +168,7 @@ STUDIO_IMPRINT_URL = "https://appmonto.com/legal/"
 
 def studio_line(lang):
     t = STUDIO[lang]
-    brand = f'<a href="{STUDIO_URL}" rel="noopener">{STUDIO_NAME}</a>'
+    brand = f'<a href="{STUDIO_URL}{href(lang)}" rel="noopener">{STUDIO_NAME}</a>'
     imprint = f'<a href="{STUDIO_IMPRINT_URL}" rel="noopener">{escape(t["imprint"])}</a>'
     return f'{t["brand_of"].format(studio=brand)} · {imprint}'
 
@@ -203,33 +203,28 @@ def footer(lang, links, note, route=""):
 
 T = {'en': {'lang': 'Language',
         'note': 'Not a medical device.',
-        'home': {'title': "Elia — calm, private apps for birth and the years that follow",
-                 'description': 'Elia is a small family of calm, private, offline-first apps for birth, the early days '
-                                'with your baby, and the childhood years that follow. No account. No ads. No cloud.',
+        'home': {'title': 'Elia — apps for birth and the first years',
+                 'description': 'Time contractions, record feeds and look back at the entries on your phone. Both apps work offline.',
                  'nav': [('Apps', '#apps'), ('Philosophy', '#philosophy'), ('Story', '#story')],
                  'hero': ['Elia',
-                          'Calm companions for birth and beyond.',
-                          'A small family of private, offline-first apps for birth, the early days with your baby, and '
-                          'the childhood years that follow. No account. No ads. No cloud.',
+                          'When was the last contraction? The last feed?',
+                          'Time contractions, record feeds and look back at the entries on your phone. Both apps work offline.',
                           'See the apps',
                           'Why Elia'],
                  'apps_head': ['The apps',
-                               'Three apps for three chapters.',
-                               'Each does one thing well, and gets out of your way.'],
+                               'Choose an app',
+                               'Contractions and Feeding are available on Android. Moments is in development.'],
                  'coming': 'Coming soon',
                  'on_play': 'On Google Play',
                  'get_play': 'Get it on Google Play',
                  'learn': 'Learn more',
                  'contr_card': ['Elia Contractions',
-                                'A calm companion for birth. Time contractions clearly, stay present, and share a '
-                                'simple summary with your care team.'],
+                                'Record when each contraction starts and ends. Share the times with your midwife or doctor.'],
                  'feed_card': ['Elia Feeding',
-                               'A private feeding log for the first days with your baby. Tap what just happened '
-                               '— Elia remembers the rest.'],
+                               'Record feeds, pumping sessions and diaper changes. Check when you last switched sides.'],
                  'promise': ['The promise',
-                             'The interface should reduce stress, not add to it.',
-                             'Elia is warm, quiet, and trustworthy — like a steady midwife and a supportive partner, not '
-                             'like hospital software. Every Elia app follows the same principles.'],
+                             'Your entries stay on your phone',
+                             'You can use Contractions and Feeding without signing in. You choose when to share a summary.'],
                  'chips': ['No account',
                            'No ads',
                            'No subscriptions',
@@ -249,35 +244,28 @@ T = {'en': {'lang': 'Language',
                            'family of apps for the quiet, tired, important days that follow.']}},
  'de': {'lang': 'Sprache',
         'note': 'Kein Medizinprodukt.',
-        'home': {'title': 'Elia — ruhige, private Apps für Geburt und Kindheit',
-                 'description': 'Elia ist eine kleine Familie ruhiger, privater Offline-first-Apps für die '
-                                'Geburt, die ersten Tage mit deinem Baby und die Kindheitsjahre danach. Kein Konto. '
-                                'Keine Werbung. Keine Cloud.',
+        'home': {'title': 'Elia — Apps für die Geburt und die ersten Jahre',
+                 'description': 'Miss die Dauer der Wehen, halte Mahlzeiten fest und sieh auf dem Handy nach, wann die letzte war. Beide Apps funktionieren offline.',
                  'nav': [('Apps', '#apps'), ('Philosophie', '#philosophy'), ('Geschichte', '#story')],
                  'hero': ['Elia',
-                          'Ruhige Begleiter für Geburt und die Zeit danach.',
-                          'Eine kleine Familie privater Offline-first-Apps für die Geburt, die ersten Tage mit deinem '
-                          'Baby und die Kindheitsjahre danach. Kein Konto. Keine Werbung. Keine Cloud.',
+                          'Wann war die letzte Wehe? Und die letzte Mahlzeit?',
+                          'Miss die Dauer der Wehen, halte Mahlzeiten fest und sieh auf dem Handy nach, wann die letzte war. Beide Apps funktionieren offline.',
                           'Apps ansehen',
                           'Warum Elia'],
                  'apps_head': ['Die Apps',
-                               'Drei Apps für drei Kapitel.',
-                               'Jede tut eine Sache gut und tritt dann in den Hintergrund.'],
+                               'App auswählen',
+                               'Contractions und Feeding sind für Android erhältlich. Moments ist in Entwicklung.'],
                  'coming': 'Demnächst',
                  'on_play': 'Bei Google Play',
                  'get_play': 'Bei Google Play herunterladen',
                  'learn': 'Mehr erfahren',
                  'contr_card': ['Elia Contractions',
-                                'Ein ruhiger Begleiter für die Geburt. Wehen klar erfassen, präsent bleiben und bei '
-                                'Bedarf eine einfache Zusammenfassung teilen.'],
+                                'Erfasse Beginn und Ende jeder Wehe. Die Zeiten kannst du mit deiner Hebamme oder deinem Arzt teilen.'],
                  'feed_card': ['Elia Feeding',
-                               'Ein privates Still- und Fütterungsprotokoll für die ersten Tage mit deinem '
-                               'Baby. Tippe, was gerade passiert ist — Elia merkt sich den Rest.'],
+                               'Erfasse Mahlzeiten, Abpumpen und Windelwechsel. Sieh nach, an welcher Seite du zuletzt gestillt hast.'],
                  'promise': ['Das Versprechen',
-                             'Die Oberfläche soll Stress reduzieren, nicht erhöhen.',
-                             'Elia ist warm, leise und vertrauenswürdig — eher wie eine verlässliche Hebamme und ein '
-                             'unterstützender Partner als wie Krankenhaussoftware. Jede Elia-App folgt denselben '
-                             'Prinzipien.'],
+                             'Deine Einträge bleiben auf deinem Handy',
+                             'Contractions und Feeding funktionieren ohne Anmeldung. Du entscheidest, wann du eine Zusammenfassung teilst.'],
                  'chips': ['Kein Konto',
                            'Keine Werbung',
                            'Keine Abos',
@@ -298,36 +286,28 @@ T = {'en': {'lang': 'Language',
                            'kleinen App-Familie für die leisen, müden und wichtigen Tage danach.']}},
  'es': {'lang': 'Idioma',
         'note': 'No es un dispositivo médico.',
-        'home': {'title': 'Elia — apps tranquilas y privadas para el parto y la infancia',
-                 'description': 'Elia es una pequeña familia de apps tranquilas, privadas y offline-first para el '
-                                'parto, los primeros días con tu bebé y los años de infancia que siguen. Sin cuenta. '
-                                'Sin anuncios. Sin sincronización en la nube.',
+        'home': {'title': 'Elia — apps para el parto y los primeros años',
+                 'description': 'Cronometra las contracciones, anota las tomas y consulta los registros en tu móvil. Ambas apps funcionan sin conexión.',
                  'nav': [('Apps', '#apps'), ('Filosofía', '#philosophy'), ('Historia', '#story')],
                  'hero': ['Elia',
-                          'Compañeras tranquilas para el parto y lo que viene después.',
-                          'Una pequeña familia de apps privadas y offline-first para el parto, los primeros días con '
-                          'tu bebé y los años de infancia que siguen. Sin cuenta. Sin anuncios. Sin sincronización '
-                          'en la nube.',
+                          '¿Cuándo fue la última contracción? ¿Y la última toma?',
+                          'Cronometra las contracciones, anota las tomas y consulta los registros en tu móvil. Ambas apps funcionan sin conexión.',
                           'Ver las apps',
                           'Por qué Elia'],
                  'apps_head': ['Las apps',
-                               'Tres apps para tres capítulos.',
-                               'Cada una hace una cosa bien y no se interpone.'],
+                               'Elige una app',
+                               'Contractions y Feeding están disponibles para Android. Moments está en desarrollo.'],
                  'coming': 'Próximamente',
                  'on_play': 'En Google Play',
                  'get_play': 'Consíguelo en Google Play',
                  'learn': 'Más información',
                  'contr_card': ['Elia Contractions',
-                                'Una compañera tranquila para el parto. Registra las contracciones con claridad, '
-                                'mantente presente y comparte un resumen sencillo con tu equipo de atención.'],
+                                'Anota cuándo empieza y termina cada contracción. Puedes compartir los tiempos con tu equipo médico.'],
                  'feed_card': ['Elia Feeding',
-                               'Un registro privado de alimentación para los primeros días con tu bebé. Toca lo '
-                               'que acaba de pasar; Elia recuerda el resto.'],
+                               'Anota las tomas, las extracciones y los cambios de pañal. Consulta qué pecho diste la última vez.'],
                  'promise': ['La promesa',
-                             'La interfaz debería reducir el estrés, no añadirlo.',
-                             'Elia es cálida, discreta y confiable: más parecida a una presencia constante y una pareja '
-                             'que acompaña que a un software de hospital. Todas las apps de Elia siguen los mismos '
-                             'principios.'],
+                             'Tus registros se guardan en tu móvil',
+                             'Puedes usar Contractions y Feeding sin iniciar sesión. Tú decides cuándo compartir un resumen.'],
                  'chips': ['Sin cuenta',
                            'Sin anuncios',
                            'Sin suscripciones',
@@ -359,13 +339,11 @@ APP = {'en': {'common': {'overview': 'Overview',
                    'why': 'Why it exists',
                    'still': 'Still need help?',
                    'read': 'We read every message.'},
-        'contractions': {'title': 'Elia Contractions — a calm companion for birth',
-                         'desc': 'Elia Contractions is a calm, offline-first contraction companion for families during '
-                                 'labor. Time contractions clearly, stay present, and share a simple summary.',
-                         'tag': 'A calm companion for birth.',
-                         'sub': 'A contraction companion for families during labor, built around one belief: during '
-                                'labor, the interface should reduce stress, not add to it.',
-                         'head': ['What it is', 'Just enough, exactly when it matters.'],
+        'contractions': {'title': 'Elia Contractions — contraction timer',
+                         'desc': 'Tap at the start of a contraction and again at the end. The app records its duration and the time between starts.',
+                         'tag': 'Time your contractions',
+                         'sub': 'Tap at the start of a contraction and again at the end. The app records its duration and the time between starts.',
+                         'head': ['What it is', 'Your contraction history'],
                          'left': 'Elia Contractions helps you',
                          'right': 'What it is not',
                          'yes': ['Record contractions with one clear tap.',
@@ -400,28 +378,26 @@ APP = {'en': {'common': {'overview': 'Overview',
                                         'Elia Contractions is not a medical device and does not provide medical advice '
                                         'or diagnosis. It never tells you when to go to the hospital. Always follow '
                                         'the guidance of your doctors and midwives.']},
-        'feeding': {'title': 'Elia Feeding — a calm feeding log for the first days',
-                    'desc': 'Elia Feeding is a calm, private newborn feeding and care log for the first days with your '
-                            'baby. No account. No cloud. No judgement.',
-                    'tag': 'Remember just enough.',
-                    'sub': 'A private feeding log for the first days with your baby. No account. No cloud. No '
-                           'judgement. Just the last feed, the next action, and a simple history.',
-                    'pull': ['Open the app. Tap the thing that just happened. Elia remembers.',
-                             'Most baby trackers help you measure everything. Elia helps you remember just enough.'],
-                    'head': ['What it does', 'Fast, obvious logging — one hand, low attention.'],
+        'feeding': {'title': 'Elia Feeding — feeding and diaper log',
+                    'desc': 'Log breastfeeding, bottles, diapers and pumping. The home screen shows the last feed and diaper change.',
+                    'tag': 'When did the baby last eat?',
+                    'sub': 'Log breastfeeding, bottles, diapers and pumping. The home screen shows the last feed and diaper change.',
+                    'pull': ['Which side was it last time?',
+                             'The breastfeeding timer records the side. If you switch during a feed, both sides stay in the same entry.'],
+                    'head': ['What it does', 'What you can record'],
                     'left': 'In the app',
                     'right': 'Deliberately not included',
                     'yes': ['Breastfeeding timer with Left / Right side.',
                             'Bottle feeding log, with optional amount.',
                             'Simple diaper log: wet, dirty, or both.',
-                            'A home screen showing the current state and last useful context.',
-                            'A quiet history you can edit or delete.',
+                            'Pumping sessions, with side, duration and optional amount.',
+                            'Review a day, 7 days or 30 days. Edit or delete individual entries in History.',
                             'Share or export as plain text.'],
                     'no': ['Accounts, cloud, or multi-parent sync.',
                            'Growth charts and analytics.',
                            'Feeding targets, streaks, or warnings.',
                            'Medical recommendations.',
-                           'Sleep, medication, or pumping inventory.',
+                           'Sleep and medication logs.',
                            'Ads or billing.'],
                     'principles': ['Yours alone.',
                                    'No goals, warnings, or pressure. Elia remembers what you log — nothing more.',
@@ -433,7 +409,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                                     'No analytics',
                                     'Offline-first',
                                     'No judgement'],
-                                   'Elia Feeding is a calm memory aid, not a medical tool. It does not give medical '
+                                   'Elia Feeding is a feeding log. It does not give medical '
                                    "advice and does not define what is normal. For anything about your baby's health, "
                                    'talk to your pediatrician or midwife.']}},
  'de': {'common': {'overview': 'Überblick',
@@ -447,14 +423,11 @@ APP = {'en': {'common': {'overview': 'Overview',
                    'why': 'Warum es existiert',
                    'still': 'Brauchst du Hilfe?',
                    'read': 'Wir lesen jede Nachricht.'},
-        'contractions': {'title': 'Elia Contractions — ein ruhiger Begleiter für die Geburt',
-                         'desc': 'Elia Contractions ist ein ruhiger Offline-first-Begleiter für Familien während der '
-                                 'Geburt. Wehen klar erfassen, präsent bleiben und eine einfache Zusammenfassung '
-                                 'teilen.',
-                         'tag': 'Ein ruhiger Begleiter für die Geburt.',
-                         'sub': 'Ein Wehenbegleiter für Familien während der Geburt, gebaut um eine Überzeugung: '
-                                'Während der Geburt soll die Oberfläche Stress reduzieren, nicht erhöhen.',
-                         'head': ['Was es ist', 'Gerade genug, genau dann, wenn es zählt.'],
+        'contractions': {'title': 'Elia Contractions — Wehen-Timer',
+                         'desc': 'Tippe zu Beginn und am Ende einer Wehe. Die App zeigt die Dauer und den Abstand zwischen zwei Wehenanfängen.',
+                         'tag': 'Wehen messen',
+                         'sub': 'Tippe zu Beginn und am Ende einer Wehe. Die App zeigt die Dauer und den Abstand zwischen zwei Wehenanfängen.',
+                         'head': ['Was es ist', 'Dein Wehenverlauf'],
                          'left': 'Elia Contractions hilft dir',
                          'right': 'Was es nicht ist',
                          'yes': ['Wehen mit einem klaren Tippen erfassen.',
@@ -489,30 +462,26 @@ APP = {'en': {'common': {'overview': 'Overview',
                                         'Elia Contractions ist kein Medizinprodukt und gibt keine medizinische '
                                         'Beratung oder Diagnose. Sie sagt dir nie, wann du ins Krankenhaus fahren '
                                         'sollst. Folge immer den Empfehlungen deiner Ärztinnen, Ärzte und Hebammen.']},
-        'feeding': {'title': 'Elia Feeding — ein ruhiges Fütterungsprotokoll für die ersten Tage',
-                    'desc': 'Elia Feeding ist ein ruhiges, privates Protokoll für Füttern und Pflege in den ersten '
-                            'Tagen mit deinem Baby. Kein Konto. Keine Cloud. Kein Urteil.',
-                    'tag': 'Gerade genug merken.',
-                    'sub': 'Ein privates Fütterungsprotokoll für die ersten Tage mit deinem Baby. Kein Konto. '
-                           'Keine Cloud. Kein Urteil. Nur die letzte Mahlzeit, die nächste Aktion und eine einfache '
-                           'Historie.',
-                    'pull': ['App öffnen. Antippen, was gerade passiert ist. Elia merkt es sich.',
-                             'Die meisten Babytracker helfen, alles zu messen. Elia hilft, gerade genug im Kopf zu '
-                             'behalten.'],
-                    'head': ['Was es tut', 'Schnelles, klares Protokollieren — mit einer Hand, wenig Aufmerksamkeit.'],
+        'feeding': {'title': 'Elia Feeding — Mahlzeiten und Windeln protokollieren',
+                    'desc': 'Erfasse Stillen, Fläschchen, Windeln und Abpumpen. Auf der Startseite siehst du die letzte Mahlzeit und den letzten Windelwechsel.',
+                    'tag': 'Wann hat dein Baby zuletzt getrunken?',
+                    'sub': 'Erfasse Stillen, Fläschchen, Windeln und Abpumpen. Auf der Startseite siehst du die letzte Mahlzeit und den letzten Windelwechsel.',
+                    'pull': ['Welche Seite war zuletzt dran?',
+                             'Der Still-Timer merkt sich die Seite. Wechselst du während des Stillens, bleiben beide Seiten in einem Eintrag.'],
+                    'head': ['Was es tut', 'Das kannst du eintragen'],
                     'left': 'In der App',
                     'right': 'Bewusst nicht enthalten',
                     'yes': ['Still-Timer mit linker / rechter Seite.',
                             'Fläschchen-Protokoll mit optionaler Menge.',
                             'Einfaches Windelprotokoll: nass, schmutzig oder beides.',
-                            'Startseite mit aktuellem Zustand und dem letzten nützlichen Kontext.',
-                            'Eine schlichte Historie, die du bearbeiten oder löschen kannst.',
+                            'Abpumpen mit Seite, Dauer und auf Wunsch der abgepumpten Menge.',
+                            'Übersicht für einen Tag, 7 Tage oder 30 Tage. Im Verlauf kannst du einzelne Einträge ändern oder löschen.',
                             'Teilen oder Export als Klartext.'],
                     'no': ['Konten, Cloud oder Synchronisierung zwischen Eltern.',
                            'Wachstumskurven und Analysen.',
                            'Fütterungsziele, Serien oder Warnungen.',
                            'Medizinische Empfehlungen.',
-                           'Schlaf, Medikamente oder Pumpvorräte.',
+                           'Schlaf- und Medikamentenprotokolle.',
                            'Werbung oder Bezahlung.'],
                     'principles': ['Nur deins.',
                                    'Keine Ziele, Warnungen oder Druck. Elia merkt sich, was du einträgst — mehr nicht.',
@@ -524,7 +493,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                                     'Keine Analyse',
                                     'Offline-first',
                                     'Kein Urteil'],
-                                   'Elia Feeding ist eine ruhige Gedächtnisstütze, kein medizinisches Werkzeug. Sie '
+                                   'Elia Feeding ist ein Protokoll für Mahlzeiten und Pflege. Sie '
                                    'gibt keine medizinischen Ratschläge und definiert nicht, was normal ist. Wenn es '
                                    'um die Gesundheit deines Babys geht, sprich mit Kinderarzt, Kinderärztin oder '
                                    'Hebamme.']}},
@@ -539,14 +508,11 @@ APP = {'en': {'common': {'overview': 'Overview',
                    'why': 'Por qué existe',
                    'still': '¿Necesitas ayuda?',
                    'read': 'Leemos todos los mensajes.'},
-        'contractions': {'title': 'Elia Contractions — una compañera tranquila para el parto',
-                         'desc': 'Elia Contractions es una compañera tranquila y offline-first para familias durante '
-                                 'el parto. Registra contracciones con claridad, mantente presente y comparte un '
-                                 'resumen sencillo.',
-                         'tag': 'Una compañera tranquila para el parto.',
-                         'sub': 'Una compañera de contracciones para familias durante el parto, creada alrededor de '
-                                'una idea: durante el parto, la interfaz debería reducir el estrés, no añadirlo.',
-                         'head': ['Qué es', 'Lo justo, justo cuando importa.'],
+        'contractions': {'title': 'Elia Contractions — cronómetro de contracciones',
+                         'desc': 'Toca el botón al empezar una contracción y de nuevo al terminar. La app registra la duración y el intervalo entre inicios.',
+                         'tag': 'Cronometra tus contracciones',
+                         'sub': 'Toca el botón al empezar una contracción y de nuevo al terminar. La app registra la duración y el intervalo entre inicios.',
+                         'head': ['Qué es', 'Tu historial de contracciones'],
                          'left': 'Elia Contractions te ayuda a',
                          'right': 'Qué no es',
                          'yes': ['Registrar contracciones con un toque claro.',
@@ -581,29 +547,26 @@ APP = {'en': {'common': {'overview': 'Overview',
                                         'Elia Contractions no es un dispositivo médico y no ofrece consejo médico ni '
                                         'diagnóstico. Nunca te dice cuándo ir al hospital. Sigue siempre las '
                                         'indicaciones de tus profesionales de salud.']},
-        'feeding': {'title': 'Elia Feeding — un registro tranquilo de alimentación para los primeros días',
-                    'desc': 'Elia Feeding es un registro tranquilo y privado de alimentación y cuidados del recién nacido '
-                            'para los primeros días con tu bebé. Sin cuenta. Sin sincronización en la nube. Sin juicio.',
-                    'tag': 'Recordar justo lo necesario.',
-                    'sub': 'Un registro privado de alimentación para los primeros días con tu bebé. Sin cuenta. '
-                           'Sin sincronización en la nube. Sin juicio. Solo la última alimentación, la siguiente acción y un historial sencillo.',
-                    'pull': ['Abre la app. Toca lo que acaba de pasar. Elia lo recuerda.',
-                             'La mayoría de apps para bebés ayudan a medirlo todo. Elia te ayuda a recordar justo lo '
-                             'necesario.'],
-                    'head': ['Qué hace', 'Registro rápido y obvio: una mano, poca atención.'],
+        'feeding': {'title': 'Elia Feeding — registro de tomas y pañales',
+                    'desc': 'Registra lactancia, biberones, pañales y extracciones. En la pantalla de inicio verás la última toma y el último cambio de pañal.',
+                    'tag': '¿Cuándo fue la última toma?',
+                    'sub': 'Registra lactancia, biberones, pañales y extracciones. En la pantalla de inicio verás la última toma y el último cambio de pañal.',
+                    'pull': ['¿Qué pecho diste la última vez?',
+                             'El temporizador guarda el lado. Si cambias de pecho durante la toma, ambos quedan en el mismo registro.'],
+                    'head': ['Qué hace', 'Qué puedes registrar'],
                     'left': 'En la app',
                     'right': 'Deliberadamente no incluido',
                     'yes': ['Temporizador de lactancia con lado izquierdo / derecho.',
                             'Registro de biberón, con cantidad opcional.',
                             'Registro simple de pañales: pis, caca o ambos.',
-                            'Pantalla principal con el estado actual y el último contexto útil.',
-                            'Un historial discreto que puedes editar o borrar.',
+                            'Extracciones con lado, duración y cantidad opcional.',
+                            'Consulta el resumen de un día, de 7 días o de 30 días. Puedes editar o borrar entradas en el historial.',
                             'Compartir o exportar como texto plano.'],
                     'no': ['Cuentas o sincronización en la nube entre cuidadores.',
                            'Gráficas de crecimiento y analíticas.',
                            'Objetivos de alimentación, rachas o alertas.',
                            'Recomendaciones médicas.',
-                           'Sueño, medicación o inventario de extracción.',
+                           'Registros de sueño y medicación.',
                            'Anuncios o pagos.'],
                     'principles': ['Solo tuya.',
                                    'Sin objetivos, alertas ni presión. Elia recuerda lo que registras, nada más.',
@@ -615,7 +578,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                                     'Sin analíticas',
                                     'Offline-first',
                                     'Sin juicio'],
-                                   'Elia Feeding es una ayuda tranquila para la memoria, no una herramienta médica. No '
+                                   'Elia Feeding sirve para registrar tomas y cuidados. No '
                                    'da consejos médicos ni define qué es normal. Para cualquier duda sobre la salud de '
                                    'tu bebé, habla con tu pediatra o profesional de salud.']}}}
 
@@ -631,7 +594,7 @@ SUPPORT = {'en': {'contractions': [('Is my data private?',
                           'so you can share them with your care team. Always follow the guidance of your doctors and '
                           'midwives.'),
                          ('Can I correct a mistake?',
-                          'Yes. You can edit or delete entries calmly. Nothing is permanent by accident.'),
+                          'Yes. You can edit or delete entries in your history.'),
                          ('How do I share a summary with my midwife or doctor?',
                           "You can export or share your session as plain text using your device's share options. You "
                           'choose where it goes; Elia never sends it anywhere on its own.'),
@@ -656,8 +619,7 @@ SUPPORT = {'en': {'contractions': [('Is my data private?',
                      "You can export or share it as plain text using your device's share options. You choose the "
                      'destination; Elia never sends it anywhere on its own.'),
                     ('Are there ads or subscriptions?',
-                     'No ads, no subscriptions, no billing. Elia Feeding is a calm memory aid, not a monetization '
-                     'funnel.')]},
+                     'No. Elia Feeding has no ads or subscriptions.')]},
  'de': {'contractions': [('Sind meine Daten privat?',
                           'Ja. Elia Contractions hat kein Konto und kein Backend. Wehenzeiten, Historie und '
                           'Einstellungen bleiben auf deinem Gerät. Details stehen in der Datenschutzerklärung.'),
@@ -669,7 +631,7 @@ SUPPORT = {'en': {'contractions': [('Is my data private?',
                           'Wehen klar, damit du sie mit deinem Betreuungsteam teilen kannst. Folge immer den '
                           'Empfehlungen deiner Ärztinnen, Ärzte und Hebammen.'),
                          ('Kann ich einen Fehler korrigieren?',
-                          'Ja. Du kannst Einträge ruhig bearbeiten oder löschen. Nichts ist aus Versehen endgültig.'),
+                          'Ja. Du kannst Einträge im Verlauf bearbeiten oder löschen.'),
                          ('Wie teile ich eine Zusammenfassung mit Hebamme oder Arzt?',
                           'Du kannst deine Sitzung als Klartext über die Teilen-Funktionen deines Geräts exportieren. '
                           'Du wählst das Ziel; Elia sendet nie von selbst etwas.'),
@@ -694,8 +656,7 @@ SUPPORT = {'en': {'contractions': [('Is my data private?',
                      'Du kannst es als Klartext über die Teilen-Funktionen deines Geräts exportieren. Du wählst das '
                      'Ziel; Elia sendet nie von selbst etwas.'),
                     ('Gibt es Werbung oder Abos?',
-                     'Keine Werbung, keine Abos, keine Bezahlung. Elia Feeding ist eine ruhige Gedächtnisstütze, kein '
-                     'Monetarisierungstrichter.')]},
+                     'Nein. Elia Feeding enthält weder Werbung noch Abos.')]},
  'es': {'contractions': [('¿Mis datos son privados?',
                           'Sí. Elia Contractions no tiene cuenta ni backend. Tus tiempos de contracciones, historial y '
                           'ajustes se quedan en tu dispositivo. Consulta la política de privacidad para más detalles.'),
@@ -707,7 +668,7 @@ SUPPORT = {'en': {'contractions': [('Is my data private?',
                           'para que puedas compartirlas con tu equipo de atención. Sigue siempre las indicaciones de '
                           'tus profesionales de salud.'),
                          ('¿Puedo corregir un error?',
-                          'Sí. Puedes editar o borrar entradas con calma. Nada queda permanente por accidente.'),
+                          'Sí. Puedes editar o borrar entradas en tu historial.'),
                          ('¿Cómo comparto un resumen con mi equipo de salud?',
                           'Puedes exportar o compartir tu sesión como texto plano usando las opciones de compartir de '
                           'tu dispositivo. Tú eliges el destino; Elia nunca envía nada por su cuenta.'),
@@ -732,23 +693,21 @@ SUPPORT = {'en': {'contractions': [('Is my data private?',
                      'Puedes exportarlo o compartirlo como texto plano usando las opciones de compartir de tu '
                      'dispositivo. Tú eliges el destino; Elia nunca envía nada por su cuenta.'),
                     ('¿Hay anuncios o suscripciones?',
-                     'No hay anuncios, suscripciones ni pagos. Elia Feeding es una ayuda tranquila para la memoria, no '
-                     'un embudo de monetización.')]}}
+                     'No. Elia Feeding no tiene anuncios ni suscripciones.')]}}
 
 
 MOMENTS = {
  'en': {'card': ['Elia Moments',
-                 'A private home for the little firsts. Capture a memory in seconds today, and enjoy it with your '
-                 'family years later.'],
-        'app': {'title': 'Elia Moments — a private home for the little firsts',
-                'desc': 'Elia Moments is a calm, private family archive for the small firsts and meaningful memories '
+                 'A journal of childhood photos and notes, organised by date and by child.'],
+        'app': {'title': 'Elia Moments — a childhood photo journal',
+                'desc': 'Elia Moments is a private family archive for the small firsts and meaningful memories '
                         'of childhood. No account. No cloud. Local-first.',
-                'tag': 'Remember the little firsts.',
+                'tag': 'A photo and the story behind it',
                 'sub': 'A private family archive for the small firsts and meaningful memories that otherwise '
                        'scatter across notes, chats, and photo libraries.',
-                'pull': ['Capture it in seconds today. Enjoy it with your family years later.',
-                         'The result is a child’s story, not a dashboard.'],
-                'head': ['What it does', 'One durable home for the memories that matter.'],
+                'pull': ['What did they call the dog before they could say his name?',
+                         'Write down the word, add a photo and save the date. The entry shows how old your child was.'],
+                'head': ['What it does', 'Inside the journal'],
                 'left': 'In the app',
                 'right': 'Deliberately not included',
                 'yes': ['A moment with a title, date, and automatically calculated age.',
@@ -790,17 +749,16 @@ MOMENTS = {
                     ('Are there ads or subscriptions?',
                      'No ads, and no subscription gate for the core archive.')]},
  'de': {'card': ['Elia Moments',
-                 'Ein privates Zuhause für die kleinen ersten Male. Heute in Sekunden festhalten, Jahre später '
-                 'gemeinsam genießen.'],
-        'app': {'title': 'Elia Moments — ein privates Zuhause für die kleinen ersten Male',
-                'desc': 'Elia Moments ist ein ruhiges, privates Familienarchiv für die kleinen ersten Male und '
+                 'Ein Tagebuch für Fotos und Notizen aus der Kindheit, nach Datum und Kind geordnet.'],
+        'app': {'title': 'Elia Moments — ein Fototagebuch für die Kindheit',
+                'desc': 'Elia Moments ist ein privates Familienarchiv für die kleinen ersten Male und '
                         'bedeutsamen Erinnerungen der Kindheit. Kein Konto. Keine Cloud. Local-first.',
-                'tag': 'Die kleinen ersten Male festhalten.',
+                'tag': 'Ein Foto und die Geschichte dazu',
                 'sub': 'Ein privates Familienarchiv für die kleinen ersten Male und bedeutsamen '
                        'Erinnerungen, die sonst zwischen Notizen, Chats und Fotomediatheken verloren gehen.',
-                'pull': ['Heute in Sekunden festhalten. Jahre später gemeinsam genießen.',
-                         'Das Ergebnis ist die Geschichte eines Kindes, kein Dashboard.'],
-                'head': ['Was sie kann', 'Ein dauerhaftes Zuhause für die Erinnerungen, die zählen.'],
+                'pull': ['Wie hat dein Kind den Hund genannt, bevor es seinen Namen aussprechen konnte?',
+                         'Schreib das Wort auf, füge ein Foto hinzu und speichere das Datum. Im Eintrag steht, wie alt dein Kind damals war.'],
+                'head': ['Was sie kann', 'Im Tagebuch'],
                 'left': 'In der App',
                 'right': 'Bewusst nicht enthalten',
                 'yes': ['Ein Moment mit Titel, Datum und automatisch berechnetem Alter.',
@@ -846,17 +804,16 @@ MOMENTS = {
                     ('Gibt es Werbung oder Abos?',
                      'Keine Werbung und keine Abo-Schranke für das Kernarchiv.')]},
  'es': {'card': ['Elia Moments',
-                 'Un hogar privado para las pequeñas primeras veces. Guárdalo en segundos hoy y disfrútalo en familia '
-                 'años después.'],
-        'app': {'title': 'Elia Moments — un hogar privado para las pequeñas primeras veces',
-                'desc': 'Elia Moments es un archivo familiar tranquilo y privado para las pequeñas primeras veces y '
+                 'Un diario de fotos y notas de la infancia, organizado por fecha y por hijo.'],
+        'app': {'title': 'Elia Moments — un diario de fotos de la infancia',
+                'desc': 'Elia Moments es un archivo familiar privado para las pequeñas primeras veces y '
                         'los recuerdos importantes de la infancia. Sin cuenta. Sin nube. Local-first.',
-                'tag': 'Recuerda las pequeñas primeras veces.',
+                'tag': 'Una foto y la historia que hay detrás',
                 'sub': 'Un archivo familiar privado para las pequeñas primeras veces y los recuerdos '
                        'que, si no, se dispersan entre notas, chats y fototecas.',
-                'pull': ['Guárdalo en segundos hoy. Disfrútalo en familia años después.',
-                         'El resultado es la historia de un niño, no un panel de métricas.'],
-                'head': ['Qué hace', 'Un hogar duradero para los recuerdos que importan.'],
+                'pull': ['¿Cómo llamaba al perro antes de saber decir su nombre?',
+                         'Anota la palabra, añade una foto y guarda la fecha. La entrada muestra la edad que tenía tu hijo en ese momento.'],
+                'head': ['Qué hace', 'Dentro del diario'],
                 'left': 'En la app',
                 'right': 'Deliberadamente no incluido',
                 'yes': ['Un momento con título, fecha y edad calculada automáticamente.',
@@ -1054,7 +1011,7 @@ SHOTS_T = {
         "alt": {
             "contractions": [
                 "Track each contraction — start and stop with one tap, then stay focused on the moment.",
-                "See the rhythm at a glance — recent contractions, interval, and last duration in one calm view.",
+                "See the rhythm at a glance — recent contractions, interval, and last duration on one screen.",
                 "Review your session history — check start times, durations and intervals, and edit entries when needed.",
                 "Private by design — no account, no ads, no tracking. Your data stays on your device unless you choose to share it.",
             ],
@@ -1062,7 +1019,7 @@ SHOTS_T = {
                 "Track a breastfeeding session, switch sides with one tap, and see the time for each side.",
                 "Log a bottle feed with an optional amount using a simple visual scale.",
                 "Log a wet, dirty, or combined diaper change in one tap.",
-                "Start a feed or log a bottle, diaper, or pumping session from the calm home screen.",
+                "Start a feed or log a bottle, diaper, or pumping session from the home screen.",
                 "See a clear daily summary of feeding time, bottle amounts, and care events.",
                 "Review and filter the complete history of breastfeeding, bottles, diapers, and pumping.",
             ],
@@ -1075,7 +1032,7 @@ SHOTS_T = {
         "alt": {
             "contractions": [
                 "Jede Wehe erfassen — mit einem Tippen starten und stoppen und im Moment bleiben.",
-                "Den Rhythmus auf einen Blick sehen — letzte Wehen, Intervall und Dauer in einer ruhigen Ansicht.",
+                "Den Rhythmus auf einen Blick sehen — letzte Wehen, Intervall und Dauer auf einem Bildschirm.",
                 "Den Sitzungsverlauf durchsehen — Startzeiten, Dauern und Intervalle prüfen und Einträge bearbeiten.",
                 "Von Grund auf privat — kein Konto, keine Werbung, kein Tracking. Deine Daten bleiben auf deinem Gerät.",
             ],
@@ -1083,7 +1040,7 @@ SHOTS_T = {
                 "Eine Stillmahlzeit erfassen, mit einem Tippen die Seite wechseln und die Zeit pro Seite sehen.",
                 "Eine Flaschenmahlzeit mit optionaler Menge über eine einfache visuelle Skala eintragen.",
                 "Eine nasse, volle oder kombinierte Windel mit einem Tippen eintragen.",
-                "Auf dem ruhigen Startbildschirm eine Mahlzeit starten oder Flasche, Windel und Abpumpen eintragen.",
+                "Auf dem Startbildschirm eine Mahlzeit starten oder Flasche, Windel und Abpumpen eintragen.",
                 "Eine klare Tagesübersicht über Stillzeiten, Flaschenmengen und Pflegeereignisse sehen.",
                 "Den vollständigen Verlauf von Stillen, Flaschen, Windeln und Abpumpen ansehen und filtern.",
             ],
@@ -1096,7 +1053,7 @@ SHOTS_T = {
         "alt": {
             "contractions": [
                 "Cronometra cada contracción: empieza y para con un toque, y sigue presente en el momento.",
-                "Ve el ritmo de un vistazo: contracciones recientes, intervalo y última duración en una vista tranquila.",
+                "Ve el ritmo de un vistazo: contracciones recientes, intervalo y última duración en una sola pantalla.",
                 "Revisa el historial de la sesión: horas de inicio, duraciones, intervalos y edición de entradas.",
                 "Privada por diseño: sin cuenta, sin anuncios, sin seguimiento. Tus datos se quedan en tu dispositivo.",
             ],
@@ -1104,7 +1061,7 @@ SHOTS_T = {
                 "Registra una toma de pecho, cambia de lado con un toque y consulta el tiempo de cada lado.",
                 "Registra una toma con biberón y una cantidad opcional mediante una sencilla escala visual.",
                 "Registra con un toque un pañal mojado, sucio o ambas cosas.",
-                "Inicia una toma o registra biberón, pañal o extracción desde una pantalla de inicio tranquila.",
+                "Inicia una toma o registra biberón, pañal o extracción desde la pantalla de inicio.",
                 "Consulta un resumen diario claro del tiempo de lactancia, los biberones y los cuidados.",
                 "Revisa y filtra el historial completo de lactancia, biberones, pañales y extracciones.",
             ],
@@ -1155,9 +1112,9 @@ def support_page(lang, app):
     app_name = f"Elia {app.capitalize()}"
     title = f"{c['support']} — {app_name}"
     desc = {
-        "en": f"Help and answers for {app_name} — a calm, private app. Common questions and how to reach us.",
-        "de": f"Hilfe und Antworten für {app_name} — eine ruhige, private App. Häufige Fragen und Kontakt.",
-        "es": f"Ayuda y respuestas para {app_name}, una app tranquila y privada. Preguntas frecuentes y contacto.",
+        "en": f"Help and answers for {app_name}. Common questions and how to reach us.",
+        "de": f"Hilfe und Antworten für {app_name}. Häufige Fragen und Kontakt.",
+        "es": f"Ayuda y respuestas para {app_name}. Preguntas frecuentes y contacto.",
     }[lang]
     extra = app_style(app)
     faq = "".join(f'<details{" open" if i == 0 else ""}><summary>{escape(q)}</summary><p>{escape(a).replace("privacy policy", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">privacy policy</a>").replace("Datenschutzerklärung", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">Datenschutzerklärung</a>").replace("política de privacidad", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">política de privacidad</a>")}</p></details>' for i, (q, a) in enumerate(SUPPORT[lang][app]))
