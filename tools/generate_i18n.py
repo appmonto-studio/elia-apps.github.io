@@ -223,16 +223,9 @@ T = {'en': {'lang': 'Language',
                  'feed_card': ['Elia Feeding',
                                'Record feeds, pumping sessions and diaper changes. Check when you last switched sides.'],
                  'promise': ['The promise',
-                             'Your entries stay on your phone',
-                             'You can use Contractions and Feeding without signing in. You choose when to share a summary.'],
-                 'chips': ['No account',
-                           'No ads',
-                           'No subscriptions',
-                           'No cloud sync',
-                           'No analytics',
-                           'Offline-first',
-                           'Local-only by default',
-                           'No judgement'],
+                             'Use Elia without signing in',
+                             'Timing contractions and logging feeds are free and work offline. If you want cloud backup or family sharing, you can opt in where your app supports it. Elia Account activation is a one-time purchase. Invited family members can join without a separate purchase.'],
+                 'chips': ['Free offline use', 'No ads', 'No analytics'],
                  'story': ['Our story',
                            'Elia was born in a delivery room.',
                            'During labor, a partner reached for a contraction app. It lagged. The main button never '
@@ -264,16 +257,9 @@ T = {'en': {'lang': 'Language',
                  'feed_card': ['Elia Feeding',
                                'Erfasse Mahlzeiten, Abpumpen und Windelwechsel. Sieh nach, an welcher Seite du zuletzt gestillt hast.'],
                  'promise': ['Das Versprechen',
-                             'Deine Einträge bleiben auf deinem Handy',
-                             'Contractions und Feeding funktionieren ohne Anmeldung. Du entscheidest, wann du eine Zusammenfassung teilst.'],
-                 'chips': ['Kein Konto',
-                           'Keine Werbung',
-                           'Keine Abos',
-                           'Keine Cloud-Synchronisierung',
-                           'Keine Analyse',
-                           'Offline-first',
-                           'Standardmäßig lokal',
-                           'Kein Urteil'],
+                             'Elia ohne Anmeldung nutzen',
+                             'Wehen messen und Mahlzeiten festhalten kannst du kostenlos und offline. Wo deine App es unterstützt, kannst du Cloud-Backups oder das Teilen mit deiner Familie einschalten. Für die Aktivierung deines Elia Account zahlst du einmalig. Mit einer Familieneinladung kannst du ohne weiteren Kauf beitreten.'],
+                 'chips': ['Offline kostenlos nutzbar', 'Keine Werbung', 'Keine Nutzungsanalyse'],
                  'story': ['Unsere Geschichte',
                            'Elia entstand in einem Kreißsaal.',
                            'Während der Geburt griff ein Partner zu einer Wehen-App. Sie reagierte träge. Der '
@@ -306,16 +292,9 @@ T = {'en': {'lang': 'Language',
                  'feed_card': ['Elia Feeding',
                                'Anota las tomas, las extracciones y los cambios de pañal. Consulta qué pecho diste la última vez.'],
                  'promise': ['La promesa',
-                             'Tus registros se guardan en tu móvil',
-                             'Puedes usar Contractions y Feeding sin iniciar sesión. Tú decides cuándo compartir un resumen.'],
-                 'chips': ['Sin cuenta',
-                           'Sin anuncios',
-                           'Sin suscripciones',
-                           'Sin sincronización en la nube',
-                           'Sin analíticas',
-                           'Offline-first',
-                           'Local por defecto',
-                           'Sin juicio'],
+                             'Usa Elia sin iniciar sesión',
+                             'Puedes cronometrar las contracciones y registrar las tomas gratis y sin conexión. Si tu app lo permite, puedes activar las copias en la nube o compartir datos con tu familia. La activación de Elia Account se paga una sola vez. Si recibes una invitación familiar, puedes unirte sin volver a pagar.'],
+                 'chips': ['Uso sin conexión gratuito', 'Sin anuncios', 'Sin analíticas'],
                  'story': ['Nuestra historia',
                            'Elia nació en una sala de parto.',
                            'Durante el parto, una pareja abrió una app de contracciones. Iba lenta. El botón principal '
@@ -352,12 +331,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                                  'Stay present between them.',
                                  'Keep a simple, honest history.',
                                  'Share a clear summary with your care team, if useful.'],
-                         'no': ['A medical device or diagnostic tool.',
-                                'A replacement for doctors or midwives.',
-                                'A pregnancy or baby tracker.',
-                                'A subscription trap.',
-                                'An advertising surface.',
-                                'Something that tells you what to do.'],
+                         'no': ['A medical device or diagnostic tool.', 'A replacement for doctors or midwives.', 'A pregnancy or baby tracker.', 'An advertising surface.', 'Something that tells you what to do.'],
                          'story': ['Why it exists',
                                    'Born from a real birth.',
                                    'It began in a hospital room, during labor. Things moved quickly, and soon the '
@@ -368,13 +342,8 @@ APP = {'en': {'common': {'overview': 'Overview',
                                    'family to leave for the hospital — where they already were, under care.',
                                    'The app added stress. Elia is the answer to that moment.',
                                    'Their baby was born that evening. Elia was born the same day.'],
-                         'principles': ['Yours alone.',
-                                        ['Offline-first',
-                                         'Local-only',
-                                         'No account',
-                                         'No ads',
-                                         'No subscription for core',
-                                         'No analytics'],
+                         'principles': ['Use Elia without signing in',
+                                        ['Free offline use', 'No ads', 'No analytics'],
                                         'Elia Contractions is not a medical device and does not provide medical advice '
                                         'or diagnosis. It never tells you when to go to the hospital. Always follow '
                                         'the guidance of your doctors and midwives.']},
@@ -393,22 +362,10 @@ APP = {'en': {'common': {'overview': 'Overview',
                             'Pumping sessions, with side, duration and optional amount.',
                             'Review a day, 7 days or 30 days. Edit or delete individual entries in History.',
                             'Share or export as plain text.'],
-                    'no': ['Accounts, cloud, or multi-parent sync.',
-                           'Growth charts and analytics.',
-                           'Feeding targets, streaks, or warnings.',
-                           'Medical recommendations.',
-                           'Sleep and medication logs.',
-                           'Ads or billing.'],
-                    'principles': ['Yours alone.',
+                    'no': ['Growth charts and analytics.', 'Feeding targets, streaks, or warnings.', 'Medical recommendations.', 'Sleep and medication logs.'],
+                    'principles': ['Use Elia without signing in',
                                    'No goals, warnings, or pressure. Elia remembers what you log — nothing more.',
-                                   ['No account',
-                                    'No ads',
-                                    'No subscriptions',
-                                    'No backend',
-                                    'No cloud sync',
-                                    'No analytics',
-                                    'Offline-first',
-                                    'No judgement'],
+                                   ['Free offline use', 'No ads', 'No analytics'],
                                    'Elia Feeding is a feeding log. It does not give medical '
                                    "advice and does not define what is normal. For anything about your baby's health, "
                                    'talk to your pediatrician or midwife.']}},
@@ -436,12 +393,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                                  'Zwischen den Wehen präsent bleiben.',
                                  'Eine einfache, ehrliche Historie behalten.',
                                  'Bei Bedarf eine klare Zusammenfassung mit dem Betreuungsteam teilen.'],
-                         'no': ['Ein Medizinprodukt oder Diagnosewerkzeug.',
-                                'Ein Ersatz für Ärztinnen, Ärzte oder Hebammen.',
-                                'Ein Schwangerschafts- oder Babytracker.',
-                                'Eine Abo-Falle.',
-                                'Eine Werbefläche.',
-                                'Etwas, das dir sagt, was du tun sollst.'],
+                         'no': ['Ein Medizinprodukt oder Diagnosewerkzeug.', 'Ein Ersatz für Ärztinnen, Ärzte oder Hebammen.', 'Ein Schwangerschafts- oder Babytracker.', 'Eine Werbefläche.', 'Etwas, das dir sagt, was du tun sollst.'],
                          'story': ['Warum es existiert',
                                    'Aus einer echten Geburt entstanden.',
                                    'Es begann in einem Krankenhauszimmer während der Geburt. Alles ging schnell, und '
@@ -452,13 +404,8 @@ APP = {'en': {'common': {'overview': 'Overview',
                                    'Krankenhaus fahren — wo die Familie bereits betreut wurde.',
                                    'Die App machte den Moment stressiger. Elia ist die Antwort darauf.',
                                    'Das Baby wurde an diesem Abend geboren. Elia entstand am selben Tag.'],
-                         'principles': ['Nur deins.',
-                                        ['Offline-first',
-                                         'Nur lokal',
-                                         'Kein Konto',
-                                         'Keine Werbung',
-                                         'Kernfunktionen ohne Abo',
-                                         'Keine Analyse'],
+                         'principles': ['Elia ohne Anmeldung nutzen',
+                                        ['Offline kostenlos nutzbar', 'Keine Werbung', 'Keine Nutzungsanalyse'],
                                         'Elia Contractions ist kein Medizinprodukt und gibt keine medizinische '
                                         'Beratung oder Diagnose. Sie sagt dir nie, wann du ins Krankenhaus fahren '
                                         'sollst. Folge immer den Empfehlungen deiner Ärztinnen, Ärzte und Hebammen.']},
@@ -477,22 +424,10 @@ APP = {'en': {'common': {'overview': 'Overview',
                             'Abpumpen mit Seite, Dauer und auf Wunsch der abgepumpten Menge.',
                             'Übersicht für einen Tag, 7 Tage oder 30 Tage. Im Verlauf kannst du einzelne Einträge ändern oder löschen.',
                             'Teilen oder Export als Klartext.'],
-                    'no': ['Konten, Cloud oder Synchronisierung zwischen Eltern.',
-                           'Wachstumskurven und Analysen.',
-                           'Fütterungsziele, Serien oder Warnungen.',
-                           'Medizinische Empfehlungen.',
-                           'Schlaf- und Medikamentenprotokolle.',
-                           'Werbung oder Bezahlung.'],
-                    'principles': ['Nur deins.',
+                    'no': ['Wachstumskurven und Analysen.', 'Fütterungsziele, Serien oder Warnungen.', 'Medizinische Empfehlungen.', 'Schlaf- und Medikamentenprotokolle.'],
+                    'principles': ['Elia ohne Anmeldung nutzen',
                                    'Keine Ziele, Warnungen oder Druck. Elia merkt sich, was du einträgst — mehr nicht.',
-                                   ['Kein Konto',
-                                    'Keine Werbung',
-                                    'Keine Abos',
-                                    'Kein Backend',
-                                    'Keine Cloud-Synchronisierung',
-                                    'Keine Analyse',
-                                    'Offline-first',
-                                    'Kein Urteil'],
+                                   ['Offline kostenlos nutzbar', 'Keine Werbung', 'Keine Nutzungsanalyse'],
                                    'Elia Feeding ist ein Protokoll für Mahlzeiten und Pflege. Sie '
                                    'gibt keine medizinischen Ratschläge und definiert nicht, was normal ist. Wenn es '
                                    'um die Gesundheit deines Babys geht, sprich mit Kinderarzt, Kinderärztin oder '
@@ -521,12 +456,7 @@ APP = {'en': {'common': {'overview': 'Overview',
                                  'Estar presente entre una y otra.',
                                  'Conservar un historial simple y honesto.',
                                  'Compartir un resumen claro con tu equipo de atención, si resulta útil.'],
-                         'no': ['Un dispositivo médico o herramienta de diagnóstico.',
-                                'Un reemplazo de profesionales de salud.',
-                                'Un tracker de embarazo o bebé.',
-                                'Una trampa de suscripción.',
-                                'Un espacio para anuncios.',
-                                'Algo que te diga qué hacer.'],
+                         'no': ['Un dispositivo médico o herramienta de diagnóstico.', 'Un reemplazo de profesionales de salud.', 'Un tracker de embarazo o bebé.', 'Un espacio para anuncios.', 'Algo que te diga qué hacer.'],
                          'story': ['Por qué existe',
                                    'Nacida de un parto real.',
                                    'Todo empezó en una habitación de hospital, durante el parto. Las cosas avanzaron '
@@ -537,13 +467,8 @@ APP = {'en': {'common': {'overview': 'Overview',
                                    'familia que saliera hacia el hospital, donde ya estaban bajo cuidado.',
                                    'La app añadió estrés. Elia es la respuesta a ese momento.',
                                    'Su bebé nació esa noche. Elia nació el mismo día.'],
-                         'principles': ['Solo tuya.',
-                                        ['Offline-first',
-                                         'Solo local',
-                                         'Sin cuenta',
-                                         'Sin anuncios',
-                                         'Funciones esenciales sin suscripción',
-                                         'Sin analíticas'],
+                         'principles': ['Usa Elia sin iniciar sesión',
+                                        ['Uso sin conexión gratuito', 'Sin anuncios', 'Sin analíticas'],
                                         'Elia Contractions no es un dispositivo médico y no ofrece consejo médico ni '
                                         'diagnóstico. Nunca te dice cuándo ir al hospital. Sigue siempre las '
                                         'indicaciones de tus profesionales de salud.']},
@@ -562,30 +487,17 @@ APP = {'en': {'common': {'overview': 'Overview',
                             'Extracciones con lado, duración y cantidad opcional.',
                             'Consulta el resumen de un día, de 7 días o de 30 días. Puedes editar o borrar entradas en el historial.',
                             'Compartir o exportar como texto plano.'],
-                    'no': ['Cuentas o sincronización en la nube entre cuidadores.',
-                           'Gráficas de crecimiento y analíticas.',
-                           'Objetivos de alimentación, rachas o alertas.',
-                           'Recomendaciones médicas.',
-                           'Registros de sueño y medicación.',
-                           'Anuncios o pagos.'],
-                    'principles': ['Solo tuya.',
+                    'no': ['Gráficas de crecimiento y analíticas.', 'Objetivos de alimentación, rachas o alertas.', 'Recomendaciones médicas.', 'Registros de sueño y medicación.'],
+                    'principles': ['Usa Elia sin iniciar sesión',
                                    'Sin objetivos, alertas ni presión. Elia recuerda lo que registras, nada más.',
-                                   ['Sin cuenta',
-                                    'Sin anuncios',
-                                    'Sin suscripciones',
-                                    'Sin backend',
-                                    'Sin sincronización en la nube',
-                                    'Sin analíticas',
-                                    'Offline-first',
-                                    'Sin juicio'],
+                                   ['Uso sin conexión gratuito', 'Sin anuncios', 'Sin analíticas'],
                                    'Elia Feeding sirve para registrar tomas y cuidados. No '
                                    'da consejos médicos ni define qué es normal. Para cualquier duda sobre la salud de '
                                    'tu bebé, habla con tu pediatra o profesional de salud.']}}}
 
 
 SUPPORT = {'en': {'contractions': [('Is my data private?',
-                          'Yes. Elia Contractions has no account and no backend. Your contraction times, history, and '
-                          'settings stay on your device. See the privacy policy for details.'),
+                          'Your entries are saved on this device by default. You can use the app without paying or signing in.'),
                          ('Does it work offline?',
                           'Yes. Recording contractions never needs an internet connection. The app is built to be '
                           'reliable in a delivery room, not dependent on a signal.'),
@@ -596,14 +508,11 @@ SUPPORT = {'en': {'contractions': [('Is my data private?',
                          ('Can I correct a mistake?',
                           'Yes. You can edit or delete entries in your history.'),
                          ('How do I share a summary with my midwife or doctor?',
-                          "You can export or share your session as plain text using your device's share options. You "
-                          'choose where it goes; Elia never sends it anywhere on its own.'),
+                          'Use the share option to send a text summary. You choose the recipient.'),
                          ('Is there a subscription?',
-                          'The core experience is not a subscription trap. Elia will never lock essential labor '
-                          'features behind a paywall or show ads.')],
+                          'Local use is free and ad-free. Optional Elia Account activation is a one-time purchase. Availability of cloud features depends on the app version.')],
         'feeding': [('Is my data private?',
-                     'Yes. Elia Feeding has no account, no backend, and no cloud. Your entries and settings stay on '
-                     'your device. See the privacy policy for details.'),
+                     'Your entries are saved on this device by default. You can use the app without paying or signing in.'),
                     ('Does it work offline?',
                      'Yes. Logging a feed, bottle, or diaper never needs an internet connection.'),
                     ('Does it tell me if my baby is feeding enough?',
@@ -613,16 +522,13 @@ SUPPORT = {'en': {'contractions': [('Is my data private?',
                     ('Can I edit or delete an entry?',
                      'Yes. You can edit or delete any entry. Nothing is permanent by accident.'),
                     ('Can two parents share the same log?',
-                     'Not in the current version. Elia Feeding is local-only by design, so there is no cloud sync '
-                     'between devices. Everything lives on the one device you log on.'),
+                     'The current public Android version keeps the log on one device. You can send a text summary to another parent.'),
                     ('How do I move my log somewhere else?',
-                     "You can export or share it as plain text using your device's share options. You choose the "
-                     'destination; Elia never sends it anywhere on its own.'),
+                     'Export a text summary to share, or save a backup file to import on another device. You choose where to save or send it.'),
                     ('Are there ads or subscriptions?',
-                     'No. Elia Feeding has no ads or subscriptions.')]},
+                     'Local use is free and ad-free. Optional Elia Account activation is a one-time purchase. Availability of cloud features depends on the app version.')]},
  'de': {'contractions': [('Sind meine Daten privat?',
-                          'Ja. Elia Contractions hat kein Konto und kein Backend. Wehenzeiten, Historie und '
-                          'Einstellungen bleiben auf deinem Gerät. Details stehen in der Datenschutzerklärung.'),
+                          'Deine Einträge werden standardmäßig auf diesem Gerät gespeichert. Du kannst die App kostenlos und ohne Anmeldung nutzen.'),
                          ('Funktioniert es offline?',
                           'Ja. Wehen zu erfassen braucht nie eine Internetverbindung. Die App soll im Kreißsaal '
                           'verlässlich sein, nicht vom Empfang abhängen.'),
@@ -633,14 +539,11 @@ SUPPORT = {'en': {'contractions': [('Is my data private?',
                          ('Kann ich einen Fehler korrigieren?',
                           'Ja. Du kannst Einträge im Verlauf bearbeiten oder löschen.'),
                          ('Wie teile ich eine Zusammenfassung mit Hebamme oder Arzt?',
-                          'Du kannst deine Sitzung als Klartext über die Teilen-Funktionen deines Geräts exportieren. '
-                          'Du wählst das Ziel; Elia sendet nie von selbst etwas.'),
+                          'Über die Teilen-Funktion kannst du eine Zusammenfassung als Text senden. Du bestimmst den Empfänger.'),
                          ('Gibt es ein Abo?',
-                          'Die Kernfunktionen sind keine Abo-Falle. Elia wird wichtige Geburtsfunktionen nie hinter '
-                          'einer Paywall verstecken oder Werbung zeigen.')],
+                          'Die lokale Nutzung ist kostenlos und werbefrei. Für die optionale Aktivierung des Elia Account zahlst du einmalig. Welche Cloud-Funktionen verfügbar sind, hängt von der App-Version ab.')],
         'feeding': [('Sind meine Daten privat?',
-                     'Ja. Elia Feeding hat kein Konto, kein Backend und keine Cloud. Deine Einträge und Einstellungen '
-                     'bleiben auf deinem Gerät. Details stehen in der Datenschutzerklärung.'),
+                     'Deine Einträge werden standardmäßig auf diesem Gerät gespeichert. Du kannst die App kostenlos und ohne Anmeldung nutzen.'),
                     ('Funktioniert es offline?',
                      'Ja. Füttern, Fläschchen oder Windeln zu protokollieren braucht nie Internet.'),
                     ('Sagt die App, ob mein Baby genug trinkt?',
@@ -650,16 +553,13 @@ SUPPORT = {'en': {'contractions': [('Is my data private?',
                     ('Kann ich einen Eintrag bearbeiten oder löschen?',
                      'Ja. Du kannst jeden Eintrag bearbeiten oder löschen. Nichts ist aus Versehen endgültig.'),
                     ('Können zwei Eltern dasselbe Protokoll teilen?',
-                     'In der aktuellen Version nicht. Elia Feeding ist bewusst lokal, daher gibt es keine '
-                     'Cloud-Synchronisierung zwischen Geräten. Alles bleibt auf dem Gerät, auf dem du protokollierst.'),
+                     'Die aktuelle öffentliche Android-Version speichert das Protokoll auf einem Gerät. Du kannst dem anderen Elternteil eine Zusammenfassung als Text schicken.'),
                     ('Wie verschiebe ich mein Protokoll woandershin?',
-                     'Du kannst es als Klartext über die Teilen-Funktionen deines Geräts exportieren. Du wählst das '
-                     'Ziel; Elia sendet nie von selbst etwas.'),
+                     'Du kannst eine Zusammenfassung als Text teilen oder eine Sicherungsdatei auf einem anderen Gerät importieren. Du wählst das Ziel.'),
                     ('Gibt es Werbung oder Abos?',
-                     'Nein. Elia Feeding enthält weder Werbung noch Abos.')]},
+                     'Die lokale Nutzung ist kostenlos und werbefrei. Für die optionale Aktivierung des Elia Account zahlst du einmalig. Welche Cloud-Funktionen verfügbar sind, hängt von der App-Version ab.')]},
  'es': {'contractions': [('¿Mis datos son privados?',
-                          'Sí. Elia Contractions no tiene cuenta ni backend. Tus tiempos de contracciones, historial y '
-                          'ajustes se quedan en tu dispositivo. Consulta la política de privacidad para más detalles.'),
+                          'Por defecto, tus registros se guardan en este dispositivo. Puedes usar la app gratis y sin iniciar sesión.'),
                          ('¿Funciona sin conexión?',
                           'Sí. Registrar contracciones nunca necesita conexión a internet. La app está pensada para '
                           'ser fiable en una sala de parto, no para depender de la señal.'),
@@ -670,14 +570,11 @@ SUPPORT = {'en': {'contractions': [('Is my data private?',
                          ('¿Puedo corregir un error?',
                           'Sí. Puedes editar o borrar entradas en tu historial.'),
                          ('¿Cómo comparto un resumen con mi equipo de salud?',
-                          'Puedes exportar o compartir tu sesión como texto plano usando las opciones de compartir de '
-                          'tu dispositivo. Tú eliges el destino; Elia nunca envía nada por su cuenta.'),
+                          'Usa la opción de compartir para enviar un resumen de texto. Tú eliges el destinatario.'),
                          ('¿Hay suscripción?',
-                          'La experiencia principal no es una trampa de suscripción. Elia nunca bloqueará funciones '
-                          'esenciales del parto detrás de un pago ni mostrará anuncios.')],
+                          'El uso local es gratuito y sin anuncios. La activación opcional de Elia Account se paga una sola vez. Las funciones en la nube dependen de la versión de la app.')],
         'feeding': [('¿Mis datos son privados?',
-                     'Sí. Elia Feeding no tiene cuenta, backend ni sincronización en la nube. Tus entradas y ajustes se quedan en tu '
-                     'dispositivo. Consulta la política de privacidad para más detalles.'),
+                     'Por defecto, tus registros se guardan en este dispositivo. Puedes usar la app gratis y sin iniciar sesión.'),
                     ('¿Funciona sin conexión?',
                      'Sí. Registrar una alimentación, un biberón o un pañal nunca necesita conexión a internet.'),
                     ('¿Me dice si mi bebé está comiendo suficiente?',
@@ -687,21 +584,18 @@ SUPPORT = {'en': {'contractions': [('Is my data private?',
                     ('¿Puedo editar o borrar una entrada?',
                      'Sí. Puedes editar o borrar cualquier entrada. Nada queda permanente por accidente.'),
                     ('¿Pueden dos cuidadores compartir el mismo registro?',
-                     'No en la versión actual. Elia Feeding es local por diseño, así que no hay sincronización en la '
-                     'nube entre dispositivos. Todo vive en el dispositivo en el que registras.'),
+                     'La versión pública actual de Android guarda el registro en un dispositivo. Puedes enviar un resumen de texto a otra persona.'),
                     ('¿Cómo llevo mi registro a otro lugar?',
-                     'Puedes exportarlo o compartirlo como texto plano usando las opciones de compartir de tu '
-                     'dispositivo. Tú eliges el destino; Elia nunca envía nada por su cuenta.'),
+                     'Puedes compartir un resumen de texto o guardar una copia para importarla en otro dispositivo. Tú eliges el destino.'),
                     ('¿Hay anuncios o suscripciones?',
-                     'No. Elia Feeding no tiene anuncios ni suscripciones.')]}}
+                     'El uso local es gratuito y sin anuncios. La activación opcional de Elia Account se paga una sola vez. Las funciones en la nube dependen de la versión de la app.')]}}
 
 
 MOMENTS = {
  'en': {'card': ['Elia Moments',
                  'A journal of childhood photos and notes, organised by date and by child.'],
         'app': {'title': 'Elia Moments — a childhood photo journal',
-                'desc': 'Elia Moments is a private family archive for the small firsts and meaningful memories '
-                        'of childhood. No account. No cloud. Local-first.',
+                'desc': 'A photo journal organised by child and date. You can keep a local archive without signing in.',
                 'tag': 'A photo and the story behind it',
                 'sub': 'A private family archive for the small firsts and meaningful memories that otherwise '
                        'scatter across notes, chats, and photo libraries.',
@@ -722,17 +616,14 @@ MOMENTS = {
                        'A social network or public child profile.',
                        'A required cloud account.',
                        'Ads or a subscription gate for the core archive.'],
-                'principles': ['Yours alone.',
-                               ['No account', 'No ads', 'No analytics', 'Local-first', 'Works offline',
-                                'Portable backups'],
+                'principles': ['Use Elia without signing in',
+                               ['Free offline use', 'No ads', 'No analytics'],
                                'Elia Moments never infers delays, diagnoses, or developmental judgement from what you '
                                'save. Categories and prompts are ways to remember, never obligations.']},
         'support': [('Is my data private?',
-                     'Yes. Elia Moments has no account and no hidden upload. Your moments, photos, and settings stay '
-                     'in the app’s private storage on your device. See the privacy policy for details.'),
+                     'Your entries are saved on this device by default. You can use the app without paying or signing in.'),
                     ('Does it work offline?',
-                     'Yes. Capturing, browsing, search, backup, and restore all work without a network. Optional '
-                     'place suggestions are the only online extra, and they have a manual fallback.'),
+                     'You can add and browse local entries offline. Cloud backup, restoring cloud photos and online place suggestions require a connection.'),
                     ('Does it tell me whether my child is on track?',
                      'No. Elia Moments is not a milestone checklist and never judges development. A first step and a '
                      'first taste of sushi can be equally valuable — your family decides what matters.'),
@@ -744,15 +635,13 @@ MOMENTS = {
                      'Create a complete backup file in Settings, then restore it on the new device. It contains '
                      'profiles, moments, settings, places, and media.'),
                     ('Will I lose everything if I uninstall?',
-                     'Uninstalling the app or clearing its storage removes the local data, and automatic cloud backup '
-                     'is deliberately disabled. Create a backup before uninstalling, resetting, or switching devices.'),
+                     'Uninstalling removes the archive from your device. Before switching phones, save a complete backup and check where you saved it. Uninstalling does not delete a connected family archive.'),
                     ('Are there ads or subscriptions?',
-                     'No ads, and no subscription gate for the core archive.')]},
+                     'Local use is free and ad-free. Optional Elia Account activation is a one-time purchase. Availability of cloud features depends on the app version.')]},
  'de': {'card': ['Elia Moments',
                  'Ein Tagebuch für Fotos und Notizen aus der Kindheit, nach Datum und Kind geordnet.'],
         'app': {'title': 'Elia Moments — ein Fototagebuch für die Kindheit',
-                'desc': 'Elia Moments ist ein privates Familienarchiv für die kleinen ersten Male und '
-                        'bedeutsamen Erinnerungen der Kindheit. Kein Konto. Keine Cloud. Local-first.',
+                'desc': 'Ein Fototagebuch nach Kind und Datum. Das lokale Archiv kannst du ohne Anmeldung nutzen.',
                 'tag': 'Ein Foto und die Geschichte dazu',
                 'sub': 'Ein privates Familienarchiv für die kleinen ersten Male und bedeutsamen '
                        'Erinnerungen, die sonst zwischen Notizen, Chats und Fotomediatheken verloren gehen.',
@@ -773,19 +662,15 @@ MOMENTS = {
                        'Ein soziales Netzwerk oder öffentliches Kinderprofil.',
                        'Ein verpflichtendes Cloud-Konto.',
                        'Werbung oder eine Abo-Schranke für das Kernarchiv.'],
-                'principles': ['Nur deins.',
-                               ['Kein Konto', 'Keine Werbung', 'Keine Analyse', 'Local-first', 'Funktioniert offline',
-                                'Portable Backups'],
+                'principles': ['Elia ohne Anmeldung nutzen',
+                               ['Offline kostenlos nutzbar', 'Keine Werbung', 'Keine Nutzungsanalyse'],
                                'Elia Moments leitet aus deinen Einträgen niemals Verzögerungen, Diagnosen oder '
                                'Entwicklungsurteile ab. Kategorien und Vorschläge sind Wege zu erinnern, niemals '
                                'Pflichten.']},
         'support': [('Sind meine Daten privat?',
-                     'Ja. Elia Moments hat kein Konto und lädt nichts heimlich hoch. Deine Momente, Fotos und '
-                     'Einstellungen bleiben im privaten Speicher der App auf deinem Gerät. Details stehen in der '
-                     'Datenschutzerklärung.'),
+                     'Deine Einträge werden standardmäßig auf diesem Gerät gespeichert. Du kannst die App kostenlos und ohne Anmeldung nutzen.'),
                     ('Funktioniert die App offline?',
-                     'Ja. Erfassen, Durchsuchen, Suche, Backup und Wiederherstellung funktionieren ohne Netz. '
-                     'Optionale Ortsvorschläge sind die einzige Online-Ergänzung und haben eine manuelle Alternative.'),
+                     'Lokale Einträge kannst du offline anlegen und ansehen. Cloud-Backups, das Laden von Fotos aus der Cloud und Online-Ortsvorschläge brauchen eine Verbindung.'),
                     ('Sagt sie mir, ob mein Kind altersgerecht entwickelt ist?',
                      'Nein. Elia Moments ist keine Meilenstein-Checkliste und bewertet Entwicklung nie. Ein erster '
                      'Schritt und der erste Bissen Sushi können gleich wertvoll sein — deine Familie entscheidet, was '
@@ -798,16 +683,13 @@ MOMENTS = {
                      'Erstelle in den Einstellungen eine vollständige Backup-Datei und stelle sie auf dem neuen Gerät '
                      'wieder her. Sie enthält Profile, Momente, Einstellungen, Orte und Medien.'),
                     ('Verliere ich alles, wenn ich die App deinstalliere?',
-                     'Deinstallieren oder das Löschen des App-Speichers entfernt die lokalen Daten, und automatische '
-                     'Cloud-Backups sind bewusst deaktiviert. Erstelle ein Backup, bevor du deinstallierst, '
-                     'zurücksetzt oder das Gerät wechselst.'),
+                     'Beim Deinstallieren wird das Archiv vom Gerät entfernt. Sichere vor einem Gerätewechsel das vollständige Archiv und prüfe den Speicherort. Ein verbundenes Familienarchiv wird durch die Deinstallation nicht gelöscht.'),
                     ('Gibt es Werbung oder Abos?',
-                     'Keine Werbung und keine Abo-Schranke für das Kernarchiv.')]},
+                     'Die lokale Nutzung ist kostenlos und werbefrei. Für die optionale Aktivierung des Elia Account zahlst du einmalig. Welche Cloud-Funktionen verfügbar sind, hängt von der App-Version ab.')]},
  'es': {'card': ['Elia Moments',
                  'Un diario de fotos y notas de la infancia, organizado por fecha y por hijo.'],
         'app': {'title': 'Elia Moments — un diario de fotos de la infancia',
-                'desc': 'Elia Moments es un archivo familiar privado para las pequeñas primeras veces y '
-                        'los recuerdos importantes de la infancia. Sin cuenta. Sin nube. Local-first.',
+                'desc': 'Un diario de fotos organizado por hijo y fecha. Puedes usar el archivo local sin iniciar sesión.',
                 'tag': 'Una foto y la historia que hay detrás',
                 'sub': 'Un archivo familiar privado para las pequeñas primeras veces y los recuerdos '
                        'que, si no, se dispersan entre notas, chats y fototecas.',
@@ -828,19 +710,15 @@ MOMENTS = {
                        'Una red social o un perfil público del niño.',
                        'Una cuenta en la nube obligatoria.',
                        'Anuncios o un muro de suscripción para el archivo principal.'],
-                'principles': ['Solo tuya.',
-                               ['Sin cuenta', 'Sin anuncios', 'Sin analíticas', 'Local-first', 'Funciona sin conexión',
-                                'Copias portables'],
+                'principles': ['Usa Elia sin iniciar sesión',
+                               ['Uso sin conexión gratuito', 'Sin anuncios', 'Sin analíticas'],
                                'Elia Moments nunca deduce retrasos, diagnósticos ni juicios sobre el desarrollo a '
                                'partir de lo que guardas. Las categorías y las sugerencias son formas de recordar, '
                                'nunca obligaciones.']},
         'support': [('¿Mis datos son privados?',
-                     'Sí. Elia Moments no tiene cuenta ni sube nada de forma oculta. Tus momentos, fotos y ajustes se '
-                     'quedan en el almacenamiento privado de la app en tu dispositivo. Consulta la política de '
-                     'privacidad para más detalles.'),
+                     'Por defecto, tus registros se guardan en este dispositivo. Puedes usar la app gratis y sin iniciar sesión.'),
                     ('¿Funciona sin conexión?',
-                     'Sí. Guardar, explorar, buscar, crear copias y restaurar funcionan sin red. Las sugerencias de '
-                     'lugar son el único extra en línea y tienen alternativa manual.'),
+                     'Puedes añadir y consultar entradas locales sin conexión. Las copias en la nube, la descarga de fotos de la nube y las sugerencias de lugares en línea requieren conexión.'),
                     ('¿Me dice si mi hijo va bien para su edad?',
                      'No. Elia Moments no es una lista de hitos y nunca juzga el desarrollo. Un primer paso y la '
                      'primera vez que prueba sushi pueden ser igual de valiosos: tu familia decide qué importa.'),
@@ -852,11 +730,9 @@ MOMENTS = {
                      'Crea un archivo de copia de seguridad completo en Ajustes y restáuralo en el nuevo dispositivo. '
                      'Contiene perfiles, momentos, ajustes, lugares y archivos.'),
                     ('¿Pierdo todo si desinstalo la app?',
-                     'Desinstalar la app o borrar su almacenamiento elimina los datos locales, y la copia automática '
-                     'en la nube está desactivada a propósito. Crea una copia antes de desinstalar, restablecer o '
-                     'cambiar de dispositivo.'),
+                     'Al desinstalar se borra el archivo del dispositivo. Antes de cambiar de móvil, guarda una copia completa y comprueba dónde está. Desinstalar no elimina un archivo familiar conectado.'),
                     ('¿Hay anuncios o suscripciones?',
-                     'No hay anuncios ni muro de suscripción para el archivo principal.')]}}
+                     'El uso local es gratuito y sin anuncios. La activación opcional de Elia Account se paga una sola vez. Las funciones en la nube dependen de la versión de la app.')]}}
 
 for _lang, _data in MOMENTS.items():
     T[_lang]['home']['moments_card'] = _data['card']
@@ -1013,7 +889,7 @@ SHOTS_T = {
                 "Track each contraction — start and stop with one tap, then stay focused on the moment.",
                 "See the rhythm at a glance — recent contractions, interval, and last duration on one screen.",
                 "Review your session history — check start times, durations and intervals, and edit entries when needed.",
-                "Private by design — no account, no ads, no tracking. Your data stays on your device unless you choose to share it.",
+                'About screen with information on offline timing and privacy.',
             ],
             "feeding": [
                 "Track a breastfeeding session, switch sides with one tap, and see the time for each side.",
@@ -1034,7 +910,7 @@ SHOTS_T = {
                 "Jede Wehe erfassen — mit einem Tippen starten und stoppen und im Moment bleiben.",
                 "Den Rhythmus auf einen Blick sehen — letzte Wehen, Intervall und Dauer auf einem Bildschirm.",
                 "Den Sitzungsverlauf durchsehen — Startzeiten, Dauern und Intervalle prüfen und Einträge bearbeiten.",
-                "Von Grund auf privat — kein Konto, keine Werbung, kein Tracking. Deine Daten bleiben auf deinem Gerät.",
+                'Infoansicht mit Hinweisen zur Offline-Zeitmessung und zum Datenschutz.',
             ],
             "feeding": [
                 "Eine Stillmahlzeit erfassen, mit einem Tippen die Seite wechseln und die Zeit pro Seite sehen.",
@@ -1055,7 +931,7 @@ SHOTS_T = {
                 "Cronometra cada contracción: empieza y para con un toque, y sigue presente en el momento.",
                 "Ve el ritmo de un vistazo: contracciones recientes, intervalo y última duración en una sola pantalla.",
                 "Revisa el historial de la sesión: horas de inicio, duraciones, intervalos y edición de entradas.",
-                "Privada por diseño: sin cuenta, sin anuncios, sin seguimiento. Tus datos se quedan en tu dispositivo.",
+                'Pantalla de información sobre el cronómetro sin conexión y la privacidad.',
             ],
             "feeding": [
                 "Registra una toma de pecho, cambia de lado con un toque y consulta el tiempo de cada lado.",
@@ -1136,13 +1012,9 @@ def privacy_page(lang, app):
     route = f"apps/{app}/privacy"
     app_name = f"Elia {app.capitalize()}"
     title = f"{c['privacy']} — {app_name}"
-    desc = {
-        "en": f"Privacy policy for {app_name}. No account, no backend, no tracking — your data stays on your device.",
-        "de": f"Datenschutzerklärung für {app_name}. Kein Konto, kein Backend, kein Tracking — deine Daten bleiben auf deinem Gerät.",
-        "es": f"Política de privacidad de {app_name}. Sin cuenta, sin backend, sin seguimiento: tus datos se quedan en tu dispositivo.",
-    }[lang]
-    extra = app_style(app)
     text = privacy_text(lang, app)
+    desc = text["intro"]
+    extra = app_style(app)
     sections = "".join(f"<h2>{escape(h)}</h2><p>{escape(p)}</p>" if isinstance(p, str) else f"<h2>{escape(h)}</h2>{ul(p, '')}" for h, p in text["sections"])
     body = f"""<!DOCTYPE html>
 <html lang="{lang}" data-theme="light">
@@ -1169,39 +1041,53 @@ def app_style(app):
 
 
 def privacy_text(lang, app):
-    if lang == "en":
-        intro = "Elia is built to be private by design. It has no account, no backend, and no tracking. This policy explains, in plain language, what that means."
-        return {"updated": "Last updated 13 July 2026", "intro": intro, "contact": "Contact", "question": "Questions about privacy? Reach us at", "callout": APP[lang][app]["principles"][-1], "sections": [
-            ("The short version", ["No account and no sign-in.", "No data is collected by Elia.", "Your data is never sold or shared.", "Everything is stored locally on your device.", "Nothing is uploaded to any Elia server."]),
-            ("What the app stores", "Stored locally on your device only: your entries, history derived from them, and settings."),
-            ("Data leaving your device", "Data leaves your device only when you choose to export or share it, using your device's own share options. You pick the destination. Elia does not upload your log to any service of its own."),
-            ("Backups", "Automatic cloud backup and device-to-device transfer of app data are disabled. Your log moves only through an export you start yourself."),
-            ("Network and permissions", "Core use does not require registration or a connection. The app avoids unnecessary permissions and contains no advertising, analytics, or third-party tracking SDKs."),
-            ("Deleting your data", "Deleting the app's data, or uninstalling the app, removes the local data from your device. Because nothing is stored elsewhere, that is all it takes."),
-            ("Children", "Elia is intended as a tool for adults and caregivers. It does not knowingly collect data from anyone."),
-        ]}
     data = {
-      "de": ("Zuletzt aktualisiert am 13. Juli 2026", "Elia ist von Anfang an privat gedacht. Es gibt kein Konto, kein Backend und kein Tracking. Diese Richtlinie erklärt in einfacher Sprache, was das bedeutet.", "Kontakt", "Fragen zum Datenschutz? Schreib uns an", [
-        ("Kurzfassung", ["Kein Konto und keine Anmeldung.", "Elia sammelt keine Daten.", "Deine Daten werden nie verkauft oder geteilt.", "Alles wird lokal auf deinem Gerät gespeichert.", "Nichts wird auf Elia-Server hochgeladen."]),
-        ("Was die App speichert", "Nur lokal auf deinem Gerät: deine Einträge, daraus abgeleitete Historie und Einstellungen."),
-        ("Wenn Daten dein Gerät verlassen", "Daten verlassen dein Gerät nur, wenn du sie selbst über die Teilen-Funktionen deines Geräts exportierst oder teilst. Du wählst das Ziel."),
-        ("Backups", "Automatische Cloud-Backups und Geräteübertragung von App-Daten sind deaktiviert. Dein Protokoll bewegt sich nur durch einen Export, den du selbst startest."),
-        ("Netzwerk und Berechtigungen", "Die Kernnutzung braucht keine Registrierung und keine Verbindung. Die App vermeidet unnötige Berechtigungen und enthält keine Werbung, Analyse oder Tracking-SDKs."),
-        ("Daten löschen", "Wenn du App-Daten löschst oder die App deinstallierst, werden die lokalen Daten vom Gerät entfernt. Da nichts anderswo gespeichert wird, reicht das aus."),
-        ("Kinder", "Elia ist als Werkzeug für Erwachsene und Betreuungspersonen gedacht. Sie sammelt wissentlich keine Daten von irgendwem."),
-      ]),
-      "es": ("Última actualización: 13 de julio de 2026", "Elia está diseñada para ser privada desde el principio. No tiene cuenta, backend ni seguimiento. Esta política explica en lenguaje sencillo qué significa eso.", "Contacto", "¿Preguntas sobre privacidad? Escríbenos a", [
-        ("La versión corta", ["Sin cuenta ni inicio de sesión.", "Elia no recoge datos.", "Tus datos nunca se venden ni se comparten.", "Todo se guarda localmente en tu dispositivo.", "Nada se sube a servidores de Elia."]),
-        ("Qué guarda la app", "Solo localmente en tu dispositivo: tus entradas, el historial derivado de ellas y tus ajustes."),
-        ("Cuando los datos salen de tu dispositivo", "Los datos salen de tu dispositivo solo cuando decides exportarlos o compartirlos usando las opciones de compartir del propio dispositivo. Tú eliges el destino."),
-        ("Copias de seguridad", "Las copias de seguridad automáticas en la nube y la transferencia de datos entre dispositivos están desactivadas. Tu registro se mueve solo mediante una exportación que tú inicias."),
-        ("Red y permisos", "El uso principal no requiere registro ni conexión. La app evita permisos innecesarios y no contiene publicidad, analíticas ni SDKs de seguimiento de terceros."),
-        ("Borrar tus datos", "Borrar los datos de la app o desinstalarla elimina los datos locales del dispositivo. Como no se guardan en ningún otro lugar, eso es suficiente."),
-        ("Menores", "Elia está pensada como herramienta para adultos y cuidadores. No recoge datos de nadie de forma consciente."),
-      ]),
+        "en": {
+            "updated": "Last updated 19 November 2026",
+            "intro": "You can use the app offline without an Elia Account. In local use, entries, history and settings are saved on your device.",
+            "sharing": "Sharing and cloud storage",
+            "contractions": "The current public Android version keeps contraction times and session history on your device. Sharing a summary sends it to the recipient you choose. Your contraction history is personal and is not shared with family members through an invitation.",
+            "feeding": "The current public Android version stores feeding, pumping and diaper records on your device. It does not automatically send them to another parent. You can export a summary and choose who receives it.",
+            "moments": "In a local archive, notes and selected photos stay on your device. In versions that support connecting to a family archive, connecting enables synchronization. Shared entries and supported photos are stored in the cloud and can be accessed by family members according to their roles. Online place suggestions also require a connection.",
+            "backup": "Backups and deletion",
+            "backup_note": "You choose where to save a manual backup or export. Clearing the app’s storage removes the local copy. Files you exported, summaries you sent and copies already stored in a connected account or family archive are separate. Contact us below for help with account data.",
+            "network": "Permissions and tracking",
+            "network_note": "Local recording works without an internet connection. The apps are designed for adults and caregivers. Elia does not sell your entries. The apps contain no ads or third-party tracking SDKs. Cloud features require a connection.",
+            "contact": "Contact", "question": "For privacy questions, write to",
+        },
+        "de": {
+            "updated": "Zuletzt aktualisiert am 19. November 2026",
+            "intro": "Du kannst die App offline und ohne Elia Account verwenden. Bei lokaler Nutzung werden Einträge, Verlauf und Einstellungen auf deinem Gerät gespeichert.",
+            "sharing": "Teilen und Cloud-Speicherung",
+            "contractions": "Die aktuelle öffentliche Android-Version speichert Wehenzeiten und Sitzungsverlauf auf deinem Gerät. Beim Teilen einer Zusammenfassung wählst du den Empfänger. Eine Familieneinladung gibt anderen Familienmitgliedern keinen Zugriff auf deinen persönlichen Wehenverlauf.",
+            "feeding": "Die aktuelle öffentliche Android-Version speichert Mahlzeiten, Abpumpen und Windelwechsel auf deinem Gerät. Sie sendet diese Einträge nicht automatisch an den anderen Elternteil. Du kannst eine Zusammenfassung exportieren und den Empfänger auswählen.",
+            "moments": "Im lokalen Archiv bleiben Notizen und ausgewählte Fotos auf deinem Gerät. Unterstützt deine Version ein Familienarchiv, startet die Synchronisierung, wenn du es verbindest. Geteilte Einträge und unterstützte Fotos werden in der Cloud gespeichert. Familienmitglieder haben entsprechend ihrer Rolle Zugriff. Online-Ortsvorschläge benötigen ebenfalls eine Verbindung.",
+            "backup": "Sicherung und Löschung",
+            "backup_note": "Den Speicherort manueller Sicherungen und Exporte wählst du selbst. Wenn du den App-Speicher löschst, entfernst du die lokale Kopie. Exportierte Dateien, versendete Zusammenfassungen und bereits in einem verbundenen Konto oder Familienarchiv gespeicherte Kopien bleiben davon unberührt. Bei Fragen zu Kontodaten erreichst du uns unter der Adresse unten.",
+            "network": "Berechtigungen und Tracking",
+            "network_note": "Lokale Einträge kannst du ohne Internetverbindung erfassen. Die Apps richten sich an Erwachsene und Betreuungspersonen. Elia verkauft deine Einträge nicht. Die Apps enthalten weder Werbung noch Tracking-SDKs von Drittanbietern. Cloud-Funktionen benötigen eine Verbindung.",
+            "contact": "Kontakt", "question": "Bei Datenschutzfragen schreib an",
+        },
+        "es": {
+            "updated": "Actualizado el 19 de noviembre de 2026",
+            "intro": "Puedes usar la app sin conexión y sin Elia Account. En el uso local, las entradas, el historial y los ajustes se guardan en tu dispositivo.",
+            "sharing": "Datos compartidos y almacenamiento en la nube",
+            "contractions": "La versión pública actual de Android guarda los tiempos de las contracciones y el historial en tu dispositivo. Al compartir un resumen, tú eliges el destinatario. Una invitación familiar no da acceso a tu historial personal de contracciones.",
+            "feeding": "La versión pública actual de Android guarda las tomas, las extracciones y los cambios de pañal en tu dispositivo. No los envía automáticamente a otro cuidador. Puedes exportar un resumen y elegir quién lo recibe.",
+            "moments": "En un archivo local, las notas y las fotos seleccionadas se quedan en tu dispositivo. En las versiones compatibles, conectar un archivo familiar activa la sincronización. Las entradas compartidas y las fotos compatibles se guardan en la nube. Los miembros de la familia pueden acceder según su función. Las sugerencias de lugares en línea también requieren conexión.",
+            "backup": "Copias de seguridad y borrado",
+            "backup_note": "Tú eliges dónde guardar una copia manual o una exportación. Borrar los datos de la app elimina la copia local. Los archivos exportados, los resúmenes enviados y las copias ya guardadas en una cuenta o archivo familiar conectado se conservan por separado. Si necesitas ayuda con los datos de tu cuenta, escríbenos a la dirección de abajo.",
+            "network": "Permisos y seguimiento",
+            "network_note": "Puedes registrar entradas locales sin internet. Las apps están pensadas para adultos y cuidadores. Elia no vende tus registros. Las apps no contienen anuncios ni SDK de seguimiento de terceros. Las funciones en la nube requieren conexión.",
+            "contact": "Contacto", "question": "Para consultas sobre privacidad, escribe a",
+        },
+    }[lang]
+    return {
+        **data, "sections": [(data["sharing"], data[app]), (data["backup"], data["backup_note"]),
+                             (data["network"], data["network_note"])],
+        "callout": APP[lang][app]["principles"][-1],
     }
-    updated, intro, contact, question, sections = data[lang]
-    return {"updated": updated, "intro": intro, "contact": contact, "question": question, "sections": sections, "callout": APP[lang][app]["principles"][-1]}
+
 
 def not_found(lang):
     route = ""
