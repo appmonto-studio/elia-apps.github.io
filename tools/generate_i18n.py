@@ -1100,12 +1100,17 @@ def privacy_page(lang, app):
     desc = text["intro"]
     extra = app_style(app)
     sections = "".join(f"<h2>{escape(h)}</h2><p>{escape(p)}</p>" if isinstance(p, str) else f"<h2>{escape(h)}</h2>{ul(p, '')}" for h, p in text["sections"])
+    deletion_link = ""
+    if app == "moments":
+        deletion_href = href(lang, MOMENTS_DELETION_ROUTE)
+        deletion_label = MOMENTS_DELETION_COPY[lang][0]
+        deletion_link = f'<p><a href="{deletion_href}">{escape(deletion_label)}</a></p>'
     body = f"""<!DOCTYPE html>
 <html lang="{lang}" data-theme="light">
 {head(lang, route, title, desc, "svg", None, extra)}
 <body>
   {header(lang, route, [(app.capitalize(), f"apps/{app}"), (c["support"], f"apps/{app}/support"), (c["promise"], "home#philosophy")], T[lang]["lang"])}
-  <main><section class="hero doc-hero"><div class="container"><a class="backlink" href="{href(lang, f"apps/{app}", lang, route)}">← {app_name}</a><h1>{escape(c["privacy"])}</h1><p class="updated">{app_name} · {escape(text["updated"])}</p></div></section><section><div class="container prose"><p>{escape(text["intro"])}</p>{sections}<h2>{escape(text["contact"])}</h2><p>{escape(text["question"])} <a href="mailto:{app}@getelia.app">{app}@getelia.app</a>.</p><p class="muted">{escape(STUDIO[lang]["operator"])} <a href="{STUDIO_IMPRINT_URL}" rel="noopener">{escape(STUDIO[lang]["imprint"])}</a>.</p><div class="callout">{escape(text["callout"])}</div></div></section></main>
+  <main><section class="hero doc-hero"><div class="container"><a class="backlink" href="{href(lang, f"apps/{app}", lang, route)}">← {app_name}</a><h1>{escape(c["privacy"])}</h1><p class="updated">{app_name} · {escape(text["updated"])}</p></div></section><section><div class="container prose"><p>{escape(text["intro"])}</p>{sections}{deletion_link}<h2>{escape(text["contact"])}</h2><p>{escape(text["question"])} <a href="mailto:{app}@getelia.app">{app}@getelia.app</a>.</p><p class="muted">{escape(STUDIO[lang]["operator"])} <a href="{STUDIO_IMPRINT_URL}" rel="noopener">{escape(STUDIO[lang]["imprint"])}</a>.</p><div class="callout">{escape(text["callout"])}</div></div></section></main>
   {footer(lang, [(c["overview"], f"apps/{app}"), (c["support"], f"apps/{app}/support"), (c["all"], "")], T[lang]["note"], route)}
 </body>
 </html>
@@ -1132,7 +1137,7 @@ def privacy_text(lang, app):
             "sharing": "Sharing and cloud storage",
             "contractions": "The current public Android version keeps contraction times and session history on your device. Sharing a summary sends it to the recipient you choose. Your contraction history is personal and is not shared with family members through an invitation.",
             "feeding": "The current public Android version stores feeding, pumping and diaper records on your device. It does not automatically send them to another parent. You can export a summary and choose who receives it.",
-            "moments": "In a local archive, notes and selected photos stay on your device. In versions that support connecting to a family archive, connecting enables synchronization. Shared entries and supported photos are stored in the cloud and can be accessed by family members according to their roles. Online place suggestions also require a connection.",
+            "moments": "In a local archive, notes and selected photos stay on your device. If you connect a family archive, shared entries and supported photos are stored in the cloud. Family members can access them according to their roles. Cloud backup keeps supported photo originals, including embedded metadata such as GPS coordinates if present. Places in entries are labels you add yourself. Moments does not request your device’s location.",
             "backup": "Backups and deletion",
             "backup_note": "You choose where to save a manual backup or export. Clearing the app’s storage removes the local copy. Files you exported, summaries you sent and copies already stored in a connected account or family archive are separate. Contact us below for help with account data.",
             "network": "Permissions and tracking",
@@ -1145,7 +1150,7 @@ def privacy_text(lang, app):
             "sharing": "Teilen und Cloud-Speicherung",
             "contractions": "Die aktuelle öffentliche Android-Version speichert Wehenzeiten und Sitzungsverlauf auf deinem Gerät. Beim Teilen einer Zusammenfassung wählst du den Empfänger. Eine Familieneinladung gibt anderen Familienmitgliedern keinen Zugriff auf deinen persönlichen Wehenverlauf.",
             "feeding": "Die aktuelle öffentliche Android-Version speichert Mahlzeiten, Abpumpen und Windelwechsel auf deinem Gerät. Sie sendet diese Einträge nicht automatisch an den anderen Elternteil. Du kannst eine Zusammenfassung exportieren und den Empfänger auswählen.",
-            "moments": "Im lokalen Archiv bleiben Notizen und ausgewählte Fotos auf deinem Gerät. Unterstützt deine Version ein Familienarchiv, startet die Synchronisierung, wenn du es verbindest. Geteilte Einträge und unterstützte Fotos werden in der Cloud gespeichert. Familienmitglieder haben entsprechend ihrer Rolle Zugriff. Online-Ortsvorschläge benötigen ebenfalls eine Verbindung.",
+            "moments": "Im lokalen Archiv bleiben Notizen und ausgewählte Fotos auf deinem Gerät. Wenn du ein Familienarchiv verbindest, werden geteilte Einträge und unterstützte Fotos in der Cloud gespeichert. Familienmitglieder haben entsprechend ihrer Rolle Zugriff. Die Cloud-Sicherung bewahrt unterstützte Originalfotos mit ihren Metadaten auf. Dazu können GPS-Koordinaten gehören. Ortsnamen in Einträgen gibst du selbst ein. Moments fragt den Standort deines Geräts nicht ab.",
             "backup": "Sicherung und Löschung",
             "backup_note": "Den Speicherort manueller Sicherungen und Exporte wählst du selbst. Wenn du den App-Speicher löschst, entfernst du die lokale Kopie. Exportierte Dateien, versendete Zusammenfassungen und bereits in einem verbundenen Konto oder Familienarchiv gespeicherte Kopien bleiben davon unberührt. Bei Fragen zu Kontodaten erreichst du uns unter der Adresse unten.",
             "network": "Berechtigungen und Tracking",
@@ -1158,7 +1163,7 @@ def privacy_text(lang, app):
             "sharing": "Datos compartidos y almacenamiento en la nube",
             "contractions": "La versión pública actual de Android guarda los tiempos de las contracciones y el historial en tu dispositivo. Al compartir un resumen, tú eliges el destinatario. Una invitación familiar no da acceso a tu historial personal de contracciones.",
             "feeding": "La versión pública actual de Android guarda las tomas, las extracciones y los cambios de pañal en tu dispositivo. No los envía automáticamente a otro cuidador. Puedes exportar un resumen y elegir quién lo recibe.",
-            "moments": "En un archivo local, las notas y las fotos seleccionadas se quedan en tu dispositivo. En las versiones compatibles, conectar un archivo familiar activa la sincronización. Las entradas compartidas y las fotos compatibles se guardan en la nube. Los miembros de la familia pueden acceder según su función. Las sugerencias de lugares en línea también requieren conexión.",
+            "moments": "En un archivo local, las notas y las fotos seleccionadas se quedan en tu dispositivo. Si conectas un archivo familiar, las entradas compartidas y las fotos compatibles se guardan en la nube. Los miembros de la familia pueden acceder según su función. La copia en la nube conserva los originales de las fotos compatibles y sus metadatos, incluidas las coordenadas GPS si están presentes. Tú añades el nombre del lugar en cada entrada. Moments no solicita la ubicación de tu dispositivo.",
             "backup": "Copias de seguridad y borrado",
             "backup_note": "Tú eliges dónde guardar una copia manual o una exportación. Borrar los datos de la app elimina la copia local. Los archivos exportados, los resúmenes enviados y las copias ya guardadas en una cuenta o archivo familiar conectado se conservan por separado. Si necesitas ayuda con los datos de tu cuenta, escríbenos a la dirección de abajo.",
             "network": "Permisos y seguimiento",
