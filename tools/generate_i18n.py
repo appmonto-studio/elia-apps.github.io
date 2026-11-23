@@ -991,6 +991,9 @@ MOMENTS_DELETION_COPY = {
         "Send the request from the email address you use for your Elia Account. Support will reply with the steps to verify the account before processing your request.",
         "Keep passwords, sign-in codes, photos and family details out of the email.",
         "In the app, open Settings → Elia Account → Delete Elia Account to start there.",
+        "What happens to your data",
+        "Once deletion is scheduled, you have 30 days to cancel. After that, your sign-in and personal cloud data are deleted. Copies on your device and backups you exported stay where you saved them.",
+        "Photos and entries stay with the family if the shared archive continues. If you own the archive and other members are active, transfer ownership before deletion. Support can guide you. If you are the only member of an archive you own, that cloud archive is deleted after you confirm.",
     ),
     "de": (
         "Kontolöschung beantragen",
@@ -999,6 +1002,9 @@ MOMENTS_DELETION_COPY = {
         "Sende die Anfrage von der E-Mail-Adresse, die du für dein Elia-Konto verwendest. Der Support erklärt dir in seiner Antwort, wie du dein Konto bestätigst, bevor er die Anfrage bearbeitet.",
         "Sende keine Passwörter, Anmeldecodes, Fotos oder Familiendaten per E-Mail.",
         "In der App findest du die Option unter Einstellungen → Elia-Konto → Elia-Konto löschen.",
+        "Was mit deinen Daten geschieht",
+        "Sobald die Löschung geplant ist, hast du 30 Tage Zeit, sie abzubrechen. Danach werden dein Zugang und deine persönlichen Cloud-Daten gelöscht. Kopien auf deinem Gerät und exportierte Sicherungen bleiben dort, wo du sie gespeichert hast.",
+        "Fotos und Einträge bleiben bei der Familie, wenn das gemeinsame Archiv weiterbesteht. Wenn dir das Archiv gehört und andere Mitglieder aktiv sind, übertrage es vor der Löschung. Der Support kann dir dabei helfen. Wenn du das einzige Mitglied eines Archivs bist, das dir gehört, wird dieses Cloud-Archiv nach deiner Bestätigung gelöscht.",
     ),
     "es": (
         "Solicitar la eliminación de la cuenta",
@@ -1007,13 +1013,18 @@ MOMENTS_DELETION_COPY = {
         "Envía la solicitud desde la dirección de correo que usas para tu cuenta de Elia. El equipo de soporte te responderá con los pasos para verificar la cuenta antes de tramitar la solicitud.",
         "Evita incluir contraseñas, códigos de acceso, fotos o datos familiares en el correo.",
         "En la aplicación, ve a Ajustes → Cuenta de Elia → Eliminar cuenta de Elia.",
+        "Qué ocurre con tus datos",
+        "Una vez programada la eliminación, tienes 30 días para cancelarla. Después, se eliminan tu acceso y tus datos personales en la nube. Las copias en tu dispositivo y las copias de seguridad que exportaste se quedan donde las guardaste.",
+        "Las fotos y las entradas se quedan con la familia si el archivo compartido sigue activo. Si eres la persona propietaria del archivo y hay otros miembros activos, transfiere la propiedad antes de la eliminación. El equipo de soporte puede ayudarte. Si eres la única persona que forma parte de un archivo del que eres propietaria, ese archivo en la nube se elimina tras tu confirmación.",
     ),
 }
 
 
 def moments_deletion_page(lang):
     route = MOMENTS_DELETION_ROUTE
-    heading, intro, action, verification, email_safety, in_app = MOMENTS_DELETION_COPY[lang]
+    heading, intro, action, verification, email_safety, in_app, data_heading, data_summary, family = (
+        MOMENTS_DELETION_COPY[lang]
+    )
     common = APP[lang]["common"]
     nav = [
         ("Elia Moments", "apps/moments"),
@@ -1037,6 +1048,9 @@ def moments_deletion_page(lang):
         <p>{escape(verification)}</p>
         <p>{escape(email_safety)}</p>
         <p>{escape(in_app)}</p>
+        <h2>{escape(data_heading)}</h2>
+        <p>{escape(data_summary)}</p>
+        <p>{escape(family)}</p>
       </div>
     </section>
   </main>
