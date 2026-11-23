@@ -982,6 +982,71 @@ def story_section(a):
     return f"""<section id="story" class="tint"><div class="container"><div class="section-head"><span class="eyebrow">{escape(s[0])}</span><h2>{escape(s[1])}</h2></div><div class="story"><p>{escape(s[2])}</p><p>{escape(s[3])}</p><p class="pull">{escape(s[4])}</p><p>{escape(s[5])}</p></div></div></section>"""
 
 
+MOMENTS_DELETION_ROUTE = "apps/moments/delete-account"
+MOMENTS_DELETION_COPY = {
+    "en": (
+        "Request account deletion",
+        "Request deletion of your Elia Moments account and the data associated with it.",
+        "Email your deletion request",
+        "Send the request from the email address you use for your Elia Account. Support will reply with the steps to verify the account before processing your request.",
+        "Keep passwords, sign-in codes, photos and family details out of the email.",
+        "In the app, open Settings → Elia Account → Delete Elia Account to start there.",
+    ),
+    "de": (
+        "Kontolöschung beantragen",
+        "Beantrage die Löschung deines Elia Moments-Kontos und der zugehörigen Daten.",
+        "Löschanfrage per E-Mail senden",
+        "Sende die Anfrage von der E-Mail-Adresse, die du für dein Elia-Konto verwendest. Der Support erklärt dir in seiner Antwort, wie du dein Konto bestätigst, bevor er die Anfrage bearbeitet.",
+        "Sende keine Passwörter, Anmeldecodes, Fotos oder Familiendaten per E-Mail.",
+        "In der App findest du die Option unter Einstellungen → Elia-Konto → Elia-Konto löschen.",
+    ),
+    "es": (
+        "Solicitar la eliminación de la cuenta",
+        "Solicita la eliminación de tu cuenta de Elia Moments y de los datos asociados.",
+        "Enviar la solicitud por correo",
+        "Envía la solicitud desde la dirección de correo que usas para tu cuenta de Elia. El equipo de soporte te responderá con los pasos para verificar la cuenta antes de tramitar la solicitud.",
+        "Evita incluir contraseñas, códigos de acceso, fotos o datos familiares en el correo.",
+        "En la aplicación, ve a Ajustes → Cuenta de Elia → Eliminar cuenta de Elia.",
+    ),
+}
+
+
+def moments_deletion_page(lang):
+    route = MOMENTS_DELETION_ROUTE
+    heading, intro, action, verification, email_safety, in_app = MOMENTS_DELETION_COPY[lang]
+    common = APP[lang]["common"]
+    nav = [
+        ("Elia Moments", "apps/moments"),
+        (common["support"], "apps/moments/support"),
+        (common["privacy"], "apps/moments/privacy"),
+    ]
+    mailbox = "hello@getelia.app"
+    request_link = f"mailto:{mailbox}?subject=Elia%20Moments%20account%20deletion%20request"
+    body = f"""<!DOCTYPE html>
+<html lang="{lang}" data-theme="light">
+{head(lang, route, f"{heading} — Elia Moments", intro, "moments", extra=app_style("moments"))}
+<body>
+  {header(lang, route, nav, T[lang]["lang"])}
+  <main>
+    <section class="hero doc-hero">
+      <div class="container prose">
+        <h1>{escape(heading)}</h1>
+        <p>{escape(intro)}</p>
+        <div class="btn-row"><a class="btn btn--primary" href="{request_link}">{escape(action)}</a></div>
+        <p><a href="{request_link}">{mailbox}</a></p>
+        <p>{escape(verification)}</p>
+        <p>{escape(email_safety)}</p>
+        <p>{escape(in_app)}</p>
+      </div>
+    </section>
+  </main>
+  {footer(lang, nav, T[lang]["note"], route)}
+</body>
+</html>
+"""
+    write(lang, route, body)
+
+
 def support_page(lang, app):
     c = APP[lang]["common"]
     route = f"apps/{app}/support"
@@ -994,12 +1059,17 @@ def support_page(lang, app):
     }[lang]
     extra = app_style(app)
     faq = "".join(f'<details{" open" if i == 0 else ""}><summary>{escape(q)}</summary><p>{escape(a).replace("privacy policy", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">privacy policy</a>").replace("Datenschutzerklärung", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">Datenschutzerklärung</a>").replace("política de privacidad", f"<a href=\"{href(lang, f"apps/{app}/privacy", lang, route)}\">política de privacidad</a>")}</p></details>' for i, (q, a) in enumerate(SUPPORT[lang][app]))
+    deletion_link = ""
+    if app == "moments":
+        deletion_href = href(lang, MOMENTS_DELETION_ROUTE)
+        deletion_label = MOMENTS_DELETION_COPY[lang][0]
+        deletion_link = f'<p><a href="{deletion_href}">{escape(deletion_label)}</a></p>'
     body = f"""<!DOCTYPE html>
 <html lang="{lang}" data-theme="light">
 {head(lang, route, title, desc, "svg", None, extra)}
 <body>
   {header(lang, route, [(app.capitalize(), f"apps/{app}"), (c["privacy"], f"apps/{app}/privacy"), (c["promise"], "home#philosophy")], T[lang]["lang"])}
-  <main><section class="hero doc-hero"><div class="container"><a class="backlink" href="{href(lang, f"apps/{app}", lang, route)}">← {app_name}</a><h1>{escape(c["support"])}</h1><p class="updated">{escape({"en": "We keep things simple. Here are the common questions.", "de": "Wir halten es einfach. Hier sind die häufigsten Fragen.", "es": "Lo mantenemos simple. Estas son las preguntas más frecuentes."}[lang])}</p></div></section><section><div class="container"><div class="faq">{faq}</div><div class="prose" style="margin-top:40px;"><h2>{escape(c["still"])}</h2><p>{escape({"en": "Write to us at", "de": "Schreib uns an", "es": "Escríbenos a"}[lang])} <a href="mailto:{app}@getelia.app?subject=Elia%20{app.capitalize()}%20support">{app}@getelia.app</a>. {escape(c["read"])}</p></div></div></section></main>
+  <main><section class="hero doc-hero"><div class="container"><a class="backlink" href="{href(lang, f"apps/{app}", lang, route)}">← {app_name}</a><h1>{escape(c["support"])}</h1><p class="updated">{escape({"en": "We keep things simple. Here are the common questions.", "de": "Wir halten es einfach. Hier sind die häufigsten Fragen.", "es": "Lo mantenemos simple. Estas son las preguntas más frecuentes."}[lang])}</p>{deletion_link}</div></section><section><div class="container"><div class="faq">{faq}</div><div class="prose" style="margin-top:40px;"><h2>{escape(c["still"])}</h2><p>{escape({"en": "Write to us at", "de": "Schreib uns an", "es": "Escríbenos a"}[lang])} <a href="mailto:{app}@getelia.app?subject=Elia%20{app.capitalize()}%20support">{app}@getelia.app</a>. {escape(c["read"])}</p></div></div></section></main>
   {footer(lang, [(c["overview"], f"apps/{app}"), (c["privacy"], f"apps/{app}/privacy"), (c["all"], "")], T[lang]["note"], route)}
 </body>
 </html>
@@ -1103,6 +1173,7 @@ def not_found(lang):
 
 def sitemap():
     routes = [""] + [f"apps/{a}" for a in APPS] + [f"apps/{a}/{sub}" for a in APPS for sub in ("privacy", "support")]
+    routes.append(MOMENTS_DELETION_ROUTE)
     urls = []
     for route in routes:
         for lang in LANGS:
@@ -1126,5 +1197,6 @@ for lang in LANGS:
         app_page(lang, app)
         privacy_page(lang, app)
         support_page(lang, app)
+    moments_deletion_page(lang)
     not_found(lang)
 sitemap()

@@ -26,6 +26,11 @@ dependency on Elia Platform**.
 See [`docs/elia-ecosystem.md`](docs/elia-ecosystem.md) for the full boundary,
 the applications represented here, and documentation ownership.
 
+Elia Moments uses [a permanent account deletion request page](https://getelia.app/apps/moments/delete-account/).
+The page takes requests via the studio support mailbox so users can start from a browser.
+Keep this URL stable when adding a self-service link. Account verification and deletion
+remain outside this static site.
+
 ## Generated site — do not hand-edit the HTML
 
 Every `.html` file in this repository is **generated** by
